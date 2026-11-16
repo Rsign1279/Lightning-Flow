@@ -1,0 +1,7 @@
+{
+  "lightningflow/asr.py": true,
+  "lightningflow/audio.py": true,
+  "app.infer": true,
+  "app.capture": true,
+  "app.enqueue": true
+}

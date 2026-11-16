@@ -1,0 +1,58 @@
+{
+  "target_at_start": {
+    "foreground": 2757614,
+    "focus": 2757614,
+    "caret": [
+      1,
+      1,
+      2,
+      17
+    ],
+    "epoch": 0,
+    "process": 45388,
+    "thread": 48320,
+    "native": true,
+    "state": {
+      "text": "",
+      "start": 0,
+      "end": 0
+    }
+  },
+  "target_at_delivery": {
+    "foreground": 2757614,
+    "focus": 2757614,
+    "caret": [
+      1,
+      1,
+      2,
+      17
+    ],
+    "epoch": 0,
+    "process": 45388,
+    "thread": 48320,
+    "native": true,
+    "state": {
+      "text": "",
+      "start": 0,
+      "end": 0
+    }
+  },
+  "hotkey_to_replay_capture_to_cuda_to_input": true,
+  "source": "Accelerated (0.15x wall time) replay of local SAPI fixture, NOT physical microphone speech; not a microphone latency benchmark",
+  "inserted_text": "Please send the updated project report to John on Friday at 3. We need to review CUDA performance and confirm the next meeting date.",
+  "stop_hotkey_to_observed_text_ms": 53.47090004943311,
+  "first_partial_ms": 763.5655000340194,
+  "asr_decode_ms": 70.69299998693168,
+  "provider": "CUDA / CTranslate2",
+  "desktop_wrapper_external_delivery_verified": true,
+  "delivery_metrics": {
+    "audio_seconds": 9.62,
+    "capture_first_frame_ms": 3.464299952611327,
+    "first_partial_ms": 763.5655000340194,
+    "decode_ms": 70.69299998693168,
+    "stop_to_input_ms": 15.047600027173758,
+    "input_dispatch_ms": 4.314800025895238,
+    "provider": "CUDA / CTranslate2",
+    "delivery_method": "native edit message + readback"
+  }
+}

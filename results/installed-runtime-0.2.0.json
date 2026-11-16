@@ -1,0 +1,71 @@
+{
+  "measured_at_utc": "2026-11-08T09:07:11.309265+00:00",
+  "audio_sha256": "2c2397297efc4265d9811886fad17d8fb2d8db9baef62cdd5866f6dd2f38db94",
+  "model": "tiny.en",
+  "compute_type": "float16",
+  "provider": "CUDA / CTranslate2",
+  "runtime_version": "4.8.5",
+  "model_load_and_warm_ms": 661.9824999943376,
+  "audio_seconds": 8.835,
+  "runs": 3,
+  "finalization_ms": [
+    73.68030003271997,
+    67.50929995905608,
+    73.06460000108927
+  ],
+  "median_finalization_ms": 73.06460000108927,
+  "real_time_factor": [
+    0.008339592533414823,
+    0.007641120538659431,
+    0.008269903791860699
+  ],
+  "process_cpu_percent_one_core_100": [
+    106.0324129588319,
+    115.72479650564036,
+    64.15555549377014
+  ],
+  "process_peak_sampled_rss_mib": 719.45703125,
+  "gpu_before_load": [
+    {
+      "name": "NVIDIA GeForce RTX 5070",
+      "driver": "610.88",
+      "total_mib": "12227",
+      "used_mib": "8629",
+      "util_percent": "8"
+    }
+  ],
+  "gpu_samples": [
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "8877",
+        "util_percent": "14"
+      }
+    ]
+  ],
+  "gpu_scope": "Device-wide sampled values; includes other apps; not process VRAM attribution",
+  "transcripts": [
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date."
+  ],
+  "wer": [
+    0.041666666666666664,
+    0.041666666666666664,
+    0.041666666666666664
+  ],
+  "cer": [
+    0.04504504504504504,
+    0.04504504504504504,
+    0.04504504504504504
+  ],
+  "first_partial_ms": null,
+  "limitations": [
+    "File decode benchmark, not microphone-to-input latency",
+    "No token streaming timing",
+    "Synthetic speech is not representative human accuracy",
+    "No AI cleanup in this slice"
+  ]
+}

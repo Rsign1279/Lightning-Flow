@@ -1,0 +1,112 @@
+{
+  "completed": 20,
+  "hold_cycles": 10,
+  "locked_cycles": 10,
+  "persistent_log_records": 20,
+  "gpu_initializations": 1,
+  "provider": "CUDA / CTranslate2",
+  "configured_max_seconds": 1800,
+  "sessions": [
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.028399983420968056,
+      "gpu_decode_ms": 75.04249992780387
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.029099872335791588,
+      "gpu_decode_ms": 81.8429000210017
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.02159993164241314,
+      "gpu_decode_ms": 74.2369000799954
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.025799963623285294,
+      "gpu_decode_ms": 69.92749986238778
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.02119992859661579,
+      "gpu_decode_ms": 70.32999978400767
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.03909994848072529,
+      "gpu_decode_ms": 70.811300072819
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.02159993164241314,
+      "gpu_decode_ms": 78.89449992217124
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.020600156858563423,
+      "gpu_decode_ms": 79.15089977905154
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.022899825125932693,
+      "gpu_decode_ms": 73.9281999412924
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.02659996971487999,
+      "gpu_decode_ms": 78.30039970576763
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.019999919459223747,
+      "gpu_decode_ms": 78.1507003121078
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.027900096029043198,
+      "gpu_decode_ms": 72.24659994244576
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.029799994081258774,
+      "gpu_decode_ms": 79.3329996522516
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.021900050342082977,
+      "gpu_decode_ms": 71.87239988707006
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.01919991336762905,
+      "gpu_decode_ms": 75.55610011331737
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.018399907276034355,
+      "gpu_decode_ms": 67.71830003708601
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.014600111171603203,
+      "gpu_decode_ms": 70.52890001796186
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.019499799236655235,
+      "gpu_decode_ms": 68.779899738729
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.017900019884109497,
+      "gpu_decode_ms": 73.50090006366372
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.018600141629576683,
+      "gpu_decode_ms": 68.85849987156689
+    }
+  ],
+  "scope": "Production modifier event dispatcher with accelerated PCM replay. No OS input injection or physical keyboard/start-menu/microphone/30-minute-duration validation."
+}

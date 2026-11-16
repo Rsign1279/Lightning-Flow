@@ -1,0 +1,29 @@
+{
+  "gui_and_installer_gui_subsystem": true,
+  "version": "0.3.1",
+  "payload_crc_verified": true,
+  "engine_sources_match_release": true,
+  "private_recovery_not_bundled": true,
+  "models_cuda_and_machine_manifest_not_bundled_in_installer": true,
+  "installer_bytes": 41227924,
+  "frontend_exe_bytes": 3793347,
+  "frontend_bundle_bytes": 45669554,
+  "running_process_snapshot": [
+    {
+      "role": "GUI",
+      "pid": 41292,
+      "rss_mib": 51.3
+    },
+    {
+      "role": "worker",
+      "pid": 7780,
+      "rss_mib": 11.2
+    },
+    {
+      "role": "worker",
+      "pid": 36556,
+      "rss_mib": 688.3
+    }
+  ],
+  "interactive_packaged_inspection": "Packaged process launched and inspected read-only; no new manual keyboard/microphone acceptance test"
+}

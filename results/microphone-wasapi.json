@@ -1,0 +1,8 @@
+{
+  "first_frame_ms": 88.19010003935546,
+  "peak": 2.8039214157615788e-05,
+  "overflows": 0,
+  "seconds": 1.0,
+  "audio_saved": false,
+  "device": "{'name': 'Microphone (onn 4K Webcam audio)', 'index': 15, 'hostapi': 2, 'max_input_channels': 2, 'max_output_channels': 0, 'default_low_input_latency': 0.003, 'default_low_output_latency': 0.0, 'default_high_input_latency': 0.01, 'default_high_output_latency': 0.0, 'default_samplerate': 48000.0}"
+}

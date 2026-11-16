@@ -1,0 +1,16 @@
+{
+  "unicode_input_verified": true,
+  "stale_target_rejected": true,
+  "selection_replacement_rejected": true,
+  "global_hotkey_verified": true,
+  "conflict_detected": true,
+  "clipboard_untouched": true,
+  "confirmed_native_delivery": true,
+  "programmatic_edit_rejected": true,
+  "duplicate_and_background_focus_events_ignored": true,
+  "long_unicode_paragraphs_and_undo": true,
+  "truncation_detected": true,
+  "input_dispatch_ms": 3.516299999319017,
+  "hotkey_dispatch_ms": 34.73610000219196,
+  "scope": "New native Edit control only; broad application compatibility untested"
+}

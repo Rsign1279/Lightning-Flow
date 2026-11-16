@@ -1,0 +1,12 @@
+{
+  "desktop-dist\\LightningFlow\\LightningFlow.exe": "58542a39be40d8816d0631a265af54f940a1b14f80c4b888e35bf2da23c81b07",
+  "installers\\LightningFlow-Setup.exe": "b6859ab2bf60755bcb99fd1392eca381cfe9cb56117d21276d2127af61db8bf8",
+  "dist\\lightningflow-0.3.0-py3-none-any.whl": "cee2bad343b36ef48b7c7c6bce1449252ed7689ab26a033daf1f9cfcee17b102",
+  "results\\accessibility-integration-0.3.0.json": "4a62a6a4492929bbb07176ba168a8f92ae6041cba3b1add21fd514fc5c068156",
+  "results\\animation-0.3.0.json": "1470c6b83bd2b44fb640e1f583c27416003c09d06280ecd0e31e3bfd7b5e3805",
+  "results\\clipboard-preservation-0.3.0.json": "cd3c8a4d5cca741c8034245ea010e8cbf33105ce7e3878f023f787ecd551019c",
+  "results\\desktop-integration-0.3.0.json": "27b1027fb555a81fab003a66bec44a903f43654b21f2be5622191d0cf7739ee1",
+  "results\\desktop-package-0.3.0.json": "45c8f83063f2ca466049c4d156ab6c6fad8b121773c71d9c0d0c24919a023487",
+  "results\\gpu-path-integrity-0.3.0.json": "bef8b2fa208b819e4fbe75f85edc6d5e5fa4b7794a66b09fdc0ee36308f01994",
+  "results\\smart-gestures-0.3.0.json": "22bb83089a2e763850050efe1f654a79f7a547938d7624c7587da5c4693c46a4"
+}

@@ -1,0 +1,11 @@
+# Licenses and dependency boundary
+
+Original LightningFlow source: MIT, see LICENSE. No Wispr Flow services, code, branding or assets. OpenWhispr and Yap are research references only; no application source was copied from either. Their MIT licenses remain in the separate research checkouts.
+
+Desktop 0.2 uses CustomTkinter (MIT), darkdetect (BSD-3-Clause), Pillow (MIT-CMU), Python/Tcl/Tk and psutil. The desktop distribution includes upstream notices under `third-party-licenses/`. PyInstaller is a build tool with a GPL bootloader redistribution exception; its license/exception is included with those notices. The exception permits separately licensed applications; original LightningFlow code remains MIT. The installer and GUI bundle exclude CUDA libraries and model weights; the runtime installs those separately.
+
+Vendored faster-whisper 1.2.1 (SYSTRAN): MIT, license and adaptation notes in `lightningflow/_vendor/faster_whisper/`. Silero VAD: MIT, separate license alongside its unchanged ONNX asset. OpenAI Whisper weights, including the SYSTRAN CTranslate2 conversion downloaded at setup: MIT; model files downloaded separately. Check their model cards before selecting a different model.
+
+External Python dependencies are installed separately by Setup.ps1, with their upstream license files retained in .venv: comtypes (MIT), CTranslate2 (MIT), ONNX Runtime (MIT), tokenizers (Apache-2.0), huggingface-hub/hf-xet (Apache-2.0), NumPy (BSD), sounddevice/PortAudio (MIT), psutil (BSD), tqdm (MIT/MPL permissive dual license). Consult the installed distribution notices for all transitive components. No PyAV or FFmpeg dependency is included; general compressed-media decoding was removed to avoid their LGPL binary dependency.
+
+GPU runtime exception: NVIDIA cuBLAS, cuDNN and NVRTC are vendor-licensed proprietary CUDA runtimes, installed as external NVIDIA Python packages. They are not represented as open-source or permissively licensed application code. Windows, its driver and these libraries are platform prerequisites for the requested CUDA path. The source wheel does not embed them. Their package licenses govern local use/redistribution; preserve their notices if packaging a binary in a later phase. A strictly open-source entire operating-system/GPU stack is not provided by this Windows/CUDA slice.

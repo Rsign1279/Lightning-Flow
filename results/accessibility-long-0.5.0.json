@@ -1,0 +1,7 @@
+{
+  "cross_process_clipboard_paste_and_uia_readback_verified": true,
+  "characters": 11400,
+  "preferred_delivery_method": "Clipboard paste + accessibility readback",
+  "preferred_delivery_ms": 403.02530000917614,
+  "scope": "Disposable native editor forced through its real UIA provider"
+}

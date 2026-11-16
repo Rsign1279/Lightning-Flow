@@ -1,0 +1,175 @@
+{
+  "version": "0.4.4",
+  "model": "base.en",
+  "compute": "float16",
+  "provider": "CUDA / CTranslate2",
+  "completed": 4,
+  "per_mode": {
+    "hold": 2,
+    "locked": 2
+  },
+  "unique_persistent_log_records": 4,
+  "GPU_model_initializations": 1,
+  "stream_opens": 6,
+  "stream_closes": 6,
+  "post_stop_audio_appends": 0,
+  "prompt_cache_entries": 1,
+  "hint_tokens": 192,
+  "vocabulary_terms_preserved": 188,
+  "canonical_spellings_checked": 68,
+  "personalization_on_all_recording_cycles": true,
+  "hinted_silence_emitted_text": false,
+  "paired_benchmark_order": "ABBA/BAAB blocks, two measurements per condition per block, alternated for each fixture",
+  "timings": {
+    "hold": {
+      "press_dispatch_ms": {
+        "median": 0.404300051741302,
+        "p95": 0.3871000371873379,
+        "max": 0.42150006629526615,
+        "min": 0.3871000371873379
+      },
+      "stop_dispatch_ms": {
+        "median": 0.07550010923296213,
+        "p95": 0.041400082409381866,
+        "max": 0.1096001360565424,
+        "min": 0.041400082409381866
+      },
+      "stop_to_result_ms": {
+        "median": 44.53635006211698,
+        "p95": 32.24120009690523,
+        "max": 56.83150002732873,
+        "min": 32.24120009690523
+      },
+      "gpu_decode_ms": {
+        "median": 292.80169995035976,
+        "p95": 265.2166998013854,
+        "max": 320.3867000993341,
+        "min": 265.2166998013854
+      }
+    },
+    "locked": {
+      "press_dispatch_ms": {
+        "median": 0.37569995038211346,
+        "p95": 0.3722000401467085,
+        "max": 0.3791998606175184,
+        "min": 0.3722000401467085
+      },
+      "stop_dispatch_ms": {
+        "median": 0.03345008008182049,
+        "p95": 0.028600217774510384,
+        "max": 0.03829994238913059,
+        "min": 0.028600217774510384
+      },
+      "stop_to_result_ms": {
+        "median": 34.6213000593707,
+        "p95": 26.45880007185042,
+        "max": 42.783800046890974,
+        "min": 26.45880007185042
+      },
+      "gpu_decode_ms": {
+        "median": 337.93960011098534,
+        "p95": 307.19330022111535,
+        "max": 368.6859000008553,
+        "min": 307.19330022111535
+      }
+    }
+  },
+  "RSS_MiB": {
+    "median": 709.798828125,
+    "p95": 715.3984375,
+    "max": 715.40625,
+    "min": 704.19140625
+  },
+  "RSS_warm_mean_change_MiB": 0.0,
+  "paired_benchmark": [
+    {
+      "fixture": 1,
+      "pairs": 0,
+      "off": {
+        "decode_ms": {},
+        "postprocessing_ms": {},
+        "total_ms": {},
+        "raw_WER": {},
+        "final_WER": {}
+      },
+      "on": {
+        "decode_ms": {},
+        "postprocessing_ms": {},
+        "total_ms": {},
+        "raw_WER": {},
+        "final_WER": {}
+      },
+      "paired_total_delta_ms": {},
+      "key_term_passes": {}
+    },
+    {
+      "fixture": 2,
+      "pairs": 0,
+      "off": {
+        "decode_ms": {},
+        "postprocessing_ms": {},
+        "total_ms": {},
+        "raw_WER": {},
+        "final_WER": {}
+      },
+      "on": {
+        "decode_ms": {},
+        "postprocessing_ms": {},
+        "total_ms": {},
+        "raw_WER": {},
+        "final_WER": {}
+      },
+      "paired_total_delta_ms": {},
+      "key_term_passes": {}
+    }
+  ],
+  "cycles": [
+    {
+      "cycle": 1,
+      "mode": "hold",
+      "fixture": 2,
+      "press_dispatch_ms": 0.42150006629526615,
+      "stop_dispatch_ms": 0.041400082409381866,
+      "stop_to_result_ms": 56.83150002732873,
+      "gpu_decode_ms": 320.3867000993341,
+      "WER": 0.06896551724137931,
+      "process_RSS_MiB": 704.19140625
+    },
+    {
+      "cycle": 2,
+      "mode": "locked",
+      "fixture": 2,
+      "press_dispatch_ms": 0.3722000401467085,
+      "stop_dispatch_ms": 0.03829994238913059,
+      "stop_to_result_ms": 42.783800046890974,
+      "gpu_decode_ms": 368.6859000008553,
+      "WER": 0.06896551724137931,
+      "process_RSS_MiB": 715.3984375
+    },
+    {
+      "cycle": 3,
+      "mode": "hold",
+      "fixture": 2,
+      "press_dispatch_ms": 0.3871000371873379,
+      "stop_dispatch_ms": 0.1096001360565424,
+      "stop_to_result_ms": 32.24120009690523,
+      "gpu_decode_ms": 265.2166998013854,
+      "WER": 0.06896551724137931,
+      "process_RSS_MiB": 704.19921875
+    },
+    {
+      "cycle": 4,
+      "mode": "locked",
+      "fixture": 2,
+      "press_dispatch_ms": 0.3791998606175184,
+      "stop_dispatch_ms": 0.028600217774510384,
+      "stop_to_result_ms": 26.45880007185042,
+      "gpu_decode_ms": 307.19330022111535,
+      "WER": 0.06896551724137931,
+      "process_RSS_MiB": 715.40625
+    }
+  ],
+  "paired_samples": [],
+  "elapsed_seconds": 8.962208700133488,
+  "scope": "Packaged production modifier dispatcher, realistic tap gaps, accelerated synthetic PCM, real CUDA, isolated log. Not physical keyboard/hook/Start-menu, microphone, external insertion, human-speech accuracy, GUI animation FPS or a 30-minute-session certification. The user application remained running; GPU load is not exclusive."
+}

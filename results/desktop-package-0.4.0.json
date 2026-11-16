@@ -1,0 +1,29 @@
+{
+  "gui_and_installer_gui_subsystem": true,
+  "version": "0.4.0",
+  "payload_crc_verified": true,
+  "engine_sources_match_release": true,
+  "private_recovery_not_bundled": true,
+  "models_cuda_and_machine_manifest_not_bundled_in_installer": true,
+  "installer_bytes": 42332309,
+  "frontend_exe_bytes": 3864063,
+  "frontend_bundle_bytes": 48004801,
+  "running_process_snapshot": [
+    {
+      "role": "GUI",
+      "pid": 53440,
+      "rss_mib": 50.2
+    },
+    {
+      "role": "worker",
+      "pid": 53368,
+      "rss_mib": 11.2
+    },
+    {
+      "role": "worker",
+      "pid": 54916,
+      "rss_mib": 688.5
+    }
+  ],
+  "interactive_packaged_inspection": "Source dark Home inspected; user Escape stopped further UI inputs; final packaged processes inspected read-only"
+}

@@ -1,0 +1,12 @@
+{
+  "lightningflow/app.py": true,
+  "lightningflow/asr.py": true,
+  "lightningflow/audio.py": true,
+  "lightningflow/win32.py": true,
+  "lightningflow/clipboard.py": true,
+  "lightningflow/accessibility.py": true,
+  "lightningflow/desktop/worker.py": true,
+  "lightningflow/desktop/gestures.py": true,
+  "lightningflow/desktop/cleanup.py": true,
+  "lightningflow/desktop/windows.py": true
+}

@@ -1,0 +1,19 @@
+{
+  "version": "0.4.3",
+  "single_frontend": true,
+  "gui_pid": 68320,
+  "worker_pids": [
+    29752,
+    23720
+  ],
+  "worker_has_CUDA_context": true,
+  "recording_shortcut": "Ctrl + Win",
+  "activation": "hold + double-tap lock",
+  "max_seconds": 1800,
+  "personalization_enabled": true,
+  "vocabulary_terms": 188,
+  "context_rules": 8,
+  "transcript_style": "Clean",
+  "persistent_log_enabled": true,
+  "scope": "Read-only process/GPU-context/config verification after approved restart. No live microphone or physical shortcut injection."
+}

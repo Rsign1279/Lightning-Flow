@@ -1,0 +1,90 @@
+{
+  "model": "base.en",
+  "compute_type": "float16",
+  "provider": "CUDA / CTranslate2",
+  "runtime_version": "4.8.5",
+  "model_load_and_warm_ms": 580.3283000132069,
+  "audio_seconds": 8.835,
+  "runs": 5,
+  "finalization_ms": [
+    113.32290002610534,
+    80.97719994839281,
+    97.28640003595501,
+    76.29870006348938,
+    95.12539999559522
+  ],
+  "median_finalization_ms": 95.12539999559522,
+  "real_time_factor": [
+    0.01282658743928753,
+    0.009165500843055212,
+    0.011011477083865875,
+    0.008635959260157257,
+    0.010766881719931546
+  ],
+  "process_cpu_percent_one_core_100": [
+    96.51623809027487,
+    96.47777405218935,
+    80.30413292210076,
+    102.39361867894333,
+    98.5541190936817
+  ],
+  "process_peak_sampled_rss_mib": 714.6953125,
+  "gpu_before_load": [
+    {
+      "name": "NVIDIA GeForce RTX 5070",
+      "driver": "610.88",
+      "total_mib": "12227",
+      "used_mib": "11670",
+      "util_percent": "53"
+    }
+  ],
+  "gpu_samples": [
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "11764",
+        "util_percent": "14"
+      }
+    ],
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "11692",
+        "util_percent": "14"
+      }
+    ]
+  ],
+  "gpu_scope": "Device-wide sampled values; includes other apps; not process VRAM attribution",
+  "transcripts": [
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date."
+  ],
+  "wer": [
+    0.041666666666666664,
+    0.041666666666666664,
+    0.041666666666666664,
+    0.041666666666666664,
+    0.041666666666666664
+  ],
+  "cer": [
+    0.04504504504504504,
+    0.04504504504504504,
+    0.04504504504504504,
+    0.04504504504504504,
+    0.04504504504504504
+  ],
+  "first_partial_ms": null,
+  "limitations": [
+    "File decode benchmark, not microphone-to-input latency",
+    "No token streaming timing",
+    "Synthetic speech is not representative human accuracy",
+    "No AI cleanup in this slice"
+  ]
+}

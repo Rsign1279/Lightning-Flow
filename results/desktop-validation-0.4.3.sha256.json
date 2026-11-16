@@ -1,0 +1,12 @@
+{
+  "desktop-dist\\LightningFlow\\LightningFlow.exe": "c48eb804bb219258f07d008625ea75baa2f5d2063bf50a8fb52126fde815aec9",
+  "installers\\LightningFlow-Setup.exe": "3a0db2a9e06f8bc354da1d241b89d7ac40b16fafe15b691d0c17686bb53cef3a",
+  "dist\\lightningflow-0.4.3-py3-none-any.whl": "ca46ca1da022fac8a73cb55cc0f3845a9e69b7ceed67160e1d3b631f9b7e482a",
+  "PERSONALIZATION.md": "e3b9859b38e82cf7c8bb91a59496e4e0754e7203997d9cf1e63777513949dce6",
+  "results\\applied-0.4.3.json": "d6a502f9a8e1e361df1e3a7aa51fb4486adb66909ad9415754cfce5fed1b8e85",
+  "results\\desktop-package-0.4.3.json": "d92389500505af4b4b719a5b6ac35c9b2995b9685a1d99a868703d8970b3ea16",
+  "results\\gpu-path-integrity-0.4.3.json": "0ef1f90a1b315ef9f2138f653e1a5f3488177825c78f2efed3cd7a05331cdd4b",
+  "results\\personalization-0.4.3.json": "cf2c8329671fde2f1e132b05e078fb65a7eaf677be40edd7b6881db95198b6f1",
+  "results\\personalization-ui-0.4.3.json": "28463e192e07070cdf25ea5ff1b13694e9ede906412d15727c4565498cdd82f8",
+  "results\\personalized-pipeline-0.4.3.json": "c36a82e497045f97dff12aea93144a3211ec80cfbce15100e830e0b29520c6bf"
+}

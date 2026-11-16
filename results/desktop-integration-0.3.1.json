@@ -1,0 +1,38 @@
+{
+  "actual_gui_ipc_cuda_scratchpad": true,
+  "session_history_verified": true,
+  "persistent_history_default_off": true,
+  "all_screens_both_themes_constructed": [
+    "Dark/dictation",
+    "Dark/history",
+    "Dark/models",
+    "Dark/microphone",
+    "Dark/writing",
+    "Dark/dictionary",
+    "Dark/shortcuts",
+    "Dark/performance",
+    "Dark/settings",
+    "Light/dictation",
+    "Light/history",
+    "Light/models",
+    "Light/microphone",
+    "Light/writing",
+    "Light/dictionary",
+    "Light/shortcuts",
+    "Light/performance",
+    "Light/settings"
+  ],
+  "callback_errors": [],
+  "metrics": {
+    "provider": "CUDA / CTranslate2",
+    "decode_ms": 117.78319999575615,
+    "audio_seconds": 9.34,
+    "stop_to_input_ms": 0.8135000243782997,
+    "delivery_method": "In-app scratchpad",
+    "end_to_end_finish_ms": 6.923099979758263
+  },
+  "transcript": "Please send the updated project report to John on Friday at 3. We need to review CUDA performance and confirm the next meeting date.",
+  "source": "Accelerated PCM replay in test-only worker; real CUDA ASR",
+  "gui_heartbeat_max_gap_ms": 33.18400005809963,
+  "overlay_style_noactivate": true
+}

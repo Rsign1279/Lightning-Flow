@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "title": "Example vocabulary — replace with your own terms",
+  "vocabulary": ["CUDA", "ESP32-S3", "RTX 5070", "Ollama", "PyTorch"],
+  "priority": ["CUDA", "ESP32-S3", "RTX 5070"],
+  "canonical": ["CUDA", "ESP32-S3", "RTX 5070", "Ollama", "PyTorch"],
+  "rules": [],
+  "corrections": []
+}

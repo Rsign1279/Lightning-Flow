@@ -1,0 +1,63 @@
+{
+  "completed": 10,
+  "hold_cycles": 5,
+  "locked_cycles": 5,
+  "persistent_log_records": 10,
+  "gpu_initializations": 1,
+  "personalization_enabled": true,
+  "provider": "CUDA / CTranslate2",
+  "configured_max_seconds": 1800,
+  "sessions": [
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.034400029107928276,
+      "gpu_decode_ms": 68.94810008816421
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.029199989512562752,
+      "gpu_decode_ms": 64.83739987015724
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.01610000617802143,
+      "gpu_decode_ms": 65.06840023212135
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.021399930119514465,
+      "gpu_decode_ms": 63.05109988898039
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.013499986380338669,
+      "gpu_decode_ms": 69.00959997437894
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.019899802282452583,
+      "gpu_decode_ms": 62.7490000333637
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.01600012183189392,
+      "gpu_decode_ms": 66.78269989788532
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.019300030544400215,
+      "gpu_decode_ms": 89.17019981890917
+    },
+    {
+      "mode": "hold",
+      "release_or_tap_to_stop_dispatch_ms": 0.023999949917197227,
+      "gpu_decode_ms": 65.53940009325743
+    },
+    {
+      "mode": "locked",
+      "release_or_tap_to_stop_dispatch_ms": 0.034499913454055786,
+      "gpu_decode_ms": 61.82350008748472
+    }
+  ],
+  "scope": "Production modifier event dispatcher with accelerated PCM replay. No OS input injection or physical keyboard/start-menu/microphone/30-minute-duration validation."
+}

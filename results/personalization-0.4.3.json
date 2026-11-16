@@ -1,0 +1,68 @@
+{
+  "provider": "CUDA / CTranslate2",
+  "model": "tiny.en",
+  "compute": "float16",
+  "model_initializations": 1,
+  "vocabulary_terms": 188,
+  "contextual_rules": 8,
+  "hint_token_count": 192,
+  "hint_token_limit": 192,
+  "silence_emitted_text": false,
+  "cases": [
+    {
+      "fixture": 1,
+      "baseline": {
+        "median_decode_ms": 70.16150001436472,
+        "decode_ms": [
+          70.16150001436472,
+          60.75490009970963,
+          76.84489991515875
+        ],
+        "raw_wer": 0.041666666666666664,
+        "final_wer": 0.041666666666666664,
+        "digit_values_match_reference": false,
+        "postprocessing_preserved_digits": true
+      },
+      "personalized": {
+        "median_decode_ms": 57.88030009716749,
+        "decode_ms": [
+          63.52380011230707,
+          57.88030009716749,
+          55.69509998895228
+        ],
+        "raw_wer": 0.041666666666666664,
+        "final_wer": 0.041666666666666664,
+        "digit_values_match_reference": false,
+        "postprocessing_preserved_digits": true
+      }
+    },
+    {
+      "fixture": 2,
+      "baseline": {
+        "median_decode_ms": 91.8936999514699,
+        "decode_ms": [
+          92.2437000554055,
+          91.75879997201264,
+          91.8936999514699
+        ],
+        "raw_wer": 0.2413793103448276,
+        "final_wer": 0.2413793103448276,
+        "digit_values_match_reference": false,
+        "postprocessing_preserved_digits": true
+      },
+      "personalized": {
+        "median_decode_ms": 80.68979997187853,
+        "decode_ms": [
+          80.68979997187853,
+          98.64030010066926,
+          79.93439980782568
+        ],
+        "raw_wer": 0.06896551724137931,
+        "final_wer": 0.06896551724137931,
+        "digit_values_match_reference": true,
+        "postprocessing_preserved_digits": true
+      }
+    }
+  ],
+  "scope": "Synthetic speech only, three decodes per mode, one resident CUDA model. This is not accuracy on the user's voice; no acoustic training. No audio or profile uploads."
+}

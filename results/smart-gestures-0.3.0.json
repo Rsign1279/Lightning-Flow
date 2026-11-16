@@ -1,0 +1,33 @@
+{
+  "real_hook_gestures": [
+    {
+      "scenario": "hold",
+      "delivered": true,
+      "shortcut_to_start_signal_ms": 20.427299896255136,
+      "capture_first_frame_ms": 3.5201000282540917,
+      "release_to_delivery_ms": 50.088100018911064,
+      "decode_ms": 97.39180002361536,
+      "method": "native edit message + readback"
+    },
+    {
+      "scenario": "double_press_lock",
+      "delivered": true,
+      "shortcut_to_start_signal_ms": 19.644500105641782,
+      "capture_first_frame_ms": 3.21939995046705,
+      "release_to_delivery_ms": 154.60299991536885,
+      "decode_ms": 81.75050001591444,
+      "method": "native edit message + readback"
+    },
+    {
+      "scenario": "modifiers_released_first",
+      "delivered": true,
+      "shortcut_to_start_signal_ms": 23.20189995225519,
+      "capture_first_frame_ms": 3.1660000095143914,
+      "release_to_delivery_ms": 51.43230000976473,
+      "decode_ms": 69.48150007519871,
+      "method": "native edit message + readback"
+    }
+  ],
+  "provider": "CUDA / CTranslate2",
+  "scope": "Disposable native editor; accelerated PCM replay, not an acoustic microphone benchmark"
+}

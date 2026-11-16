@@ -1,0 +1,10 @@
+{
+  "payload_crc_verified": true,
+  "gui_and_real_engine_present": true,
+  "model_weights_not_bundled": true,
+  "cuda_runtime_not_bundled": true,
+  "machine_runtime_manifest_not_bundled": true,
+  "installer_bytes": 41194213,
+  "gui_bundle_bytes": 45316547,
+  "gui_executable_bytes": 3787174
+}

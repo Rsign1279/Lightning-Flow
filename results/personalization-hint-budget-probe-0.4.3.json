@@ -1,0 +1,632 @@
+{
+  "model": "base.en",
+  "candidate_hint_caps": {
+    "64": {
+      "1": {
+        "median_decode_ms": 261.7374500259757,
+        "WER": 0.08333333333333333
+      },
+      "2": {
+        "median_decode_ms": 341.1847000243142,
+        "WER": 0.13793103448275862
+      }
+    },
+    "96": {
+      "1": {
+        "median_decode_ms": 212.52665005158633,
+        "WER": 0.08333333333333333
+      },
+      "2": {
+        "median_decode_ms": 343.33265013992786,
+        "WER": 0.10344827586206896
+      }
+    },
+    "128": {
+      "1": {
+        "median_decode_ms": 190.7583000138402,
+        "WER": 0.041666666666666664
+      },
+      "2": {
+        "median_decode_ms": 367.8588999900967,
+        "WER": 0.13793103448275862
+      }
+    },
+    "192": {
+      "1": {
+        "median_decode_ms": 242.16145009268075,
+        "WER": 0.041666666666666664
+      },
+      "2": {
+        "median_decode_ms": 292.52324998378754,
+        "WER": 0.1724137931034483
+      }
+    }
+  },
+  "samples": {
+    "64": [
+      {
+        "fixture": 1,
+        "ms": 427.4120999034494,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 400.6745999213308,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 157.66709996387362,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 617.1444000210613,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 365.060199983418,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 342.46250009164214,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 138.4062001015991,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 247.47359985485673,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 237.42939997464418,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 329.5869999565184,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 281.94510005414486,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 507.5970001053065,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 168.64140005782247,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 823.6132999882102,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 248.10650013387203,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 497.8836001828313,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 306.3852998893708,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 205.4059999063611,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 115.30920001678169,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 339.9068999569863,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 275.3683999180794,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 173.26009995304048,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 498.6813999712467,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 159.62100005708635,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      }
+    ],
+    "96": [
+      {
+        "fixture": 1,
+        "ms": 145.57630009949207,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 226.66160017251968,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 268.1366999167949,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 510.19760011695325,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 225.22770008072257,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 668.6557000502944,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 311.9171999860555,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 482.2307999711484,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 152.6202999521047,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 347.17630012892187,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 160.36480013281107,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 303.84519998915493,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 227.03390009701252,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 273.04830006323755,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 193.68809997104108,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 339.48900015093386,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 199.8256000224501,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 466.9869998469949,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 330.7930000592023,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 239.97720004990697,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 350.53119994699955,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 598.9953998941928,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 149.96700012125075,
+        "WER": 0.08333333333333333,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 270.37420007400215,
+        "WER": 0.10344827586206896,
+        "digits_preserved": true
+      }
+    ],
+    "128": [
+      {
+        "fixture": 1,
+        "ms": 532.5601999647915,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 394.4633000064641,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 305.36320013925433,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 242.32430011034012,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 131.10950007103384,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 217.81840012408793,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 228.48580009303987,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 376.36510003358126,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 333.4024997893721,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 434.0367999393493,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 272.83879998140037,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 444.90200001746416,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 162.30530012398958,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 239.73040003329515,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 174.13579998537898,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 359.3526999466121,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 198.26640002429485,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 224.0640998352319,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 183.25020000338554,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 754.313200013712,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 116.84389994479716,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 173.83229988627136,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 140.43099991977215,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 444.2714999895543,
+        "WER": 0.13793103448275862,
+        "digits_preserved": true
+      }
+    ],
+    "192": [
+      {
+        "fixture": 1,
+        "ms": 205.1345999352634,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 281.4837000332773,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 239.7575001232326,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 241.67599994689226,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 275.8593000471592,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 628.8717000279576,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 244.5654000621289,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 260.0251999683678,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 160.2689998690039,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 303.5627999342978,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 312.75949999690056,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 312.4625999480486,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 364.67859987169504,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 529.48629995808,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 178.28270001336932,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 256.3918000087142,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 156.474000075832,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 245.11340004391968,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 135.63139992766082,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 382.4084000661969,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 277.5101000443101,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 217.92520000599325,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 1,
+        "ms": 285.688100149855,
+        "WER": 0.041666666666666664,
+        "digits_preserved": true
+      },
+      {
+        "fixture": 2,
+        "ms": 647.9217000305653,
+        "WER": 0.1724137931034483,
+        "digits_preserved": true
+      }
+    ]
+  },
+  "production_settings_changed": false
+}

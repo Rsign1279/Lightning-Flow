@@ -1,0 +1,8 @@
+{
+  "lightningflow\\asr.py": "f6dac795a7be9b4a68ca8525338f03c4729116d00a00c7a1a28984477d465475",
+  "lightningflow\\desktop\\personalization.py": "2a380326af3ed94ab6fc24d57cd2d047e0b1f60ec5338e2cb4f09b20389fb9e5",
+  "DECODER_FIX.md": "0d036efe4f924a6b1420223829f001bc7d7a89176d495fedd0d7cbf4699db869",
+  "results\\rtx-final-validation-0.4.4.json": "21b36c23d57c0ce7ed0f960cd7a43816449266b857228005088dd2e645e771c4",
+  "results\\rtx-control-soak-0.4.4.json": "76c774e5dbcbf5652cb6ab20e3fcc23a9de1b4acffd53404da958ed8074f3790",
+  "tests\\test_gpu_identifier.py": "3d2d5ac23658d5e8cdb28053ed20229a7bb0a097b0064b40c68c4b53401f2aec"
+}

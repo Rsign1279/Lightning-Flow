@@ -1,0 +1,10 @@
+{
+  "unchanged": {
+    "CUDA_WhisperModel_constructor_unchanged": true,
+    "resident_CudaASR_constructor_unchanged": true,
+    "CUDA_DLL_loading_unchanged": true,
+    "bounded_inference_queue_unchanged": true,
+    "audio_segmentation_unchanged": true
+  },
+  "intentional_changes": "Text readback offsets and Chromium terminal paragraph handling; GPU transcription and gestures unchanged."
+}

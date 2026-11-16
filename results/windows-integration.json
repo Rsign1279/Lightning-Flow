@@ -1,0 +1,11 @@
+{
+  "unicode_input_verified": true,
+  "stale_target_rejected": true,
+  "selection_replacement_rejected": true,
+  "global_hotkey_verified": true,
+  "conflict_detected": true,
+  "clipboard_untouched": true,
+  "input_dispatch_ms": 16.779499943368137,
+  "hotkey_dispatch_ms": 2.481799921952188,
+  "scope": "New native Edit control only; broad application compatibility untested"
+}

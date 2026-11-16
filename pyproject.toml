@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lightningflow"
+version = "0.5.0"
+description = "Local Windows desktop dictation with resident CUDA inference"
+requires-python = ">=3.11,<3.13"
+license = "MIT"
+license-files = ["LICENSE", "LICENSE_NOTICES.md"]
+dependencies = ["customtkinter==6.0.0", "pillow==13.0.0", "comtypes==1.4.17", "ctranslate2==4.8.5", "tokenizers>=0.13,<1", "onnxruntime>=1.14,<2", "huggingface-hub>=0.21,<3", "tqdm>=4.64,<5", "sounddevice==0.5.6", "numpy>=2.2,<3", "psutil>=7,<8", "nvidia-cublas-cu12>=12.8,<13", "nvidia-cudnn-cu12>=9.8,<10"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "pyinstaller>=6,<7", "pefile>=2024"]
+
+[project.urls]
+Repository = "https://github.com/Rsign1279/Lightning-Flow"
+Issues = "https://github.com/Rsign1279/Lightning-Flow/issues"
+
+[project.scripts]
+lightningflow = "lightningflow.cli:main"
+lightningflow-desktop = "lightningflow.desktop.app:main"
+
+[project.gui-scripts]
+lightningflow-app = "lightningflow.desktop.app:main"
+
+[tool.setuptools.packages.find]
+include = ["lightningflow*"]
+
+[tool.setuptools.package-data]
+"lightningflow._vendor.faster_whisper" = ["LICENSE.txt", "assets/*.onnx", "UPSTREAM.md", "SILERO_LICENSE.txt"]
+"lightningflow.desktop" = ["assets/*.ico", "assets/*.png"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

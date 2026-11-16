@@ -1,0 +1,154 @@
+[
+  {
+    "hint": "current",
+    "tokens": 192,
+    "without_timestamps": false,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 144.07210005447268,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 197.66209996305406,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "hint": "current",
+    "tokens": 192,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 126.68350012972951,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 177.98359994776547,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "hint": "priority",
+    "tokens": 144,
+    "without_timestamps": false,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 156.8150999955833,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 225.75700003653765,
+        "WER": 0.13793103448275862,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "hint": "priority",
+    "tokens": 144,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 127.36570020206273,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 205.71469981223345,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "hint": "deduplicated",
+    "tokens": 127,
+    "without_timestamps": false,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 150.3117000684142,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 235.38570012897253,
+        "WER": 0.13793103448275862,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "hint": "deduplicated",
+    "tokens": 127,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 128.71269998140633,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 201.67969982139766,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "hint": "numeric_first",
+    "tokens": 127,
+    "without_timestamps": false,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 162.9520000424236,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 228.1147998291999,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "hint": "numeric_first",
+    "tokens": 127,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 111.3793000113219,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 202.90259993635118,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "real_clipboard_roundtrip_verified": true,
+  "formats_preserved": 7,
+  "bitmap_present": false,
+  "all_memory_formats_byte_identical": true,
+  "scope": "Current clipboard, including bitmap dimensions; no content or fingerprints logged"
+}

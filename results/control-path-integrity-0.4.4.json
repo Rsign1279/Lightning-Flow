@@ -1,0 +1,11 @@
+{
+  "unchanged_from_installed_0_4_3": {
+    "lightningflow/win32.py": true,
+    "lightningflow/audio.py": true,
+    "lightningflow/app.py": true,
+    "lightningflow/desktop/chords.py": true,
+    "lightningflow/desktop/gestures.py": true,
+    "lightningflow/desktop/worker.py": true
+  },
+  "scope": "Hotkeys, capture/segmentation, inference queue, focus/input/clipboard handling, and delivery worker unchanged. Only ASR decoder output mode and vocabulary identifier rendering changed."
+}

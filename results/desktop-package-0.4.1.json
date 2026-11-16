@@ -1,0 +1,29 @@
+{
+  "gui_and_installer_gui_subsystem": true,
+  "version": "0.4.1",
+  "payload_crc_verified": true,
+  "engine_sources_match_release": true,
+  "private_recovery_not_bundled": true,
+  "models_cuda_and_machine_manifest_not_bundled_in_installer": true,
+  "installer_bytes": 42350770,
+  "frontend_exe_bytes": 3866117,
+  "frontend_bundle_bytes": 48102115,
+  "running_process_snapshot": [
+    {
+      "role": "GUI",
+      "pid": 64276,
+      "rss_mib": 46.5
+    },
+    {
+      "role": "worker",
+      "pid": 63668,
+      "rss_mib": 11.1
+    },
+    {
+      "role": "worker",
+      "pid": 34436,
+      "rss_mib": 688.6
+    }
+  ],
+  "interactive_packaged_inspection": "200 hidden GUI/IPC/CUDA cycles plus paging regression; final packaged process inspected read-only"
+}

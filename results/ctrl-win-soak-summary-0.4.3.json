@@ -1,0 +1,49 @@
+{
+  "completed": 200,
+  "per_mode": {
+    "hold": 100,
+    "locked": 100
+  },
+  "model": "base.en",
+  "latency_analysis": [
+    {
+      "fixture": 1,
+      "individual_off_total_ms": {
+        "median": 155.0636999309063,
+        "p95": 215.31450003385544
+      },
+      "individual_on_total_ms": {
+        "median": 142.91114988736808,
+        "p95": 200.82030002959073
+      },
+      "paired_median_delta_ms": -12.190149980597198,
+      "bootstrap_median_delta_95CI_ms": [
+        -17.515824816655368,
+        0.49365620216117595
+      ],
+      "P95_delta_ms": -14.494200004264712,
+      "practical_latency_budget_met": true
+    },
+    {
+      "fixture": 2,
+      "individual_off_total_ms": {
+        "median": 223.76324981451035,
+        "p95": 291.19350016117096
+      },
+      "individual_on_total_ms": {
+        "median": 221.21999983210117,
+        "p95": 295.799900079146
+      },
+      "paired_median_delta_ms": 11.863350111525506,
+      "bootstrap_median_delta_95CI_ms": [
+        -5.514699965715408,
+        16.34175016079098
+      ],
+      "P95_delta_ms": 4.606399917975068,
+      "practical_latency_budget_met": false
+    }
+  ],
+  "all_practical_latency_budgets_met": false,
+  "recognition_limitation": "Selected base.en misrecognized one synthetic RTX 5070 phrase; no unsafe number repair.",
+  "production_code_changed": false
+}

@@ -1,0 +1,126 @@
+{
+  "model": "tiny.en",
+  "compute_type": "float16",
+  "provider": "CUDA / CTranslate2",
+  "runtime_version": "4.8.5",
+  "model_load_and_warm_ms": 844.7000000160187,
+  "audio_seconds": 8.835,
+  "runs": 5,
+  "finalization_ms": [
+    99.96819996740669,
+    85.76829999219626,
+    631.5461000194773,
+    592.2821999993175,
+    81.50779991410673
+  ],
+  "median_finalization_ms": 99.96819996740669,
+  "real_time_factor": [
+    0.011315019803894362,
+    0.009707787209077109,
+    0.07148229768188763,
+    0.06703816638362393,
+    0.009225557432270144
+  ],
+  "process_cpu_percent_one_core_100": [
+    109.40979234962744,
+    91.08843244777884,
+    94.01530624315285,
+    105.52402216388069,
+    57.50983347532025
+  ],
+  "process_peak_sampled_rss_mib": 933.734375,
+  "gpu_before_load": [
+    {
+      "name": "NVIDIA GeForce RTX 5070",
+      "driver": "610.88",
+      "total_mib": "12227",
+      "used_mib": "11669",
+      "util_percent": "98"
+    }
+  ],
+  "gpu_samples": [
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "11614",
+        "util_percent": "4"
+      }
+    ],
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "11695",
+        "util_percent": "22"
+      }
+    ],
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "11718",
+        "util_percent": "22"
+      }
+    ],
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "11744",
+        "util_percent": "4"
+      }
+    ],
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "11744",
+        "util_percent": "4"
+      }
+    ],
+    [
+      {
+        "name": "NVIDIA GeForce RTX 5070",
+        "driver": "610.88",
+        "total_mib": "12227",
+        "used_mib": "11758",
+        "util_percent": "12"
+      }
+    ]
+  ],
+  "gpu_scope": "Device-wide sampled values; includes other apps; not process VRAM attribution",
+  "transcripts": [
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date.",
+    "Please send the updated project report to John on Friday at 3, we need to review CUDA performance and confirm the next meeting date."
+  ],
+  "wer": [
+    0.041666666666666664,
+    0.041666666666666664,
+    0.041666666666666664,
+    0.041666666666666664,
+    0.041666666666666664
+  ],
+  "cer": [
+    0.04504504504504504,
+    0.04504504504504504,
+    0.04504504504504504,
+    0.04504504504504504,
+    0.04504504504504504
+  ],
+  "first_partial_ms": null,
+  "limitations": [
+    "File decode benchmark, not microphone-to-input latency",
+    "No token streaming timing",
+    "Synthetic speech is not representative human accuracy",
+    "No AI cleanup in this slice"
+  ]
+}

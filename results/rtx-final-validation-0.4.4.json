@@ -1,0 +1,5822 @@
+{
+  "model": "base.en",
+  "compute": "float16",
+  "provider": "CUDA / CTranslate2",
+  "model_initializations": 1,
+  "hint_tokens": 192,
+  "accuracy_cases": [
+    {
+      "fixture": 1,
+      "old_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 112.36570007167757,
+          "p95": 112.36570007167757,
+          "max": 112.36570007167757
+        }
+      },
+      "new_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 117.38630011677742,
+          "p95": 117.38630011677742,
+          "max": 117.38630011677742
+        }
+      },
+      "old_off": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 140.4468002729118,
+          "p95": 140.4468002729118,
+          "max": 140.4468002729118
+        }
+      },
+      "new_off": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 138.46439984627068,
+          "p95": 138.46439984627068,
+          "max": 138.46439984627068
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 2,
+      "old_on": {
+        "final_WER": 0.1724137931034483,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 190.79309981316328,
+          "p95": 190.79309981316328,
+          "max": 190.79309981316328
+        }
+      },
+      "new_on": {
+        "final_WER": 0.06896551724137931,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 183.30979975871742,
+          "p95": 183.30979975871742,
+          "max": 183.30979975871742
+        }
+      },
+      "old_off": {
+        "final_WER": 0.27586206896551724,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 176.38289998285472,
+          "p95": 176.38289998285472,
+          "max": 176.38289998285472
+        }
+      },
+      "new_off": {
+        "final_WER": 0.27586206896551724,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 191.1254001315683,
+          "p95": 191.1254001315683,
+          "max": 191.1254001315683
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 3,
+      "old_on": {
+        "final_WER": 0.6,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 51.52289988473058,
+          "p95": 51.52289988473058,
+          "max": 51.52289988473058
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 47.00900008901954,
+          "p95": 47.00900008901954,
+          "max": 47.00900008901954
+        }
+      },
+      "old_off": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 47.72099992260337,
+          "p95": 47.72099992260337,
+          "max": 47.72099992260337
+        }
+      },
+      "new_off": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 62.80099996365607,
+          "p95": 62.80099996365607,
+          "max": 62.80099996365607
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 4,
+      "old_on": {
+        "final_WER": 0.6,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 61.47090019658208,
+          "p95": 61.47090019658208,
+          "max": 61.47090019658208
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": true,
+        "total_ms": {
+          "median": 36.27479984425008,
+          "p95": 36.27479984425008,
+          "max": 36.27479984425008
+        }
+      },
+      "old_off": {
+        "final_WER": 0.8,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 73.07829987257719,
+          "p95": 73.07829987257719,
+          "max": 73.07829987257719
+        }
+      },
+      "new_off": {
+        "final_WER": 0.8,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 63.294999999925494,
+          "p95": 63.294999999925494,
+          "max": 63.294999999925494
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 5,
+      "old_on": {
+        "final_WER": 0.3333333333333333,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 49.50480000115931,
+          "p95": 49.50480000115931,
+          "max": 49.50480000115931
+        }
+      },
+      "new_on": {
+        "final_WER": 0.3333333333333333,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 68.8208001665771,
+          "p95": 68.8208001665771,
+          "max": 68.8208001665771
+        }
+      },
+      "old_off": {
+        "final_WER": 0.5555555555555556,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 55.698599899187684,
+          "p95": 55.698599899187684,
+          "max": 55.698599899187684
+        }
+      },
+      "new_off": {
+        "final_WER": 0.5555555555555556,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 84.66330007649958,
+          "p95": 84.66330007649958,
+          "max": 84.66330007649958
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 6,
+      "old_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 107.63089987449348,
+          "p95": 107.63089987449348,
+          "max": 107.63089987449348
+        }
+      },
+      "new_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 78.95440002903342,
+          "p95": 78.95440002903342,
+          "max": 78.95440002903342
+        }
+      },
+      "old_off": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 115.85110030137002,
+          "p95": 115.85110030137002,
+          "max": 115.85110030137002
+        }
+      },
+      "new_off": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 97.7098997682333,
+          "p95": 97.7098997682333,
+          "max": 97.7098997682333
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 7,
+      "old_on": {
+        "final_WER": 0.07142857142857142,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 93.53919979184866,
+          "p95": 93.53919979184866,
+          "max": 93.53919979184866
+        }
+      },
+      "new_on": {
+        "final_WER": 0.07142857142857142,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 67.11539998650551,
+          "p95": 67.11539998650551,
+          "max": 67.11539998650551
+        }
+      },
+      "old_off": {
+        "final_WER": 0.07142857142857142,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 92.17509999871254,
+          "p95": 92.17509999871254,
+          "max": 92.17509999871254
+        }
+      },
+      "new_off": {
+        "final_WER": 0.07142857142857142,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 60.71800016798079,
+          "p95": 60.71800016798079,
+          "max": 60.71800016798079
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 8,
+      "old_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 108.33870014175773,
+          "p95": 108.33870014175773,
+          "max": 108.33870014175773
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 95.89339978992939,
+          "p95": 95.89339978992939,
+          "max": 95.89339978992939
+        }
+      },
+      "old_off": {
+        "final_WER": 0.6153846153846154,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 114.67929999344051,
+          "p95": 114.67929999344051,
+          "max": 114.67929999344051
+        }
+      },
+      "new_off": {
+        "final_WER": 0.6153846153846154,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 104.07899995334446,
+          "p95": 104.07899995334446,
+          "max": 104.07899995334446
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 9,
+      "old_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 103.356400039047,
+          "p95": 103.356400039047,
+          "max": 103.356400039047
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 85.6659000273794,
+          "p95": 85.6659000273794,
+          "max": 85.6659000273794
+        }
+      },
+      "old_off": {
+        "final_WER": 0.13333333333333333,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 119.54859993420541,
+          "p95": 119.54859993420541,
+          "max": 119.54859993420541
+        }
+      },
+      "new_off": {
+        "final_WER": 0.13333333333333333,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 76.62580022588372,
+          "p95": 76.62580022588372,
+          "max": 76.62580022588372
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 10,
+      "old_on": {
+        "final_WER": 0.21428571428571427,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 103.56570011936128,
+          "p95": 103.56570011936128,
+          "max": 103.56570011936128
+        }
+      },
+      "new_on": {
+        "final_WER": 0.21428571428571427,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 61.1799000762403,
+          "p95": 61.1799000762403,
+          "max": 61.1799000762403
+        }
+      },
+      "old_off": {
+        "final_WER": 0.21428571428571427,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 403.9462001528591,
+          "p95": 403.9462001528591,
+          "max": 403.9462001528591
+        }
+      },
+      "new_off": {
+        "final_WER": 0.21428571428571427,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 387.1452999301255,
+          "p95": 387.1452999301255,
+          "max": 387.1452999301255
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": false,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 11,
+      "old_on": {
+        "final_WER": 0.07692307692307693,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 89.70090025104582,
+          "p95": 89.70090025104582,
+          "max": 89.70090025104582
+        }
+      },
+      "new_on": {
+        "final_WER": 0.07692307692307693,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 88.30430009402335,
+          "p95": 88.30430009402335,
+          "max": 88.30430009402335
+        }
+      },
+      "old_off": {
+        "final_WER": 0.15384615384615385,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 101.06760007329285,
+          "p95": 101.06760007329285,
+          "max": 101.06760007329285
+        }
+      },
+      "new_off": {
+        "final_WER": 0.15384615384615385,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 69.1725998185575,
+          "p95": 69.1725998185575,
+          "max": 69.1725998185575
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 12,
+      "old_on": {
+        "final_WER": 0.14285714285714285,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 110.96310010179877,
+          "p95": 110.96310010179877,
+          "max": 110.96310010179877
+        }
+      },
+      "new_on": {
+        "final_WER": 0.14285714285714285,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 106.4470000565052,
+          "p95": 106.4470000565052,
+          "max": 106.4470000565052
+        }
+      },
+      "old_off": {
+        "final_WER": 0.21428571428571427,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 94.71979970112443,
+          "p95": 94.71979970112443,
+          "max": 94.71979970112443
+        }
+      },
+      "new_off": {
+        "final_WER": 0.21428571428571427,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 103.98399992845953,
+          "p95": 103.98399992845953,
+          "max": 103.98399992845953
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 13,
+      "old_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 104.42760004661977,
+          "p95": 104.42760004661977,
+          "max": 104.42760004661977
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 71.3475001975894,
+          "p95": 71.3475001975894,
+          "max": 71.3475001975894
+        }
+      },
+      "old_off": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 98.81010022945702,
+          "p95": 98.81010022945702,
+          "max": 98.81010022945702
+        }
+      },
+      "new_off": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 119.08209999091923,
+          "p95": 119.08209999091923,
+          "max": 119.08209999091923
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 14,
+      "old_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 80.52529999986291,
+          "p95": 80.52529999986291,
+          "max": 80.52529999986291
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 59.6457002684474,
+          "p95": 59.6457002684474,
+          "max": 59.6457002684474
+        }
+      },
+      "old_off": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 73.20799981243908,
+          "p95": 73.20799981243908,
+          "max": 73.20799981243908
+        }
+      },
+      "new_off": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 82.65080000273883,
+          "p95": 82.65080000273883,
+          "max": 82.65080000273883
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 15,
+      "old_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 138.14890012145042,
+          "p95": 138.14890012145042,
+          "max": 138.14890012145042
+        }
+      },
+      "new_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 87.66439999453723,
+          "p95": 87.66439999453723,
+          "max": 87.66439999453723
+        }
+      },
+      "old_off": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 131.91269990056753,
+          "p95": 131.91269990056753,
+          "max": 131.91269990056753
+        }
+      },
+      "new_off": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 120.0689000543207,
+          "p95": 120.0689000543207,
+          "max": 120.0689000543207
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 16,
+      "old_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 117.65239993110299,
+          "p95": 117.65239993110299,
+          "max": 117.65239993110299
+        }
+      },
+      "new_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 98.24309987016022,
+          "p95": 98.24309987016022,
+          "max": 98.24309987016022
+        }
+      },
+      "old_off": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 128.80480010062456,
+          "p95": 128.80480010062456,
+          "max": 128.80480010062456
+        }
+      },
+      "new_off": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 125.45059993863106,
+          "p95": 125.45059993863106,
+          "max": 125.45059993863106
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 17,
+      "old_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 101.920299930498,
+          "p95": 101.920299930498,
+          "max": 101.920299930498
+        }
+      },
+      "new_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 117.8920001257211,
+          "p95": 117.8920001257211,
+          "max": 117.8920001257211
+        }
+      },
+      "old_off": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 110.69209990091622,
+          "p95": 110.69209990091622,
+          "max": 110.69209990091622
+        }
+      },
+      "new_off": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 147.21169997937977,
+          "p95": 147.21169997937977,
+          "max": 147.21169997937977
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 18,
+      "old_on": {
+        "final_WER": 0.10344827586206896,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 228.21610001847148,
+          "p95": 228.21610001847148,
+          "max": 228.21610001847148
+        }
+      },
+      "new_on": {
+        "final_WER": 0.10344827586206896,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 177.0345000550151,
+          "p95": 177.0345000550151,
+          "max": 177.0345000550151
+        }
+      },
+      "old_off": {
+        "final_WER": 0.27586206896551724,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 176.7790000885725,
+          "p95": 176.7790000885725,
+          "max": 176.7790000885725
+        }
+      },
+      "new_off": {
+        "final_WER": 0.27586206896551724,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 154.97409994713962,
+          "p95": 154.97409994713962,
+          "max": 154.97409994713962
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 19,
+      "old_on": {
+        "final_WER": 0.10344827586206896,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 196.7335999943316,
+          "p95": 196.7335999943316,
+          "max": 196.7335999943316
+        }
+      },
+      "new_on": {
+        "final_WER": 0.06896551724137931,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 189.8222998715937,
+          "p95": 189.8222998715937,
+          "max": 189.8222998715937
+        }
+      },
+      "old_off": {
+        "final_WER": 0.3103448275862069,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 225.8020997978747,
+          "p95": 225.8020997978747,
+          "max": 225.8020997978747
+        }
+      },
+      "new_off": {
+        "final_WER": 0.3103448275862069,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 204.45710001513362,
+          "p95": 204.45710001513362,
+          "max": 204.45710001513362
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": false,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 20,
+      "old_on": {
+        "final_WER": 0.1724137931034483,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 184.8200000822544,
+          "p95": 184.8200000822544,
+          "max": 184.8200000822544
+        }
+      },
+      "new_on": {
+        "final_WER": 0.06896551724137931,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 172.85239975899458,
+          "p95": 172.85239975899458,
+          "max": 172.85239975899458
+        }
+      },
+      "old_off": {
+        "final_WER": 0.3448275862068966,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 218.2098999619484,
+          "p95": 218.2098999619484,
+          "max": 218.2098999619484
+        }
+      },
+      "new_off": {
+        "final_WER": 0.3448275862068966,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 207.90870022028685,
+          "p95": 207.90870022028685,
+          "max": 207.90870022028685
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 21,
+      "old_on": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 61.84439989738166,
+          "p95": 61.84439989738166,
+          "max": 61.84439989738166
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 50.69039994850755,
+          "p95": 50.69039994850755,
+          "max": 50.69039994850755
+        }
+      },
+      "old_off": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 64.44589979946613,
+          "p95": 64.44589979946613,
+          "max": 64.44589979946613
+        }
+      },
+      "new_off": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 59.3388001434505,
+          "p95": 59.3388001434505,
+          "max": 59.3388001434505
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 22,
+      "old_on": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 64.23099990934134,
+          "p95": 64.23099990934134,
+          "max": 64.23099990934134
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 42.19279997050762,
+          "p95": 42.19279997050762,
+          "max": 42.19279997050762
+        }
+      },
+      "old_off": {
+        "final_WER": 0.6,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 61.36769987642765,
+          "p95": 61.36769987642765,
+          "max": 61.36769987642765
+        }
+      },
+      "new_off": {
+        "final_WER": 0.6,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 65.15320017933846,
+          "p95": 65.15320017933846,
+          "max": 65.15320017933846
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 23,
+      "old_on": {
+        "final_WER": 0.6,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 63.80399991758168,
+          "p95": 63.80399991758168,
+          "max": 63.80399991758168
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 39.41969992592931,
+          "p95": 39.41969992592931,
+          "max": 39.41969992592931
+        }
+      },
+      "old_off": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 68.84610000997782,
+          "p95": 68.84610000997782,
+          "max": 68.84610000997782
+        }
+      },
+      "new_off": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 66.20609969832003,
+          "p95": 66.20609969832003,
+          "max": 66.20609969832003
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 24,
+      "old_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 100.60929995961487,
+          "p95": 100.60929995961487,
+          "max": 100.60929995961487
+        }
+      },
+      "new_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 101.45950014702976,
+          "p95": 101.45950014702976,
+          "max": 101.45950014702976
+        }
+      },
+      "old_off": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 124.65819995850325,
+          "p95": 124.65819995850325,
+          "max": 124.65819995850325
+        }
+      },
+      "new_off": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 109.7677000798285,
+          "p95": 109.7677000798285,
+          "max": 109.7677000798285
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 25,
+      "old_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 120.75109989382327,
+          "p95": 120.75109989382327,
+          "max": 120.75109989382327
+        }
+      },
+      "new_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 86.71619999222457,
+          "p95": 86.71619999222457,
+          "max": 86.71619999222457
+        }
+      },
+      "old_off": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 116.13269988447428,
+          "p95": 116.13269988447428,
+          "max": 116.13269988447428
+        }
+      },
+      "new_off": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 97.65689983032644,
+          "p95": 97.65689983032644,
+          "max": 97.65689983032644
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    },
+    {
+      "fixture": 26,
+      "old_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 126.45359989255667,
+          "p95": 126.45359989255667,
+          "max": 126.45359989255667
+        }
+      },
+      "new_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 99.07629992812872,
+          "p95": 99.07629992812872,
+          "max": 99.07629992812872
+        }
+      },
+      "old_off": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 103.0773997772485,
+          "p95": 103.0773997772485,
+          "max": 103.0773997772485
+        }
+      },
+      "new_off": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 110.55410001426935,
+          "p95": 110.55410001426935,
+          "max": 110.55410001426935
+        }
+      },
+      "accuracy_not_worse": true,
+      "raw_mode_accuracy_not_worse": true,
+      "content_matches_released_except_identifier_formatting": true,
+      "raw_mode_content_matches_released": true
+    }
+  ],
+  "all_accuracy_cases_not_worse": true,
+  "all_raw_mode_accuracy_cases_not_worse": true,
+  "all_content_preserved_except_identifier_formatting": false,
+  "hinted_silence_emitted_text": false,
+  "scope": "Local synthetic speech, released timestamp decoder vs candidate text-only decoder, unchanged CUDA model and 192-token hint. No physical key injection, human-speech accuracy guarantee or user data upload.",
+  "timing": [
+    {
+      "fixture": 1,
+      "blocks": 50,
+      "old_off": {
+        "median": 190.043400041759,
+        "p95": 252.8972001746297,
+        "max": 331.4959998242557
+      },
+      "old_on": {
+        "median": 182.7360998140648,
+        "p95": 232.68340015783906,
+        "max": 272.86299993284047
+      },
+      "new_on": {
+        "median": 160.5392498895526,
+        "p95": 205.51480003632605,
+        "max": 243.87739994563162
+      },
+      "new_minus_old_off": {
+        "paired_median_ms": -32.991575077176094,
+        "median_95CI_ms": [
+          -39.840450044721365,
+          -28.194950078614056
+        ],
+        "P95_delta_ms": -47.38240013830364
+      },
+      "new_minus_old_on": {
+        "paired_median_ms": -20.90162504464388,
+        "median_95CI_ms": [
+          -31.03670012205839,
+          -15.654374961741269
+        ],
+        "P95_delta_ms": -27.16860012151301
+      }
+    },
+    {
+      "fixture": 2,
+      "blocks": 50,
+      "old_off": {
+        "median": 297.59389988612384,
+        "p95": 364.4808002281934,
+        "max": 397.0421999692917
+      },
+      "old_on": {
+        "median": 288.17899990826845,
+        "p95": 363.4417997673154,
+        "max": 487.0256001595408
+      },
+      "new_on": {
+        "median": 253.7292999913916,
+        "p95": 321.39349984936416,
+        "max": 454.7631999012083
+      },
+      "new_minus_old_off": {
+        "paired_median_ms": -37.092050013598055,
+        "median_95CI_ms": [
+          -48.86727489065379,
+          -27.51749992603436
+        ],
+        "P95_delta_ms": -43.08730037882924
+      },
+      "new_minus_old_on": {
+        "paired_median_ms": -29.762974998448044,
+        "median_95CI_ms": [
+          -42.74459992302582,
+          -21.750899963080883
+        ],
+        "P95_delta_ms": -42.048299917951226
+      }
+    }
+  ],
+  "timing_samples": [
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 172.23819997161627,
+          "postprocessing_ms": 0.037400051951408386,
+          "total_ms": 172.27560002356768,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 206.8433000240475,
+          "postprocessing_ms": 0.03900006413459778,
+          "total_ms": 206.8823000881821,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 207.38349994644523,
+          "postprocessing_ms": 0.31560007482767105,
+          "total_ms": 207.6991000212729,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 187.12790007703006,
+          "postprocessing_ms": 0.41040009818971157,
+          "total_ms": 187.53830017521977,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 158.1666001584381,
+          "postprocessing_ms": 0.35699992440640926,
+          "total_ms": 158.5236000828445,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 161.5402998868376,
+          "postprocessing_ms": 0.34380005672574043,
+          "total_ms": 161.88409994356334,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 332.2552000172436,
+          "postprocessing_ms": 0.0420999713242054,
+          "total_ms": 332.29729998856783,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 281.97639994323254,
+          "postprocessing_ms": 0.04029995761811733,
+          "total_ms": 282.01669990085065,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 348.3979001175612,
+          "postprocessing_ms": 0.8134001400321722,
+          "total_ms": 349.2113002575934,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 303.6555000580847,
+          "postprocessing_ms": 0.5501999985426664,
+          "total_ms": 304.2057000566274,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 298.41509996913373,
+          "postprocessing_ms": 0.6981999613344669,
+          "total_ms": 299.1132999304682,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 239.48609991930425,
+          "postprocessing_ms": 0.6802000571042299,
+          "total_ms": 240.16629997640848,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 190.95809990540147,
+          "postprocessing_ms": 0.03650016151368618,
+          "total_ms": 190.99460006691515,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 162.29899995960295,
+          "postprocessing_ms": 0.042800093069672585,
+          "total_ms": 162.34180005267262,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 136.9221000932157,
+          "postprocessing_ms": 0.31849998049438,
+          "total_ms": 137.24060007371008,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 190.34029985778034,
+          "postprocessing_ms": 0.3758000675588846,
+          "total_ms": 190.71609992533922,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 208.2829000428319,
+          "postprocessing_ms": 0.5731999408453703,
+          "total_ms": 208.85609998367727,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 170.81549996510148,
+          "postprocessing_ms": 0.5220999009907246,
+          "total_ms": 171.3375998660922,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 343.19819998927414,
+          "postprocessing_ms": 0.039899954572319984,
+          "total_ms": 343.23809994384646,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 329.8575999215245,
+          "postprocessing_ms": 0.03660004585981369,
+          "total_ms": 329.89419996738434,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 317.2212999779731,
+          "postprocessing_ms": 0.3494000993669033,
+          "total_ms": 317.57070007734,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 304.3935000896454,
+          "postprocessing_ms": 0.5264999344944954,
+          "total_ms": 304.9200000241399,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 304.8584000207484,
+          "postprocessing_ms": 0.4648999311029911,
+          "total_ms": 305.32329995185137,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 276.8608999904245,
+          "postprocessing_ms": 0.4927001427859068,
+          "total_ms": 277.3536001332104,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 195.60129987075925,
+          "postprocessing_ms": 0.036400044336915016,
+          "total_ms": 195.63769991509616,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 196.48350006900728,
+          "postprocessing_ms": 0.036800047382712364,
+          "total_ms": 196.52030011639,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 154.89239990711212,
+          "postprocessing_ms": 0.40619983337819576,
+          "total_ms": 155.29859974049032,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 201.46610005758703,
+          "postprocessing_ms": 0.28479984030127525,
+          "total_ms": 201.7508998978883,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 166.07580007985234,
+          "postprocessing_ms": 0.6856999825686216,
+          "total_ms": 166.76150006242096,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 137.69749994389713,
+          "postprocessing_ms": 0.3442000597715378,
+          "total_ms": 138.04170000366867,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 345.6715999636799,
+          "postprocessing_ms": 0.0513000413775444,
+          "total_ms": 345.72290000505745,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 308.4605000913143,
+          "postprocessing_ms": 0.03310013562440872,
+          "total_ms": 308.4936002269387,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 362.73959977552295,
+          "postprocessing_ms": 0.7021999917924404,
+          "total_ms": 363.4417997673154,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 295.3067999333143,
+          "postprocessing_ms": 0.5282999482005835,
+          "total_ms": 295.8350998815149,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 334.70860007219017,
+          "postprocessing_ms": 0.6218999624252319,
+          "total_ms": 335.3305000346154,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 272.7673000190407,
+          "postprocessing_ms": 0.7529999129474163,
+          "total_ms": 273.5202999319881,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 211.36149996891618,
+          "postprocessing_ms": 0.05710008554160595,
+          "total_ms": 211.41860005445778,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 182.8602000605315,
+          "postprocessing_ms": 0.10210019536316395,
+          "total_ms": 182.96230025589466,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 154.10209982655942,
+          "postprocessing_ms": 0.31090015545487404,
+          "total_ms": 154.4129999820143,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 149.1904000286013,
+          "postprocessing_ms": 0.39890012703835964,
+          "total_ms": 149.58930015563965,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 169.9066001456231,
+          "postprocessing_ms": 0.4000000189989805,
+          "total_ms": 170.30660016462207,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 145.4853001050651,
+          "postprocessing_ms": 0.5049000028520823,
+          "total_ms": 145.9902001079172,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 328.809600090608,
+          "postprocessing_ms": 0.041300198063254356,
+          "total_ms": 328.85090028867126,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 323.85709998197854,
+          "postprocessing_ms": 0.04000007174909115,
+          "total_ms": 323.8971000537276,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 249.61129995062947,
+          "postprocessing_ms": 0.4966000560671091,
+          "total_ms": 250.10790000669658,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 266.40550000593066,
+          "postprocessing_ms": 0.5383999086916447,
+          "total_ms": 266.9438999146223,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 261.2926000729203,
+          "postprocessing_ms": 0.66359993070364,
+          "total_ms": 261.95620000362396,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 196.45019993185997,
+          "postprocessing_ms": 0.5587001796811819,
+          "total_ms": 197.00890011154115,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 203.569799894467,
+          "postprocessing_ms": 0.03929995000362396,
+          "total_ms": 203.60909984447062,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 195.09520009160042,
+          "postprocessing_ms": 0.03509991802275181,
+          "total_ms": 195.13030000962317,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 194.01669991202652,
+          "postprocessing_ms": 0.4688000772148371,
+          "total_ms": 194.48549998924136,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 173.68009989149868,
+          "postprocessing_ms": 0.6577998865395784,
+          "total_ms": 174.33789977803826,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 201.80030004121363,
+          "postprocessing_ms": 0.5490998737514019,
+          "total_ms": 202.34939991496503,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 131.9192999508232,
+          "postprocessing_ms": 0.48440019600093365,
+          "total_ms": 132.40370014682412,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 285.1601999718696,
+          "postprocessing_ms": 0.0320998951792717,
+          "total_ms": 285.19229986704886,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 258.36919993162155,
+          "postprocessing_ms": 0.0420999713242054,
+          "total_ms": 258.41129990294576,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 216.22180007398129,
+          "postprocessing_ms": 0.5765999667346478,
+          "total_ms": 216.79840004071593,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 328.64629989489913,
+          "postprocessing_ms": 0.860600033774972,
+          "total_ms": 329.5068999286741,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 272.6875999942422,
+          "postprocessing_ms": 0.649099936708808,
+          "total_ms": 273.336699930951,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 306.86460016295314,
+          "postprocessing_ms": 0.45769987627863884,
+          "total_ms": 307.3223000392318,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 180.5877999868244,
+          "postprocessing_ms": 0.039499951526522636,
+          "total_ms": 180.62729993835092,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 172.82640002667904,
+          "postprocessing_ms": 0.03700004890561104,
+          "total_ms": 172.86340007558465,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 156.73799999058247,
+          "postprocessing_ms": 0.6387000903487206,
+          "total_ms": 157.3767000809312,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 181.50979978963733,
+          "postprocessing_ms": 0.4113998729735613,
+          "total_ms": 181.9211996626109,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 123.26949997805059,
+          "postprocessing_ms": 0.5610000807791948,
+          "total_ms": 123.83050005882978,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 147.873800015077,
+          "postprocessing_ms": 0.5086997989565134,
+          "total_ms": 148.3824998140335,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 307.4809000827372,
+          "postprocessing_ms": 0.038999831303954124,
+          "total_ms": 307.51989991404116,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 319.0999999642372,
+          "postprocessing_ms": 0.028999987989664078,
+          "total_ms": 319.1289999522269,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 264.62219981476665,
+          "postprocessing_ms": 0.5332999862730503,
+          "total_ms": 265.1554998010397,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 328.96830001845956,
+          "postprocessing_ms": 0.3521000035107136,
+          "total_ms": 329.3204000219703,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 237.76810010895133,
+          "postprocessing_ms": 0.6337000522762537,
+          "total_ms": 238.40180016122758,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 192.30760005302727,
+          "postprocessing_ms": 0.47459988854825497,
+          "total_ms": 192.78219994157553,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 217.1445998828858,
+          "postprocessing_ms": 0.039499951526522636,
+          "total_ms": 217.18409983441234,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 184.34179993346334,
+          "postprocessing_ms": 0.037499936297535896,
+          "total_ms": 184.37929986976087,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 189.89189993590117,
+          "postprocessing_ms": 0.33760000951588154,
+          "total_ms": 190.22949994541705,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 170.2733999118209,
+          "postprocessing_ms": 0.33989991061389446,
+          "total_ms": 170.61329982243478,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 151.7578000202775,
+          "postprocessing_ms": 0.452699838206172,
+          "total_ms": 152.21049985848367,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 126.05859991163015,
+          "postprocessing_ms": 0.5133999511599541,
+          "total_ms": 126.57199986279011,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 277.58769993670285,
+          "postprocessing_ms": 0.03800005652010441,
+          "total_ms": 277.62569999322295,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 309.0725999791175,
+          "postprocessing_ms": 0.03050011582672596,
+          "total_ms": 309.10310009494424,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 227.96500008553267,
+          "postprocessing_ms": 0.5047000013291836,
+          "total_ms": 228.46970008686185,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 270.7584002055228,
+          "postprocessing_ms": 0.5413000471889973,
+          "total_ms": 271.2997002527118,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 273.60710012726486,
+          "postprocessing_ms": 0.6535002030432224,
+          "total_ms": 274.2606003303081,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 278.54149998165667,
+          "postprocessing_ms": 0.6656998302787542,
+          "total_ms": 279.2071998119354,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 219.4133000448346,
+          "postprocessing_ms": 0.04340009763836861,
+          "total_ms": 219.45670014247298,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 188.64699988625944,
+          "postprocessing_ms": 0.03800005652010441,
+          "total_ms": 188.68499994277954,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 190.28560002334416,
+          "postprocessing_ms": 0.4265999887138605,
+          "total_ms": 190.71220001205802,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 161.359999794513,
+          "postprocessing_ms": 0.4290000069886446,
+          "total_ms": 161.78899980150163,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 184.27470000460744,
+          "postprocessing_ms": 0.45529985800385475,
+          "total_ms": 184.7299998626113,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 164.64819991961122,
+          "postprocessing_ms": 0.5149999633431435,
+          "total_ms": 165.16319988295436,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 338.99670001119375,
+          "postprocessing_ms": 0.04009995609521866,
+          "total_ms": 339.03679996728897,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 297.45549988001585,
+          "postprocessing_ms": 0.03939983434975147,
+          "total_ms": 297.4948997143656,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 289.7755999583751,
+          "postprocessing_ms": 0.4914000164717436,
+          "total_ms": 290.26699997484684,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 313.3014999330044,
+          "postprocessing_ms": 0.41290000081062317,
+          "total_ms": 313.714399933815,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 249.69600001350045,
+          "postprocessing_ms": 0.635799951851368,
+          "total_ms": 250.33179996535182,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 270.079999929294,
+          "postprocessing_ms": 0.7420999463647604,
+          "total_ms": 270.82209987565875,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 211.8812999688089,
+          "postprocessing_ms": 0.042800093069672585,
+          "total_ms": 211.92410006187856,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 195.96600020304322,
+          "postprocessing_ms": 0.0396000687032938,
+          "total_ms": 196.00560027174652,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 209.64929996989667,
+          "postprocessing_ms": 0.2812999300658703,
+          "total_ms": 209.93059989996254,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 198.08029988780618,
+          "postprocessing_ms": 0.28149993158876896,
+          "total_ms": 198.36179981939495,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 142.1093000099063,
+          "postprocessing_ms": 0.5093000363558531,
+          "total_ms": 142.61860004626215,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 113.63120004534721,
+          "postprocessing_ms": 0.5173000972718,
+          "total_ms": 114.14850014261901,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 384.93599998764694,
+          "postprocessing_ms": 0.045900000259280205,
+          "total_ms": 384.9818999879062,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 312.52650008536875,
+          "postprocessing_ms": 0.04169996827840805,
+          "total_ms": 312.56820005364716,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 396.0876998025924,
+          "postprocessing_ms": 0.5828000139445066,
+          "total_ms": 396.6704998165369,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 321.5493999887258,
+          "postprocessing_ms": 0.525900162756443,
+          "total_ms": 322.0753001514822,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 269.96479998342693,
+          "postprocessing_ms": 0.5918999668210745,
+          "total_ms": 270.556699950248,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 269.5655000861734,
+          "postprocessing_ms": 0.747899990528822,
+          "total_ms": 270.31340007670224,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 207.27080013602972,
+          "postprocessing_ms": 0.04139984957873821,
+          "total_ms": 207.31219998560846,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 214.95459997095168,
+          "postprocessing_ms": 0.040800077840685844,
+          "total_ms": 214.99540004879236,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 183.13839985057712,
+          "postprocessing_ms": 0.412600114941597,
+          "total_ms": 183.5509999655187,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 179.54330006614327,
+          "postprocessing_ms": 0.41559990495443344,
+          "total_ms": 179.9588999710977,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 177.9688000679016,
+          "postprocessing_ms": 0.5259998142719269,
+          "total_ms": 178.49479988217354,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 174.9241000507027,
+          "postprocessing_ms": 0.50769979134202,
+          "total_ms": 175.4317998420447,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 307.8002000693232,
+          "postprocessing_ms": 0.03860006108880043,
+          "total_ms": 307.838800130412,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 288.5664999485016,
+          "postprocessing_ms": 0.04100007936358452,
+          "total_ms": 288.60750002786517,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 390.05100005306304,
+          "postprocessing_ms": 1.1923001147806644,
+          "total_ms": 391.2433001678437,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 287.9716001916677,
+          "postprocessing_ms": 0.6699999794363976,
+          "total_ms": 288.6416001711041,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 283.1617998890579,
+          "postprocessing_ms": 0.6714998744428158,
+          "total_ms": 283.8332997635007,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 289.3614999484271,
+          "postprocessing_ms": 0.6053999532014132,
+          "total_ms": 289.9668999016285,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 229.33329991064966,
+          "postprocessing_ms": 0.04009995609521866,
+          "total_ms": 229.37339986674488,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 185.46549999155104,
+          "postprocessing_ms": 0.040899962186813354,
+          "total_ms": 185.50639995373785,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 162.63929987326264,
+          "postprocessing_ms": 0.39820000529289246,
+          "total_ms": 163.03749987855554,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 161.18890000507236,
+          "postprocessing_ms": 0.4430001135915518,
+          "total_ms": 161.6319001186639,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 194.19529987499118,
+          "postprocessing_ms": 0.4050999414175749,
+          "total_ms": 194.60039981640875,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 163.3156999014318,
+          "postprocessing_ms": 0.5737999454140663,
+          "total_ms": 163.88949984684587,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 294.31480006314814,
+          "postprocessing_ms": 0.042899977415800095,
+          "total_ms": 294.35770004056394,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 269.0902999602258,
+          "postprocessing_ms": 0.04009995609521866,
+          "total_ms": 269.13039991632104,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 348.3619000762701,
+          "postprocessing_ms": 0.5370001308619976,
+          "total_ms": 348.8989002071321,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 327.40229996852577,
+          "postprocessing_ms": 0.5433999467641115,
+          "total_ms": 327.9456999152899,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 320.58439985848963,
+          "postprocessing_ms": 0.8090999908745289,
+          "total_ms": 321.39349984936416,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 454.03869985602796,
+          "postprocessing_ms": 0.7245000451803207,
+          "total_ms": 454.7631999012083,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 270.29519993811846,
+          "postprocessing_ms": 0.06079999729990959,
+          "total_ms": 270.35599993541837,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 214.2606999259442,
+          "postprocessing_ms": 0.033899908885359764,
+          "total_ms": 214.29459983482957,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 193.77529993653297,
+          "postprocessing_ms": 0.4292998928576708,
+          "total_ms": 194.20459982939065,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 198.76649999059737,
+          "postprocessing_ms": 0.4072000738233328,
+          "total_ms": 199.1737000644207,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 173.63970004953444,
+          "postprocessing_ms": 0.4160997923463583,
+          "total_ms": 174.0557998418808,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 205.11809992603958,
+          "postprocessing_ms": 0.39670011028647423,
+          "total_ms": 205.51480003632605,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 286.7146998178214,
+          "postprocessing_ms": 0.052999937906861305,
+          "total_ms": 286.76769975572824,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 289.9221000261605,
+          "postprocessing_ms": 0.03609992563724518,
+          "total_ms": 289.9581999517977,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 309.5553000457585,
+          "postprocessing_ms": 0.586699927225709,
+          "total_ms": 310.1419999729842,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 261.41669997014105,
+          "postprocessing_ms": 0.5350001156330109,
+          "total_ms": 261.95170008577406,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 305.67310005426407,
+          "postprocessing_ms": 0.6383000873029232,
+          "total_ms": 306.311400141567,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 250.56189997121692,
+          "postprocessing_ms": 0.5135000683367252,
+          "total_ms": 251.07540003955364,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 158.60929992049932,
+          "postprocessing_ms": 0.05759997293353081,
+          "total_ms": 158.66689989343286,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 207.99209992401302,
+          "postprocessing_ms": 0.03820005804300308,
+          "total_ms": 208.03029998205602,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 159.47440010495484,
+          "postprocessing_ms": 0.40769996121525764,
+          "total_ms": 159.8821000661701,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 161.9551999028772,
+          "postprocessing_ms": 0.2663000486791134,
+          "total_ms": 162.22149995155632,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 172.87110001780093,
+          "postprocessing_ms": 0.40380004793405533,
+          "total_ms": 173.27490006573498,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 135.20819996483624,
+          "postprocessing_ms": 0.49640005454421043,
+          "total_ms": 135.70460001938045,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 281.5036999527365,
+          "postprocessing_ms": 0.04279986023902893,
+          "total_ms": 281.5464998129755,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 295.7667000591755,
+          "postprocessing_ms": 0.061499886214733124,
+          "total_ms": 295.8281999453902,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 281.27590008080006,
+          "postprocessing_ms": 0.7205000147223473,
+          "total_ms": 281.9964000955224,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 290.0696999859065,
+          "postprocessing_ms": 0.5501999985426664,
+          "total_ms": 290.61989998444915,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 239.98319986276329,
+          "postprocessing_ms": 0.5749000702053308,
+          "total_ms": 240.55809993296862,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 260.07710001431406,
+          "postprocessing_ms": 0.5632999818772078,
+          "total_ms": 260.64039999619126,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 164.1084998846054,
+          "postprocessing_ms": 0.03890017978847027,
+          "total_ms": 164.14740006439388,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 205.07539995014668,
+          "postprocessing_ms": 0.04009995609521866,
+          "total_ms": 205.1154999062419,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 149.11490003578365,
+          "postprocessing_ms": 0.3570001572370529,
+          "total_ms": 149.4719001930207,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 188.32359998486936,
+          "postprocessing_ms": 0.3208001144230366,
+          "total_ms": 188.6444000992924,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 162.76880004443228,
+          "postprocessing_ms": 0.5389000289142132,
+          "total_ms": 163.3077000733465,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 162.35040011815727,
+          "postprocessing_ms": 0.579700106754899,
+          "total_ms": 162.93010022491217,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 301.73749988898635,
+          "postprocessing_ms": 0.039899954572319984,
+          "total_ms": 301.77739984355867,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 316.23659981414676,
+          "postprocessing_ms": 0.031100120395421982,
+          "total_ms": 316.2676999345422,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 276.5990002080798,
+          "postprocessing_ms": 0.37640007212758064,
+          "total_ms": 276.9754002802074,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 322.34600000083447,
+          "postprocessing_ms": 0.5298999603837729,
+          "total_ms": 322.87589996121824,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 169.4495000410825,
+          "postprocessing_ms": 0.5938999820500612,
+          "total_ms": 170.04340002313256,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 242.80370003543794,
+          "postprocessing_ms": 0.6150000263005495,
+          "total_ms": 243.4187000617385,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 160.3506999090314,
+          "postprocessing_ms": 0.03660004585981369,
+          "total_ms": 160.3872999548912,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 211.8709001224488,
+          "postprocessing_ms": 0.03629992716014385,
+          "total_ms": 211.90720004960895,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 196.66859996505082,
+          "postprocessing_ms": 0.49460004083812237,
+          "total_ms": 197.16320000588894,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 170.8758999593556,
+          "postprocessing_ms": 0.5310999695211649,
+          "total_ms": 171.40699992887676,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 149.73190007731318,
+          "postprocessing_ms": 0.376800075173378,
+          "total_ms": 150.10870015248656,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 96.14060004241765,
+          "postprocessing_ms": 0.5167999770492315,
+          "total_ms": 96.65740001946688,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 246.04190001264215,
+          "postprocessing_ms": 0.041800085455179214,
+          "total_ms": 246.08370009809732,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 276.6634998843074,
+          "postprocessing_ms": 0.04549999721348286,
+          "total_ms": 276.70899988152087,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 243.62799990922213,
+          "postprocessing_ms": 0.69019990041852,
+          "total_ms": 244.31819980964065,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 294.66919996775687,
+          "postprocessing_ms": 0.5530000198632479,
+          "total_ms": 295.2221999876201,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 223.01260009407997,
+          "postprocessing_ms": 0.6200999487191439,
+          "total_ms": 223.63270004279912,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 274.53739987686276,
+          "postprocessing_ms": 0.7788999937474728,
+          "total_ms": 275.31629987061024,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 166.57579992897809,
+          "postprocessing_ms": 0.03619980998337269,
+          "total_ms": 166.61199973896146,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 192.5979999359697,
+          "postprocessing_ms": 0.04009995609521866,
+          "total_ms": 192.63809989206493,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 133.7156998924911,
+          "postprocessing_ms": 0.41370000690221786,
+          "total_ms": 134.12939989939332,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 169.22299982979894,
+          "postprocessing_ms": 0.40570017881691456,
+          "total_ms": 169.62870000861585,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 92.3396002035588,
+          "postprocessing_ms": 0.5260000471025705,
+          "total_ms": 92.86560025066137,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 151.98639989830554,
+          "postprocessing_ms": 0.6083999760448933,
+          "total_ms": 152.59479987435043,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 243.61509992741048,
+          "postprocessing_ms": 0.04169996827840805,
+          "total_ms": 243.6567998956889,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 265.04560001194477,
+          "postprocessing_ms": 0.038899946957826614,
+          "total_ms": 265.0844999589026,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 294.2377000581473,
+          "postprocessing_ms": 0.5515001248568296,
+          "total_ms": 294.78920018300414,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 309.22940000891685,
+          "postprocessing_ms": 0.5204998888075352,
+          "total_ms": 309.7498998977244,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 236.8993000127375,
+          "postprocessing_ms": 0.5382001399993896,
+          "total_ms": 237.4375001527369,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 227.34520002268255,
+          "postprocessing_ms": 0.6436000112444162,
+          "total_ms": 227.98880003392696,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 202.5158000178635,
+          "postprocessing_ms": 0.2616001293063164,
+          "total_ms": 202.77740014716983,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 182.3555000592023,
+          "postprocessing_ms": 0.02950010821223259,
+          "total_ms": 182.38500016741455,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 185.88180001825094,
+          "postprocessing_ms": 0.7474999874830246,
+          "total_ms": 186.62930000573397,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 172.40989999845624,
+          "postprocessing_ms": 0.40220003575086594,
+          "total_ms": 172.8121000342071,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 146.85990009456873,
+          "postprocessing_ms": 0.5455000791698694,
+          "total_ms": 147.4054001737386,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 169.56830001436174,
+          "postprocessing_ms": 0.49169990234076977,
+          "total_ms": 170.0599999167025,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 280.65490000881255,
+          "postprocessing_ms": 0.04079984501004219,
+          "total_ms": 280.6956998538226,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 256.9049000740051,
+          "postprocessing_ms": 0.04109996370971203,
+          "total_ms": 256.94600003771484,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 291.3202000781894,
+          "postprocessing_ms": 0.5484998691827059,
+          "total_ms": 291.8686999473721,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 231.2980000860989,
+          "postprocessing_ms": 0.5326000973582268,
+          "total_ms": 231.83060018345714,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 273.78639997914433,
+          "postprocessing_ms": 0.6551998667418957,
+          "total_ms": 274.44159984588623,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 263.90419993549585,
+          "postprocessing_ms": 0.5755999591201544,
+          "total_ms": 264.479799894616,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 199.4032000657171,
+          "postprocessing_ms": 0.0320998951792717,
+          "total_ms": 199.43529996089637,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 186.19090015999973,
+          "postprocessing_ms": 0.042300205677747726,
+          "total_ms": 186.23320036567748,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 177.9932000208646,
+          "postprocessing_ms": 0.43000001460313797,
+          "total_ms": 178.42320003546774,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 161.31869982928038,
+          "postprocessing_ms": 0.40089990943670273,
+          "total_ms": 161.71959973871708,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 130.86439995095134,
+          "postprocessing_ms": 0.5051000043749809,
+          "total_ms": 131.36949995532632,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 120.42469996958971,
+          "postprocessing_ms": 0.5499001126736403,
+          "total_ms": 120.97460008226335,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 258.0422998871654,
+          "postprocessing_ms": 0.041400082409381866,
+          "total_ms": 258.0836999695748,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 293.2765001896769,
+          "postprocessing_ms": 0.03229989670217037,
+          "total_ms": 293.30880008637905,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 279.1454999241978,
+          "postprocessing_ms": 0.5314999725669622,
+          "total_ms": 279.67699989676476,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 269.71989986486733,
+          "postprocessing_ms": 0.5846000276505947,
+          "total_ms": 270.3044998925179,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 269.8826000560075,
+          "postprocessing_ms": 0.5954999942332506,
+          "total_ms": 270.47810005024076,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 269.2758000921458,
+          "postprocessing_ms": 0.7215000223368406,
+          "total_ms": 269.99730011448264,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 168.63940004259348,
+          "postprocessing_ms": 0.06079999729990959,
+          "total_ms": 168.7002000398934,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 200.08490001782775,
+          "postprocessing_ms": 0.03060000017285347,
+          "total_ms": 200.1155000180006,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 192.84090003930032,
+          "postprocessing_ms": 0.40140002965927124,
+          "total_ms": 193.2423000689596,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 175.59910006821156,
+          "postprocessing_ms": 0.4371998365968466,
+          "total_ms": 176.0362999048084,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 143.39239988476038,
+          "postprocessing_ms": 0.4825000651180744,
+          "total_ms": 143.87489994987845,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 196.33749988861382,
+          "postprocessing_ms": 0.5189999938011169,
+          "total_ms": 196.85649988241494,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 276.0038999840617,
+          "postprocessing_ms": 0.04029995761811733,
+          "total_ms": 276.04419994167984,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 272.3350999876857,
+          "postprocessing_ms": 0.04220008850097656,
+          "total_ms": 272.37730007618666,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 275.2205999568105,
+          "postprocessing_ms": 0.3948998637497425,
+          "total_ms": 275.6154998205602,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 262.9047001246363,
+          "postprocessing_ms": 0.35690004006028175,
+          "total_ms": 263.2616001646966,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 253.10129998251796,
+          "postprocessing_ms": 0.6544999778270721,
+          "total_ms": 253.75579996034503,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 223.65249996073544,
+          "postprocessing_ms": 0.503599876537919,
+          "total_ms": 224.15609983727336,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 169.6690998505801,
+          "postprocessing_ms": 0.040800077840685844,
+          "total_ms": 169.70989992842078,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 177.45600012131035,
+          "postprocessing_ms": 0.04119984805583954,
+          "total_ms": 177.4971999693662,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 187.06310004927218,
+          "postprocessing_ms": 0.4167999140918255,
+          "total_ms": 187.479899963364,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 198.41130007989705,
+          "postprocessing_ms": 0.26650005020201206,
+          "total_ms": 198.67780013009906,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 196.45289983600378,
+          "postprocessing_ms": 0.4292998928576708,
+          "total_ms": 196.88219972886145,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 153.91799993813038,
+          "postprocessing_ms": 0.3638998605310917,
+          "total_ms": 154.28189979866147,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 311.85320019721985,
+          "postprocessing_ms": 0.04300009459257126,
+          "total_ms": 311.8962002918124,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 364.9077999871224,
+          "postprocessing_ms": 0.03939983434975147,
+          "total_ms": 364.94719982147217,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 331.61720004864037,
+          "postprocessing_ms": 0.39069983176887035,
+          "total_ms": 332.00789988040924,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 294.3208001088351,
+          "postprocessing_ms": 0.4157000221312046,
+          "total_ms": 294.7365001309663,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 191.84519979171455,
+          "postprocessing_ms": 0.5093000363558531,
+          "total_ms": 192.3544998280704,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 263.79380002617836,
+          "postprocessing_ms": 0.6470999214798212,
+          "total_ms": 264.4408999476582,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 173.36710006929934,
+          "postprocessing_ms": 0.04039984196424484,
+          "total_ms": 173.40749991126359,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 225.14570015482605,
+          "postprocessing_ms": 0.035999808460474014,
+          "total_ms": 225.18169996328652,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 179.4372999574989,
+          "postprocessing_ms": 0.4235999658703804,
+          "total_ms": 179.8608999233693,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 197.3808000329882,
+          "postprocessing_ms": 0.42310007847845554,
+          "total_ms": 197.80390011146665,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 166.426399955526,
+          "postprocessing_ms": 0.3917999565601349,
+          "total_ms": 166.81819991208613,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 133.90049990266562,
+          "postprocessing_ms": 0.5267998203635216,
+          "total_ms": 134.42729972302914,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 305.90260005556047,
+          "postprocessing_ms": 0.037400051951408386,
+          "total_ms": 305.9400001075119,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 275.1138999592513,
+          "postprocessing_ms": 0.04100007936358452,
+          "total_ms": 275.15490003861487,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 323.5718999058008,
+          "postprocessing_ms": 0.44870004057884216,
+          "total_ms": 324.02059994637966,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 305.06289983168244,
+          "postprocessing_ms": 0.5749999545514584,
+          "total_ms": 305.6378997862339,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 230.92489992268384,
+          "postprocessing_ms": 0.5833001341670752,
+          "total_ms": 231.5082000568509,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 275.6743000354618,
+          "postprocessing_ms": 0.5785999819636345,
+          "total_ms": 276.2529000174254,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 185.46460010111332,
+          "postprocessing_ms": 0.04810001701116562,
+          "total_ms": 185.51270011812449,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 176.12540000118315,
+          "postprocessing_ms": 0.03820005804300308,
+          "total_ms": 176.16360005922616,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 190.36390003748238,
+          "postprocessing_ms": 0.38659991696476936,
+          "total_ms": 190.75049995444715,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 213.7392999138683,
+          "postprocessing_ms": 0.4523999523371458,
+          "total_ms": 214.19169986620545,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 185.56770007126033,
+          "postprocessing_ms": 0.5074001383036375,
+          "total_ms": 186.07510020956397,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 181.487699970603,
+          "postprocessing_ms": 0.8002000395208597,
+          "total_ms": 182.28790001012385,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 364.43540011532605,
+          "postprocessing_ms": 0.04540011286735535,
+          "total_ms": 364.4808002281934,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 303.67709998972714,
+          "postprocessing_ms": 0.04279986023902893,
+          "total_ms": 303.71989984996617,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 486.36620002798736,
+          "postprocessing_ms": 0.6594001315534115,
+          "total_ms": 487.0256001595408,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 262.74449983611703,
+          "postprocessing_ms": 0.475199893116951,
+          "total_ms": 263.219699729234,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 312.3554000630975,
+          "postprocessing_ms": 0.7939999923110008,
+          "total_ms": 313.1494000554085,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 210.45389981009066,
+          "postprocessing_ms": 1.0395999997854233,
+          "total_ms": 211.49349980987608,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 210.05879994481802,
+          "postprocessing_ms": 0.04010018892586231,
+          "total_ms": 210.09890013374388,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 171.95619991980493,
+          "postprocessing_ms": 0.03820005804300308,
+          "total_ms": 171.99439997784793,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 128.11910011805594,
+          "postprocessing_ms": 0.26400014758110046,
+          "total_ms": 128.38310026563704,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 193.0096000432968,
+          "postprocessing_ms": 0.41370000690221786,
+          "total_ms": 193.42330005019903,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 178.87290008366108,
+          "postprocessing_ms": 0.5246999207884073,
+          "total_ms": 179.3976000044495,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 157.28200017474592,
+          "postprocessing_ms": 0.43160002678632736,
+          "total_ms": 157.71360020153224,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 299.47949992492795,
+          "postprocessing_ms": 0.044599873945117,
+          "total_ms": 299.52409979887307,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 294.4153000134975,
+          "postprocessing_ms": 0.04229997284710407,
+          "total_ms": 294.4575999863446,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 302.6941998396069,
+          "postprocessing_ms": 0.41910004802048206,
+          "total_ms": 303.11329988762736,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 287.52969997003675,
+          "postprocessing_ms": 0.488499877974391,
+          "total_ms": 288.01819984801114,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 267.6450000144541,
+          "postprocessing_ms": 0.4898000042885542,
+          "total_ms": 268.1348000187427,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 279.92090000770986,
+          "postprocessing_ms": 0.5393000319600105,
+          "total_ms": 280.46020003966987,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 163.50420005619526,
+          "postprocessing_ms": 0.03520003519952297,
+          "total_ms": 163.53940009139478,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 165.76100001111627,
+          "postprocessing_ms": 0.04069996066391468,
+          "total_ms": 165.80169997178018,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 165.92549998313189,
+          "postprocessing_ms": 0.42719999328255653,
+          "total_ms": 166.35269997641444,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 146.42879995517433,
+          "postprocessing_ms": 0.3806999884545803,
+          "total_ms": 146.8094999436289,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 177.18310002237558,
+          "postprocessing_ms": 0.40510017424821854,
+          "total_ms": 177.5882001966238,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 151.70350018888712,
+          "postprocessing_ms": 0.5292999558150768,
+          "total_ms": 152.2328001447022,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 291.6827001608908,
+          "postprocessing_ms": 0.04249997437000275,
+          "total_ms": 291.7252001352608,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 276.43630001693964,
+          "postprocessing_ms": 0.033700140193104744,
+          "total_ms": 276.47000015713274,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 281.99779987335205,
+          "postprocessing_ms": 0.5204000044614077,
+          "total_ms": 282.51819987781346,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 300.89630000293255,
+          "postprocessing_ms": 0.5339998751878738,
+          "total_ms": 301.4302998781204,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 298.72000007890165,
+          "postprocessing_ms": 0.4523000679910183,
+          "total_ms": 299.17230014689267,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 278.4744999371469,
+          "postprocessing_ms": 0.5524000152945518,
+          "total_ms": 279.02689995244145,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 196.23939995653927,
+          "postprocessing_ms": 0.037400051951408386,
+          "total_ms": 196.27680000849068,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 190.22560003213584,
+          "postprocessing_ms": 0.04369998350739479,
+          "total_ms": 190.26930001564324,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 226.13289998844266,
+          "postprocessing_ms": 0.27020019479095936,
+          "total_ms": 226.40310018323362,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 209.5339000225067,
+          "postprocessing_ms": 0.41719991713762283,
+          "total_ms": 209.95109993964434,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 184.44580002687871,
+          "postprocessing_ms": 0.5187001079320908,
+          "total_ms": 184.9645001348108,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 206.74480008892715,
+          "postprocessing_ms": 0.5094001535326242,
+          "total_ms": 207.25420024245977,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 312.42410000413656,
+          "postprocessing_ms": 0.03890017978847027,
+          "total_ms": 312.46300018392503,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 348.7633999902755,
+          "postprocessing_ms": 0.04559988155961037,
+          "total_ms": 348.8089998718351,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 331.0330000240356,
+          "postprocessing_ms": 0.3893999382853508,
+          "total_ms": 331.4223999623209,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 340.27220006100833,
+          "postprocessing_ms": 0.5359000060707331,
+          "total_ms": 340.80810006707907,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 284.3648998532444,
+          "postprocessing_ms": 0.6228000856935978,
+          "total_ms": 284.987699938938,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 285.6387998908758,
+          "postprocessing_ms": 0.6562999915331602,
+          "total_ms": 286.295099882409,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 274.9477999750525,
+          "postprocessing_ms": 0.0350000336766243,
+          "total_ms": 274.9828000087291,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 189.7791000083089,
+          "postprocessing_ms": 0.038400059565901756,
+          "total_ms": 189.8175000678748,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 203.14359990879893,
+          "postprocessing_ms": 0.26650005020201206,
+          "total_ms": 203.41009995900095,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 272.5355001166463,
+          "postprocessing_ms": 0.3274998161941767,
+          "total_ms": 272.86299993284047,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 232.33429994434118,
+          "postprocessing_ms": 0.4343001637607813,
+          "total_ms": 232.76860010810196,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 243.55829996056855,
+          "postprocessing_ms": 0.319099985063076,
+          "total_ms": 243.87739994563162,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 299.6239000931382,
+          "postprocessing_ms": 0.04579988308250904,
+          "total_ms": 299.6696999762207,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 307.3754000943154,
+          "postprocessing_ms": 0.04000007174909115,
+          "total_ms": 307.4154001660645,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 332.62680005282164,
+          "postprocessing_ms": 0.41229999624192715,
+          "total_ms": 333.03910004906356,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 256.1409999616444,
+          "postprocessing_ms": 0.5321002099663019,
+          "total_ms": 256.6731001716107,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 378.72919999063015,
+          "postprocessing_ms": 0.4110999871045351,
+          "total_ms": 379.1402999777347,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 248.88980016112328,
+          "postprocessing_ms": 0.4154001362621784,
+          "total_ms": 249.30520029738545,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 136.94779993966222,
+          "postprocessing_ms": 0.0383998267352581,
+          "total_ms": 136.98619976639748,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 135.00490016303957,
+          "postprocessing_ms": 0.04220008850097656,
+          "total_ms": 135.04710025154054,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 165.6325999647379,
+          "postprocessing_ms": 0.3325999714434147,
+          "total_ms": 165.9651999361813,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 183.72799991630018,
+          "postprocessing_ms": 0.412600114941597,
+          "total_ms": 184.14060003124177,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 122.73479998111725,
+          "postprocessing_ms": 0.5107000470161438,
+          "total_ms": 123.24550002813339,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 165.55760009214282,
+          "postprocessing_ms": 0.49230013974010944,
+          "total_ms": 166.04990023188293,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 266.4805999957025,
+          "postprocessing_ms": 0.04119984805583954,
+          "total_ms": 266.52179984375834,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 347.75059996172786,
+          "postprocessing_ms": 0.032300129532814026,
+          "total_ms": 347.7829000912607,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 223.07950002141297,
+          "postprocessing_ms": 0.35170000046491623,
+          "total_ms": 223.43120002187788,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 314.35150001198053,
+          "postprocessing_ms": 0.7390000391751528,
+          "total_ms": 315.0905000511557,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 257.72090000100434,
+          "postprocessing_ms": 0.4227000754326582,
+          "total_ms": 258.143600076437,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 242.86750005558133,
+          "postprocessing_ms": 0.4165000282227993,
+          "total_ms": 243.28400008380413,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 252.8593000024557,
+          "postprocessing_ms": 0.0379001721739769,
+          "total_ms": 252.8972001746297,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 188.34959995001554,
+          "postprocessing_ms": 0.031099887564778328,
+          "total_ms": 188.38069983758032,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 252.72270012646914,
+          "postprocessing_ms": 0.30310009606182575,
+          "total_ms": 253.02580022253096,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 188.92830004915595,
+          "postprocessing_ms": 0.2753001172095537,
+          "total_ms": 189.2036001663655,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 146.25369990244508,
+          "postprocessing_ms": 0.32950006425380707,
+          "total_ms": 146.58319996669888,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 139.59559984505177,
+          "postprocessing_ms": 0.38880016654729843,
+          "total_ms": 139.98440001159906,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 369.0031000878662,
+          "postprocessing_ms": 0.031200004741549492,
+          "total_ms": 369.03430009260774,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 273.9659999497235,
+          "postprocessing_ms": 0.0320998951792717,
+          "total_ms": 273.99809984490275,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 320.9655999671668,
+          "postprocessing_ms": 0.36610011011362076,
+          "total_ms": 321.3317000772804,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 189.5479999948293,
+          "postprocessing_ms": 0.5409999284893274,
+          "total_ms": 190.08899992331862,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 182.19950003549457,
+          "postprocessing_ms": 0.584400026127696,
+          "total_ms": 182.78390006162226,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 260.7276998460293,
+          "postprocessing_ms": 0.4092000890523195,
+          "total_ms": 261.1368999350816,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 331.4562998712063,
+          "postprocessing_ms": 0.03969995304942131,
+          "total_ms": 331.4959998242557,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 138.13129998743534,
+          "postprocessing_ms": 0.04359986633062363,
+          "total_ms": 138.17489985376596,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 196.77130016498268,
+          "postprocessing_ms": 1.0836999863386154,
+          "total_ms": 197.8550001513213,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 208.5211998783052,
+          "postprocessing_ms": 0.4200998228043318,
+          "total_ms": 208.94129970110953,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 129.6826999168843,
+          "postprocessing_ms": 0.503400107845664,
+          "total_ms": 130.18610002472997,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 181.94019980728626,
+          "postprocessing_ms": 0.457199988886714,
+          "total_ms": 182.39739979617298,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 204.88910004496574,
+          "postprocessing_ms": 0.041400082409381866,
+          "total_ms": 204.93050012737513,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 241.94969981908798,
+          "postprocessing_ms": 0.04160008393228054,
+          "total_ms": 241.99129990302026,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 211.36899990960956,
+          "postprocessing_ms": 0.5438001826405525,
+          "total_ms": 211.9128000922501,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 227.26690000854433,
+          "postprocessing_ms": 0.48439996317029,
+          "total_ms": 227.75129997171462,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 232.35619999468327,
+          "postprocessing_ms": 0.6625000387430191,
+          "total_ms": 233.01870003342628,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 254.19089989736676,
+          "postprocessing_ms": 0.7932998705655336,
+          "total_ms": 254.9841997679323,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 177.26329993456602,
+          "postprocessing_ms": 0.043899985030293465,
+          "total_ms": 177.30719991959631,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 174.04980002902448,
+          "postprocessing_ms": 0.03169989213347435,
+          "total_ms": 174.08149992115796,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 151.12029993906617,
+          "postprocessing_ms": 0.41370000690221786,
+          "total_ms": 151.5339999459684,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 155.058000003919,
+          "postprocessing_ms": 0.637400196865201,
+          "total_ms": 155.6954002007842,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 145.32560016959906,
+          "postprocessing_ms": 0.5271998234093189,
+          "total_ms": 145.85279999300838,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 151.7616999335587,
+          "postprocessing_ms": 0.5065000150352716,
+          "total_ms": 152.26819994859397,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 239.89100009202957,
+          "postprocessing_ms": 0.04429998807609081,
+          "total_ms": 239.93530008010566,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 300.4847001284361,
+          "postprocessing_ms": 0.03920006565749645,
+          "total_ms": 300.5239001940936,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 244.7138000279665,
+          "postprocessing_ms": 0.4631001502275467,
+          "total_ms": 245.17690017819405,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 232.1064998395741,
+          "postprocessing_ms": 0.5264999344944954,
+          "total_ms": 232.6329997740686,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 214.38730019144714,
+          "postprocessing_ms": 0.6377000827342272,
+          "total_ms": 215.02500027418137,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 230.1515000872314,
+          "postprocessing_ms": 0.6742000114172697,
+          "total_ms": 230.82570009864867,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 183.2755000796169,
+          "postprocessing_ms": 0.03729993477463722,
+          "total_ms": 183.31280001439154,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 160.49680020660162,
+          "postprocessing_ms": 0.028700102120637894,
+          "total_ms": 160.52550030872226,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 170.65409990027547,
+          "postprocessing_ms": 0.36860001273453236,
+          "total_ms": 171.02269991301,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 164.54860009253025,
+          "postprocessing_ms": 0.42699999175965786,
+          "total_ms": 164.9756000842899,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 139.103899942711,
+          "postprocessing_ms": 0.512000173330307,
+          "total_ms": 139.6159001160413,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 130.92399993911386,
+          "postprocessing_ms": 0.49480004236102104,
+          "total_ms": 131.41879998147488,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 285.99710017442703,
+          "postprocessing_ms": 0.04039984196424484,
+          "total_ms": 286.0375000163913,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 273.9812000654638,
+          "postprocessing_ms": 0.050999922677874565,
+          "total_ms": 274.03219998814166,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 190.63459988683462,
+          "postprocessing_ms": 0.47479989007115364,
+          "total_ms": 191.10939977690578,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 229.41299993544817,
+          "postprocessing_ms": 0.6218000780791044,
+          "total_ms": 230.03480001352727,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 204.22409987077117,
+          "postprocessing_ms": 0.6985999643802643,
+          "total_ms": 204.92269983515143,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 190.37620001472533,
+          "postprocessing_ms": 0.7733998354524374,
+          "total_ms": 191.14959985017776,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 178.98369999602437,
+          "postprocessing_ms": 0.04319986328482628,
+          "total_ms": 179.0268998593092,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 141.14770013839006,
+          "postprocessing_ms": 0.04569999873638153,
+          "total_ms": 141.19340013712645,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 192.79309990815818,
+          "postprocessing_ms": 0.33820001408457756,
+          "total_ms": 193.13129992224276,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 129.04540007002652,
+          "postprocessing_ms": 0.43720006942749023,
+          "total_ms": 129.482600139454,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 155.13940015807748,
+          "postprocessing_ms": 0.551900127902627,
+          "total_ms": 155.6913002859801,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 100.25899996981025,
+          "postprocessing_ms": 0.5604999605566263,
+          "total_ms": 100.81949993036687,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 174.37469982542098,
+          "postprocessing_ms": 0.05150004290044308,
+          "total_ms": 174.42619986832142,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 184.66399982571602,
+          "postprocessing_ms": 0.04200008697807789,
+          "total_ms": 184.7059999126941,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 185.78089983202517,
+          "postprocessing_ms": 0.5059000104665756,
+          "total_ms": 186.28679984249175,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 225.3178998362273,
+          "postprocessing_ms": 0.6060998421162367,
+          "total_ms": 225.92399967834353,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 153.8072000257671,
+          "postprocessing_ms": 0.7113998290151358,
+          "total_ms": 154.51859985478222,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 172.02249984256923,
+          "postprocessing_ms": 0.7937001064419746,
+          "total_ms": 172.8161999490112,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 136.93270017392933,
+          "postprocessing_ms": 0.03929995000362396,
+          "total_ms": 136.97200012393296,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 154.41169985570014,
+          "postprocessing_ms": 0.05050003528594971,
+          "total_ms": 154.46219989098608,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 111.71499988995492,
+          "postprocessing_ms": 0.5193999968469143,
+          "total_ms": 112.23439988680184,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 162.67019999213517,
+          "postprocessing_ms": 1.2700001243501902,
+          "total_ms": 163.94020011648536,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 114.11879980005324,
+          "postprocessing_ms": 0.5297001916915178,
+          "total_ms": 114.64849999174476,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 133.95449984818697,
+          "postprocessing_ms": 0.538600143045187,
+          "total_ms": 134.49309999123216,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 183.97190002724528,
+          "postprocessing_ms": 0.04319986328482628,
+          "total_ms": 184.0150998905301,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 176.74809996969998,
+          "postprocessing_ms": 0.04320009611546993,
+          "total_ms": 176.79130006581545,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 178.78419999033213,
+          "postprocessing_ms": 0.5541001446545124,
+          "total_ms": 179.33830013498664,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 220.24350007995963,
+          "postprocessing_ms": 0.8046000730246305,
+          "total_ms": 221.04810015298426,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 176.17150000296533,
+          "postprocessing_ms": 0.6658998318016529,
+          "total_ms": 176.83739983476698,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 172.9505001567304,
+          "postprocessing_ms": 0.8987998589873314,
+          "total_ms": 173.84930001571774,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 127.11229990236461,
+          "postprocessing_ms": 0.04069996066391468,
+          "total_ms": 127.15299986302853,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 130.94770000316203,
+          "postprocessing_ms": 0.04970002919435501,
+          "total_ms": 130.99740003235638,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 118.17779997363687,
+          "postprocessing_ms": 0.4385998472571373,
+          "total_ms": 118.616399820894,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 114.60010008886456,
+          "postprocessing_ms": 0.5468998569995165,
+          "total_ms": 115.14699994586408,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 118.46480006352067,
+          "postprocessing_ms": 0.5147000774741173,
+          "total_ms": 118.97950014099479,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 108.35590003989637,
+          "postprocessing_ms": 0.5455000791698694,
+          "total_ms": 108.90140011906624,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 260.9468000009656,
+          "postprocessing_ms": 0.042700208723545074,
+          "total_ms": 260.98950020968914,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 226.46020003594458,
+          "postprocessing_ms": 0.0366999302059412,
+          "total_ms": 226.49689996615052,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 210.89629991911352,
+          "postprocessing_ms": 0.37869997322559357,
+          "total_ms": 211.2749998923391,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 252.35730013810098,
+          "postprocessing_ms": 0.5771999713033438,
+          "total_ms": 252.93450010940433,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 170.7037000451237,
+          "postprocessing_ms": 0.6625000387430191,
+          "total_ms": 171.36620008386672,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 248.8716000225395,
+          "postprocessing_ms": 0.46989996917545795,
+          "total_ms": 249.34149999171495,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 168.85320004075766,
+          "postprocessing_ms": 0.02759997732937336,
+          "total_ms": 168.88080001808703,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 159.48079992085695,
+          "postprocessing_ms": 0.0420999713242054,
+          "total_ms": 159.52289989218116,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 176.5308000613004,
+          "postprocessing_ms": 0.4320999141782522,
+          "total_ms": 176.96289997547865,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 167.70579991862178,
+          "postprocessing_ms": 0.39570010267198086,
+          "total_ms": 168.10150002129376,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 158.70529995299876,
+          "postprocessing_ms": 0.489099882543087,
+          "total_ms": 159.19439983554184,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 123.11869999393821,
+          "postprocessing_ms": 0.49620005302131176,
+          "total_ms": 123.61490004695952,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 281.829799991101,
+          "postprocessing_ms": 0.032499898225069046,
+          "total_ms": 281.8622998893261,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 229.4514998793602,
+          "postprocessing_ms": 0.0483999028801918,
+          "total_ms": 229.4998997822404,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 242.41809989325702,
+          "postprocessing_ms": 0.48869987949728966,
+          "total_ms": 242.9067997727543,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 234.22609991393983,
+          "postprocessing_ms": 0.4958000499755144,
+          "total_ms": 234.72189996391535,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 207.78890000656247,
+          "postprocessing_ms": 0.649699941277504,
+          "total_ms": 208.43859994783998,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 231.61079990677536,
+          "postprocessing_ms": 0.5059000104665756,
+          "total_ms": 232.11669991724193,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 157.1452000644058,
+          "postprocessing_ms": 0.04039984196424484,
+          "total_ms": 157.18559990637004,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 138.35340016521513,
+          "postprocessing_ms": 0.040499959141016006,
+          "total_ms": 138.39390012435615,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 126.72620010562241,
+          "postprocessing_ms": 0.6240000948309898,
+          "total_ms": 127.3502002004534,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 128.81390005350113,
+          "postprocessing_ms": 0.4772001411765814,
+          "total_ms": 129.2911001946777,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 106.98869987390935,
+          "postprocessing_ms": 0.5614999681711197,
+          "total_ms": 107.55019984208047,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 88.2804999127984,
+          "postprocessing_ms": 0.619600061327219,
+          "total_ms": 88.90009997412562,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 173.89209987595677,
+          "postprocessing_ms": 0.041499966755509377,
+          "total_ms": 173.93359984271228,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 210.33680019900203,
+          "postprocessing_ms": 0.04409998655319214,
+          "total_ms": 210.38090018555522,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 186.20690004900098,
+          "postprocessing_ms": 0.586699927225709,
+          "total_ms": 186.7935999762267,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 252.28370004333556,
+          "postprocessing_ms": 0.3874001558870077,
+          "total_ms": 252.67110019922256,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 179.27810014225543,
+          "postprocessing_ms": 0.6623999215662479,
+          "total_ms": 179.94050006382167,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 205.24540008045733,
+          "postprocessing_ms": 0.4050999414175749,
+          "total_ms": 205.6505000218749,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 167.06330003216863,
+          "postprocessing_ms": 0.037899939343333244,
+          "total_ms": 167.10119997151196,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 159.39370007254183,
+          "postprocessing_ms": 0.05019991658627987,
+          "total_ms": 159.4438999891281,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 198.60460003837943,
+          "postprocessing_ms": 0.43359980918467045,
+          "total_ms": 199.0381998475641,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 169.60350004956126,
+          "postprocessing_ms": 0.42930012568831444,
+          "total_ms": 170.03280017524958,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 133.9475999120623,
+          "postprocessing_ms": 0.5451999604701996,
+          "total_ms": 134.4927998725325,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 127.45229993015528,
+          "postprocessing_ms": 0.3307000733911991,
+          "total_ms": 127.78300000354648,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 222.70460007712245,
+          "postprocessing_ms": 0.04400010220706463,
+          "total_ms": 222.74860017932951,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 249.94380003772676,
+          "postprocessing_ms": 0.040499959141016006,
+          "total_ms": 249.98429999686778,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 226.96770005859435,
+          "postprocessing_ms": 0.5280999466776848,
+          "total_ms": 227.49580000527203,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 215.91080003418028,
+          "postprocessing_ms": 0.5258000455796719,
+          "total_ms": 216.43660007975996,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 201.02020003832877,
+          "postprocessing_ms": 0.6583998911082745,
+          "total_ms": 201.67859992943704,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 191.16200017742813,
+          "postprocessing_ms": 0.6447001360356808,
+          "total_ms": 191.8067003134638,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 185.83590001799166,
+          "postprocessing_ms": 0.03909994848072529,
+          "total_ms": 185.8749999664724,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 213.17029977217317,
+          "postprocessing_ms": 0.037400051951408386,
+          "total_ms": 213.20769982412457,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 185.7046999502927,
+          "postprocessing_ms": 0.314400065690279,
+          "total_ms": 186.01910001598299,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 189.21859981492162,
+          "postprocessing_ms": 0.42779999785125256,
+          "total_ms": 189.64639981277287,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 172.24139999598265,
+          "postprocessing_ms": 0.36070006899535656,
+          "total_ms": 172.602100064978,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 186.27130007371306,
+          "postprocessing_ms": 0.4935001488775015,
+          "total_ms": 186.76480022259057,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 279.00550002232194,
+          "postprocessing_ms": 0.03339978866279125,
+          "total_ms": 279.03889981098473,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 240.01269997097552,
+          "postprocessing_ms": 0.0442001037299633,
+          "total_ms": 240.05690007470548,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 301.3273000251502,
+          "postprocessing_ms": 0.42530009523034096,
+          "total_ms": 301.7526001203805,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 227.56499983370304,
+          "postprocessing_ms": 0.5268999375402927,
+          "total_ms": 228.09189977124333,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 246.87949987128377,
+          "postprocessing_ms": 0.7960000075399876,
+          "total_ms": 247.67549987882376,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 198.12610000371933,
+          "postprocessing_ms": 0.4396000877022743,
+          "total_ms": 198.5657000914216,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 184.87280001863837,
+          "postprocessing_ms": 0.0412999652326107,
+          "total_ms": 184.91409998387098,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 234.58650009706616,
+          "postprocessing_ms": 0.0295999925583601,
+          "total_ms": 234.61610008962452,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 177.4973999708891,
+          "postprocessing_ms": 0.40369993075728416,
+          "total_ms": 177.90109990164638,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 191.89140014350414,
+          "postprocessing_ms": 0.40309992618858814,
+          "total_ms": 192.29450006969273,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 193.57910007238388,
+          "postprocessing_ms": 0.5299001932144165,
+          "total_ms": 194.1090002655983,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 168.74750005081296,
+          "postprocessing_ms": 0.4406999796628952,
+          "total_ms": 169.18820003047585,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 342.8334998898208,
+          "postprocessing_ms": 0.038300175219774246,
+          "total_ms": 342.8718000650406,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 319.0499998163432,
+          "postprocessing_ms": 0.03620004281401634,
+          "total_ms": 319.0861998591572,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 286.33509995415807,
+          "postprocessing_ms": 0.5318999756127596,
+          "total_ms": 286.8669999297708,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 274.5914999395609,
+          "postprocessing_ms": 0.5134998355060816,
+          "total_ms": 275.104999775067,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 233.9353000279516,
+          "postprocessing_ms": 0.45250006951391697,
+          "total_ms": 234.38780009746552,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 272.35620003193617,
+          "postprocessing_ms": 0.6911000236868858,
+          "total_ms": 273.04730005562305,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 199.21729993075132,
+          "postprocessing_ms": 0.055999960750341415,
+          "total_ms": 199.27329989150167,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 131.117400014773,
+          "postprocessing_ms": 0.06500002928078175,
+          "total_ms": 131.1824000440538,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 180.4623999632895,
+          "postprocessing_ms": 0.2685999497771263,
+          "total_ms": 180.73099991306663,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 161.20690014213324,
+          "postprocessing_ms": 0.3838001284748316,
+          "total_ms": 161.59070027060807,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 133.30069999210536,
+          "postprocessing_ms": 0.5450998432934284,
+          "total_ms": 133.8457998353988,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 145.91250009834766,
+          "postprocessing_ms": 0.49000000581145287,
+          "total_ms": 146.40250010415912,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 352.8396999463439,
+          "postprocessing_ms": 0.0396000687032938,
+          "total_ms": 352.8793000150472,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 315.26360008865595,
+          "postprocessing_ms": 0.03600004129111767,
+          "total_ms": 315.29960012994707,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 264.9574999231845,
+          "postprocessing_ms": 1.5579999890178442,
+          "total_ms": 266.51549991220236,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 317.20049981959164,
+          "postprocessing_ms": 0.5330999847501516,
+          "total_ms": 317.7335998043418,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 226.5371000394225,
+          "postprocessing_ms": 0.732499873265624,
+          "total_ms": 227.26959991268814,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 261.70530007220805,
+          "postprocessing_ms": 0.8362999651581049,
+          "total_ms": 262.54160003736615,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 245.02069992013276,
+          "postprocessing_ms": 0.03900006413459778,
+          "total_ms": 245.05969998426735,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 232.40779992192984,
+          "postprocessing_ms": 0.0420999713242054,
+          "total_ms": 232.44989989325404,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 172.73700004443526,
+          "postprocessing_ms": 0.4227999597787857,
+          "total_ms": 173.15980000421405,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 201.95880020037293,
+          "postprocessing_ms": 0.4042999353259802,
+          "total_ms": 202.36310013569891,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 181.30729999393225,
+          "postprocessing_ms": 0.5527001339942217,
+          "total_ms": 181.86000012792647,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 215.56010004132986,
+          "postprocessing_ms": 0.4662999417632818,
+          "total_ms": 216.02639998309314,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 350.9436999447644,
+          "postprocessing_ms": 0.04000007174909115,
+          "total_ms": 350.98370001651347,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 312.56980006583035,
+          "postprocessing_ms": 0.04329998046159744,
+          "total_ms": 312.61310004629195,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 287.8731000237167,
+          "postprocessing_ms": 0.46669994480907917,
+          "total_ms": 288.33979996852577,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 276.41030005179346,
+          "postprocessing_ms": 0.5823001265525818,
+          "total_ms": 276.99260017834604,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 288.331399904564,
+          "postprocessing_ms": 0.6464000325649977,
+          "total_ms": 288.977799937129,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 240.73620000854135,
+          "postprocessing_ms": 0.6933999247848988,
+          "total_ms": 241.42959993332624,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 208.5046002175659,
+          "postprocessing_ms": 0.038400059565901756,
+          "total_ms": 208.5430002771318,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 229.2947000823915,
+          "postprocessing_ms": 0.031000003218650818,
+          "total_ms": 229.32570008561015,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 210.69819992408156,
+          "postprocessing_ms": 0.28689997270703316,
+          "total_ms": 210.9850998967886,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 254.07869997434318,
+          "postprocessing_ms": 0.41399989277124405,
+          "total_ms": 254.49269986711442,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 169.29769981652498,
+          "postprocessing_ms": 0.4020999185740948,
+          "total_ms": 169.69979973509908,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 191.52949983254075,
+          "postprocessing_ms": 0.47289999201893806,
+          "total_ms": 192.0023998245597,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 299.2696000728756,
+          "postprocessing_ms": 0.039400067180395126,
+          "total_ms": 299.309000140056,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 378.8578000385314,
+          "postprocessing_ms": 0.04400010220706463,
+          "total_ms": 378.9018001407385,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 340.78779979608953,
+          "postprocessing_ms": 0.5197999998927116,
+          "total_ms": 341.30759979598224,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 367.43139987811446,
+          "postprocessing_ms": 0.534699996933341,
+          "total_ms": 367.9660998750478,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 293.1682001799345,
+          "postprocessing_ms": 0.7144000846892595,
+          "total_ms": 293.88260026462376,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 323.1156999245286,
+          "postprocessing_ms": 0.6532000843435526,
+          "total_ms": 323.76890000887215,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 225.0618999823928,
+          "postprocessing_ms": 0.03920006565749645,
+          "total_ms": 225.10110004805028,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 203.70549988001585,
+          "postprocessing_ms": 0.030899886041879654,
+          "total_ms": 203.73639976605773,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 235.3499000892043,
+          "postprocessing_ms": 0.7738999556750059,
+          "total_ms": 236.12380004487932,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 251.82550004683435,
+          "postprocessing_ms": 0.4241999704390764,
+          "total_ms": 252.24970001727343,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 172.5783001165837,
+          "postprocessing_ms": 0.3877999261021614,
+          "total_ms": 172.96610004268587,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 176.25509994104505,
+          "postprocessing_ms": 0.514900078997016,
+          "total_ms": 176.77000002004206,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 397.0049999188632,
+          "postprocessing_ms": 0.03720005042850971,
+          "total_ms": 397.0421999692917,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 307.07710003480315,
+          "postprocessing_ms": 0.04529999569058418,
+          "total_ms": 307.12240003049374,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 240.85060018114746,
+          "postprocessing_ms": 0.591399846598506,
+          "total_ms": 241.44200002774596,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 276.83310001157224,
+          "postprocessing_ms": 0.39810012094676495,
+          "total_ms": 277.231200132519,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 220.337999984622,
+          "postprocessing_ms": 0.6275000050663948,
+          "total_ms": 220.9654999896884,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 196.56779989600182,
+          "postprocessing_ms": 0.6204999517649412,
+          "total_ms": 197.18829984776676,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 258.92360019497573,
+          "postprocessing_ms": 0.03200001083314419,
+          "total_ms": 258.9556002058089,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 222.70180005580187,
+          "postprocessing_ms": 0.039599835872650146,
+          "total_ms": 222.74139989167452,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 191.91910000517964,
+          "postprocessing_ms": 0.4135998897254467,
+          "total_ms": 192.3326998949051,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 202.88120000623167,
+          "postprocessing_ms": 0.4187000449746847,
+          "total_ms": 203.29990005120635,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 172.81720018945634,
+          "postprocessing_ms": 0.5090998020023108,
+          "total_ms": 173.32629999145865,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 184.18370001018047,
+          "postprocessing_ms": 0.42509986087679863,
+          "total_ms": 184.60879987105727,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 332.9908000305295,
+          "postprocessing_ms": 0.04020007327198982,
+          "total_ms": 333.0310001038015,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 331.7636998835951,
+          "postprocessing_ms": 0.05969987250864506,
+          "total_ms": 331.82339975610375,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 325.81690000370145,
+          "postprocessing_ms": 0.5193999968469143,
+          "total_ms": 326.33630000054836,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 321.32550003007054,
+          "postprocessing_ms": 0.4859999753534794,
+          "total_ms": 321.811500005424,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 321.01069996133447,
+          "postprocessing_ms": 0.6680998485535383,
+          "total_ms": 321.678799809888,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 232.46149998158216,
+          "postprocessing_ms": 0.5240999162197113,
+          "total_ms": 232.98559989780188,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 204.2535999789834,
+          "postprocessing_ms": 0.03329990431666374,
+          "total_ms": 204.28689988330007,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 167.2081002034247,
+          "postprocessing_ms": 0.029999995604157448,
+          "total_ms": 167.23810019902885,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 172.92520008049905,
+          "postprocessing_ms": 0.4400999750941992,
+          "total_ms": 173.36530005559325,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 142.8453999105841,
+          "postprocessing_ms": 0.40479982271790504,
+          "total_ms": 143.250199733302,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 148.2929999474436,
+          "postprocessing_ms": 0.4585999995470047,
+          "total_ms": 148.7515999469906,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 100.77439993619919,
+          "postprocessing_ms": 0.5036999937146902,
+          "total_ms": 101.27809992991388,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 344.1733999643475,
+          "postprocessing_ms": 0.041899969801306725,
+          "total_ms": 344.2152999341488,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 310.7908999081701,
+          "postprocessing_ms": 0.04020007327198982,
+          "total_ms": 310.8310999814421,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 371.60030007362366,
+          "postprocessing_ms": 0.5447000730782747,
+          "total_ms": 372.14500014670193,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 322.9636000469327,
+          "postprocessing_ms": 0.5667000077664852,
+          "total_ms": 323.5303000546992,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 282.6473999302834,
+          "postprocessing_ms": 0.6834999658167362,
+          "total_ms": 283.33089989610016,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 277.50269998796284,
+          "postprocessing_ms": 0.6856999825686216,
+          "total_ms": 278.18839997053146,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 198.77969985827804,
+          "postprocessing_ms": 0.03720005042850971,
+          "total_ms": 198.81689990870655,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 163.53380004875362,
+          "postprocessing_ms": 0.04009995609521866,
+          "total_ms": 163.57390000484884,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 180.26360007934272,
+          "postprocessing_ms": 0.4344999324530363,
+          "total_ms": 180.69810001179576,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 197.60200008749962,
+          "postprocessing_ms": 0.2679000608623028,
+          "total_ms": 197.86990014836192,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 164.0344001352787,
+          "postprocessing_ms": 0.6831998471170664,
+          "total_ms": 164.71759998239577,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 143.65840004757047,
+          "postprocessing_ms": 0.5604999605566263,
+          "total_ms": 144.2189000081271,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 314.6055000834167,
+          "postprocessing_ms": 0.039499951526522636,
+          "total_ms": 314.6450000349432,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 299.66300004161894,
+          "postprocessing_ms": 0.04290021024644375,
+          "total_ms": 299.7059002518654,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 333.04639998823404,
+          "postprocessing_ms": 0.5894000642001629,
+          "total_ms": 333.6358000524342,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 292.4029000569135,
+          "postprocessing_ms": 0.712099950760603,
+          "total_ms": 293.1150000076741,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 241.13389989361167,
+          "postprocessing_ms": 0.6585000082850456,
+          "total_ms": 241.79239990189672,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 265.9355001524091,
+          "postprocessing_ms": 0.4755000118166208,
+          "total_ms": 266.4110001642257,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 198.8997000735253,
+          "postprocessing_ms": 0.039800070226192474,
+          "total_ms": 198.9395001437515,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 209.55060003325343,
+          "postprocessing_ms": 0.04300009459257126,
+          "total_ms": 209.593600127846,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 135.3957001119852,
+          "postprocessing_ms": 0.4029001574963331,
+          "total_ms": 135.79860026948154,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 190.5558998696506,
+          "postprocessing_ms": 0.3512999974191189,
+          "total_ms": 190.90719986706972,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 174.09200011752546,
+          "postprocessing_ms": 0.4157000221312046,
+          "total_ms": 174.50770013965666,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 116.68400000780821,
+          "postprocessing_ms": 0.44350000098347664,
+          "total_ms": 117.12750000879169,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 298.3031999319792,
+          "postprocessing_ms": 0.07400009781122208,
+          "total_ms": 298.3772000297904,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 277.8307998087257,
+          "postprocessing_ms": 0.0412999652326107,
+          "total_ms": 277.8720997739583,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 284.6989999525249,
+          "postprocessing_ms": 0.5761999636888504,
+          "total_ms": 285.27519991621375,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 277.1424998063594,
+          "postprocessing_ms": 0.346100190654397,
+          "total_ms": 277.4885999970138,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 227.33050002716482,
+          "postprocessing_ms": 0.5872000474482775,
+          "total_ms": 227.9177000746131,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 247.04580008983612,
+          "postprocessing_ms": 0.4251999780535698,
+          "total_ms": 247.4710000678897,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 179.59229997359216,
+          "postprocessing_ms": 0.032800016924738884,
+          "total_ms": 179.6250999905169,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 212.2915000654757,
+          "postprocessing_ms": 0.038800062611699104,
+          "total_ms": 212.3303001280874,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 204.6308999415487,
+          "postprocessing_ms": 0.4314000252634287,
+          "total_ms": 205.06229996681213,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 207.00210006907582,
+          "postprocessing_ms": 0.3486000932753086,
+          "total_ms": 207.35070016235113,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 167.70470002666116,
+          "postprocessing_ms": 0.7184999994933605,
+          "total_ms": 168.42320002615452,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 139.17879993095994,
+          "postprocessing_ms": 0.42010005563497543,
+          "total_ms": 139.59889998659492,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 338.51430006325245,
+          "postprocessing_ms": 0.04429998807609081,
+          "total_ms": 338.55860005132854,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 284.10959988832474,
+          "postprocessing_ms": 0.044899992644786835,
+          "total_ms": 284.1544998809695,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 284.1389998793602,
+          "postprocessing_ms": 0.5187999922782183,
+          "total_ms": 284.6577998716384,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 323.9468999672681,
+          "postprocessing_ms": 0.5443999543786049,
+          "total_ms": 324.4912999216467,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 251.92120019346476,
+          "postprocessing_ms": 0.5944999866187572,
+          "total_ms": 252.5157001800835,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 253.20170004852116,
+          "postprocessing_ms": 0.5010999739170074,
+          "total_ms": 253.70280002243817,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 193.76199995167553,
+          "postprocessing_ms": 0.033899908885359764,
+          "total_ms": 193.7958998605609,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 258.4050002042204,
+          "postprocessing_ms": 0.039899954572319984,
+          "total_ms": 258.44490015879273,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 220.61700001358986,
+          "postprocessing_ms": 0.42930012568831444,
+          "total_ms": 221.04630013927817,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 189.0263999812305,
+          "postprocessing_ms": 0.4298000130802393,
+          "total_ms": 189.45619999431074,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 191.65520020760596,
+          "postprocessing_ms": 0.6524999625980854,
+          "total_ms": 192.30770017020404,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 178.33160003647208,
+          "postprocessing_ms": 0.5123999435454607,
+          "total_ms": 178.84399998001754,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 297.6536999922246,
+          "postprocessing_ms": 0.03920006565749645,
+          "total_ms": 297.69290005788207,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 311.57090002670884,
+          "postprocessing_ms": 0.0412999652326107,
+          "total_ms": 311.61219999194145,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 336.7754998616874,
+          "postprocessing_ms": 0.5376001354306936,
+          "total_ms": 337.3130999971181,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 305.5056999437511,
+          "postprocessing_ms": 0.48619997687637806,
+          "total_ms": 305.9918999206275,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 284.01709999889135,
+          "postprocessing_ms": 0.47109997831285,
+          "total_ms": 284.4881999772042,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 296.93509987555444,
+          "postprocessing_ms": 0.6897000130265951,
+          "total_ms": 297.62479988858104,
+          "WER": 0.06896551724137931
+        }
+      ]
+    },
+    {
+      "fixture": 1,
+      "old_off": [
+        {
+          "decode_ms": 247.81939992681146,
+          "postprocessing_ms": 0.040800077840685844,
+          "total_ms": 247.86020000465214,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 192.56359990686178,
+          "postprocessing_ms": 0.04269997589290142,
+          "total_ms": 192.60629988275468,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 153.16130011342466,
+          "postprocessing_ms": 0.4344999324530363,
+          "total_ms": 153.5958000458777,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 232.24829998798668,
+          "postprocessing_ms": 0.435100169852376,
+          "total_ms": 232.68340015783906,
+          "WER": 0.041666666666666664
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 176.09099997207522,
+          "postprocessing_ms": 0.5075999069958925,
+          "total_ms": 176.59859987907112,
+          "WER": 0.041666666666666664
+        },
+        {
+          "decode_ms": 167.52990009263158,
+          "postprocessing_ms": 0.520200002938509,
+          "total_ms": 168.0501000955701,
+          "WER": 0.041666666666666664
+        }
+      ]
+    },
+    {
+      "fixture": 2,
+      "old_off": [
+        {
+          "decode_ms": 293.5262001119554,
+          "postprocessing_ms": 0.029999995604157448,
+          "total_ms": 293.55620010755956,
+          "WER": 0.27586206896551724
+        },
+        {
+          "decode_ms": 300.07610004395247,
+          "postprocessing_ms": 0.1238000113517046,
+          "total_ms": 300.19990005530417,
+          "WER": 0.27586206896551724
+        }
+      ],
+      "old_on": [
+        {
+          "decode_ms": 256.9597999099642,
+          "postprocessing_ms": 0.5363998934626579,
+          "total_ms": 257.49619980342686,
+          "WER": 0.1724137931034483
+        },
+        {
+          "decode_ms": 314.21790015883744,
+          "postprocessing_ms": 0.528999837115407,
+          "total_ms": 314.74689999595284,
+          "WER": 0.1724137931034483
+        }
+      ],
+      "new_on": [
+        {
+          "decode_ms": 301.574100041762,
+          "postprocessing_ms": 0.4905001260340214,
+          "total_ms": 302.064600167796,
+          "WER": 0.06896551724137931
+        },
+        {
+          "decode_ms": 226.29530006088316,
+          "postprocessing_ms": 0.7128999568521976,
+          "total_ms": 227.00820001773536,
+          "WER": 0.06896551724137931
+        }
+      ]
+    }
+  ],
+  "timing_conditions": {
+    "old_off": "released decoder, no hint",
+    "old_on": "released decoder with hint",
+    "new_on": "text-only decoder with unchanged hint"
+  },
+  "accuracy_evidence": "rtx-final-policy-validation-0.4.4.json",
+  "timing_evidence": "rtx-timed-decoder-comparison-0.4.4.json",
+  "control_evidence": "rtx-control-soak-0.4.4.json",
+  "practical_latency_budget_met": true,
+  "pytest_passed": 184,
+  "control_cycles": 200,
+  "streamed_RTX_checks": 20
+}

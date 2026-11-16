@@ -1,0 +1,39 @@
+{
+  "active_context_rules": 8,
+  "positive_and_negative_checks": {
+    "PATHOS": {
+      "positive": true,
+      "unrelated_preserved": true
+    },
+    "EverGreen": {
+      "positive": true,
+      "unrelated_preserved": true
+    },
+    "WESAD": {
+      "positive": true,
+      "unrelated_preserved": true
+    },
+    "LASSO": {
+      "positive": true,
+      "unrelated_preserved": true
+    },
+    "LOSO": {
+      "positive": true,
+      "unrelated_preserved": true
+    },
+    "I2C": {
+      "positive": true,
+      "unrelated_preserved": true
+    },
+    "OUAC": {
+      "positive": true,
+      "unrelated_preserved": true
+    },
+    "AIF": {
+      "positive": true,
+      "unrelated_preserved": true
+    }
+  },
+  "cross_sentence_numbers_code_checks": 4,
+  "passed": true
+}

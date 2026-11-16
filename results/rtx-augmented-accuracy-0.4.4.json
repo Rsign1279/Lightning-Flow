@@ -1,0 +1,302 @@
+{
+  "model": "base.en",
+  "compute": "float16",
+  "provider": "CUDA / CTranslate2",
+  "model_initializations": 1,
+  "hint_tokens": 192,
+  "accuracy_cases": [
+    {
+      "fixture": 1,
+      "old_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 196.75420015119016,
+          "p95": 196.75420015119016,
+          "max": 204.71780002117157
+        }
+      },
+      "new_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 163.42290001921356,
+          "p95": 163.42290001921356,
+          "max": 168.21399983018637
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 2,
+      "old_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 175.21409993059933,
+          "p95": 175.21409993059933,
+          "max": 179.32550003752112
+        }
+      },
+      "new_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 177.3016001097858,
+          "p95": 177.3016001097858,
+          "max": 183.27950011007488
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 3,
+      "old_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 227.6638001203537,
+          "p95": 227.6638001203537,
+          "max": 258.82430002093315
+        }
+      },
+      "new_on": {
+        "final_WER": 0.041666666666666664,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 164.847900159657,
+          "p95": 164.847900159657,
+          "max": 175.089200027287
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 4,
+      "old_on": {
+        "final_WER": 0.10344827586206896,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 323.37799994274974,
+          "p95": 323.37799994274974,
+          "max": 349.0693997591734
+        }
+      },
+      "new_on": {
+        "final_WER": 0.10344827586206896,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 292.58799995295703,
+          "p95": 292.58799995295703,
+          "max": 305.93209993094206
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 5,
+      "old_on": {
+        "final_WER": 0.10344827586206896,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 303.6638000048697,
+          "p95": 303.6638000048697,
+          "max": 314.43289993330836
+        }
+      },
+      "new_on": {
+        "final_WER": 0.10344827586206896,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 218.94629998132586,
+          "p95": 218.94629998132586,
+          "max": 244.32040005922318
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 6,
+      "old_on": {
+        "final_WER": 0.1724137931034483,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 260.11440018191934,
+          "p95": 260.11440018191934,
+          "max": 282.7410001773387
+        }
+      },
+      "new_on": {
+        "final_WER": 0.06896551724137931,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 240.54899998009205,
+          "p95": 240.54899998009205,
+          "max": 250.05669984966516
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 7,
+      "old_on": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 63.905199989676476,
+          "p95": 63.905199989676476,
+          "max": 79.55030002631247
+        }
+      },
+      "new_on": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 63.728599809110165,
+          "p95": 63.728599809110165,
+          "max": 66.70300010591745
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 8,
+      "old_on": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 70.96829987131059,
+          "p95": 70.96829987131059,
+          "max": 77.41610007360578
+        }
+      },
+      "new_on": {
+        "final_WER": 0.2,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 54.78349979966879,
+          "p95": 54.78349979966879,
+          "max": 61.786800157278776
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 9,
+      "old_on": {
+        "final_WER": 0.6,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 77.02230010181665,
+          "p95": 77.02230010181665,
+          "max": 83.35650013759732
+        }
+      },
+      "new_on": {
+        "final_WER": 0.0,
+        "RTX_5070_exact": true,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 63.820499926805496,
+          "p95": 63.820499926805496,
+          "max": 71.79529988206923
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 10,
+      "old_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 159.95709993876517,
+          "p95": 159.95709993876517,
+          "max": 160.17739987000823
+        }
+      },
+      "new_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 208.6406999733299,
+          "p95": 208.6406999733299,
+          "max": 209.9154000170529
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 11,
+      "old_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 230.92769994400442,
+          "p95": 230.92769994400442,
+          "max": 272.4714002106339
+        }
+      },
+      "new_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 172.0692003145814,
+          "p95": 172.0692003145814,
+          "max": 211.1308998428285
+        }
+      },
+      "accuracy_not_worse": true
+    },
+    {
+      "fixture": 12,
+      "old_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 199.73300001583993,
+          "p95": 199.73300001583993,
+          "max": 222.47349983081222
+        }
+      },
+      "new_on": {
+        "final_WER": 0.15,
+        "RTX_5070_exact": false,
+        "RTX_5090_exact": false,
+        "total_ms": {
+          "median": 191.39000005088747,
+          "p95": 191.39000005088747,
+          "max": 218.90490013174713
+        }
+      },
+      "accuracy_not_worse": true
+    }
+  ],
+  "all_accuracy_cases_not_worse": true,
+  "hinted_silence_emitted_text": false,
+  "timing": [],
+  "timing_samples": [],
+  "scope": "Local synthetic speech, released timestamp decoder vs candidate text-only decoder, unchanged CUDA model and 192-token hint. No physical key injection, human-speech accuracy guarantee or user data upload."
+}

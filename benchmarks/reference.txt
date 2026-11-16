@@ -1,0 +1,1 @@
+Please send the updated project report to John on Friday at three. We need to review CUDA performance and confirm the next meeting date.

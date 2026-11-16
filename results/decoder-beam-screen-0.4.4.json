@@ -1,0 +1,97 @@
+[
+  {
+    "beam": 1,
+    "length_penalty": 0,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 123.94879991188645,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 179.9993000458926,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "beam": 1,
+    "length_penalty": 0.5,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 121.67489994317293,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 174.60260004736483,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "beam": 2,
+    "length_penalty": 1,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 141.10039989463985,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 216.35890007019043,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "beam": 3,
+    "length_penalty": 1,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 127.26900004781783,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 232.4514000210911,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  },
+  {
+    "beam": 5,
+    "length_penalty": 1,
+    "without_timestamps": true,
+    "cases": [
+      {
+        "fixture": 1,
+        "median_ms": 137.5726000405848,
+        "WER": 0.041666666666666664,
+        "RTX_5070_exact": false
+      },
+      {
+        "fixture": 2,
+        "median_ms": 251.04080000892282,
+        "WER": 0.1724137931034483,
+        "RTX_5070_exact": false
+      }
+    ]
+  }
+]

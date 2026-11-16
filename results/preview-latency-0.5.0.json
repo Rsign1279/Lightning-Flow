@@ -1,0 +1,24 @@
+{
+  "model": "small.en",
+  "compute": "int8_float16",
+  "provider": "CUDA / CTranslate2",
+  "audio_seconds": 8.835,
+  "cases": [
+    {
+      "preview_enabled": false,
+      "first_partial_ms": 4445.0308999512345,
+      "stop_to_result_ms": 25.544500211253762,
+      "authoritative_decode_ms": 245.05159980617464,
+      "delivered_to_isolated_scratchpad": true
+    },
+    {
+      "preview_enabled": true,
+      "first_partial_ms": 922.8908999357373,
+      "stop_to_result_ms": 22.316199960187078,
+      "authoritative_decode_ms": 261.49280020035803,
+      "delivered_to_isolated_scratchpad": true
+    }
+  ],
+  "final_transcripts_identical": true,
+  "scope": "Real-time synthetic PCM replay, production capture/inference/gesture code, isolated scratchpad. Two sessions, no acoustic or physical-key latency and no external insertion."
+}

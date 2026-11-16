@@ -1,0 +1,22 @@
+{
+  "tap_and_double_tap_opened_no_microphone": true,
+  "hold_threshold_ms": 120,
+  "two_completed_transcripts_persisted": true,
+  "gpu_initializations": 1,
+  "sessions": [
+    {
+      "press_to_start_signal_ms": 121.2902000406757,
+      "release_to_stop_command_ms": 0.024000066332519054,
+      "release_to_completed_transcript_ms": 11.7906000232324,
+      "gpu_decode_ms": 101.63849999662489
+    },
+    {
+      "press_to_start_signal_ms": 121.36290001217276,
+      "release_to_stop_command_ms": 0.020799925550818443,
+      "release_to_completed_transcript_ms": 13.241600012406707,
+      "gpu_decode_ms": 95.44559998903424
+    }
+  ],
+  "provider": "CUDA / CTranslate2",
+  "scope": "Direct production key callbacks and accelerated PCM replay; not physical-keyboard or acoustic latency"
+}

@@ -1,0 +1,11 @@
+{
+  "frames": 150,
+  "median_frame_ms": 16.207900014705956,
+  "p95_frame_ms": 16.775700030848384,
+  "max_frame_ms": 21.4640999911353,
+  "callback_errors": [],
+  "overlay_did_not_activate": true,
+  "timer_resolution_released_after_hide": true,
+  "motion_enabled": true,
+  "source": "Synthetic levels to the real recording widget; no microphone recording"
+}

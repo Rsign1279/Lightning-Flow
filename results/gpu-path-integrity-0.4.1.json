@@ -1,0 +1,9 @@
+{
+  "unchanged": {
+    "lightningflow/asr.py": true,
+    "lightningflow/audio.py": true,
+    "app.infer": true,
+    "app.enqueue": true
+  },
+  "capture_change": "Explicit pause/resume on the same session; GPU inference/segmentation unchanged"
+}

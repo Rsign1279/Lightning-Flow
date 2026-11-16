@@ -1,0 +1,9 @@
+{
+  "desktop-dist\\LightningFlow\\LightningFlow.exe": "15a0d5331c2bb844208e817edcb3d85b735e75eac188566eb418ba968add60bc",
+  "installers\\LightningFlow-Setup.exe": "5fbdc7c82b10ddd8cca44f2b958168737fffc16ed54091223ec9ffbc9e60b8e1",
+  "dist\\lightningflow-0.4.5-py3-none-any.whl": "2c8faf1d63b3fd46a9321211a02ec117d4c6825bdfb831ab23f8a65c280620d8",
+  "PERSONALIZATION.md": "e3b9859b38e82cf7c8bb91a59496e4e0754e7203997d9cf1e63777513949dce6",
+  "results\\app-insertion-0.4.5.json": "4350d35184861fe407c0137cac907f398f23a4eebdbe2dce4715953b01ecf1d5",
+  "results\\desktop-package-0.4.5.json": "c4ae281a0c0c92158f2f58f392a859ddad3c342c75edd5b1d35b12d6e19a95cb",
+  "results\\gpu-path-integrity-0.4.5.json": "41dbe87b0e4b143b032281728ece9b85fbb024cb800a77419ee13f54c9229d3c"
+}

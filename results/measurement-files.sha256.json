@@ -1,0 +1,11 @@
+{
+  "benchmarks\\synthetic.wav": "2c2397297efc4265d9811886fad17d8fb2d8db9baef62cdd5866f6dd2f38db94",
+  "benchmarks\\reference.txt": "bc9c9c2cdb425ca0bff7b589eec6b1b7542aa31cbe30ed942c6768a6cd19aeb6",
+  "results\\base-fp16.json": "7f631c9021f25089f4d9e5dec479396cb6c784f68fe69c34c6015422c579edcc",
+  "results\\microphone-wasapi.json": "b3e239928be43b05ff4a10a493c7ba3aaaf3bceef23d821ba1dce4adf00213e7",
+  "results\\microphone.json": "c25940e68146c22cdd4a114f3a53407e5983add70994b7c465a3f2a1074aa3ce",
+  "results\\replay-integration.json": "2a91e6e20bae2e3bf8b9f458a2d3b58d89a2b0f24f165fdc5bee199483783b0f",
+  "results\\tiny-fp16.json": "6dffa2b7571a6dcfa30e4cffe5c288b1251add4f97ce031a0c26ff33cb69679a",
+  "results\\tiny-int8.json": "99428a80810a09e8a6395ef546dc93318454979800bae899cb2d5b09f0423a26",
+  "results\\windows-integration.json": "655c25c1a4d3eb917f766399ff66a330b74f5a4f05bc9fc06370374dbf8ce3eb"
+}

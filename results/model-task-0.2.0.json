@@ -1,0 +1,25 @@
+[
+  {
+    "event": "task_done",
+    "task": "verify",
+    "model": "tiny.en",
+    "message": "Local model hashes match. This is not an independent publisher checksum.",
+    "process_pid": 35176,
+    "task_origin": "verify",
+    "task_model": "tiny.en"
+  },
+  {
+    "event": "engine_exit",
+    "task": "verify",
+    "process_pid": 35176,
+    "task_origin": "verify",
+    "task_model": "tiny.en"
+  },
+  {
+    "event": "process_exit",
+    "pid": 35176,
+    "code": 0,
+    "task_origin": "verify",
+    "task_model": "tiny.en"
+  }
+]

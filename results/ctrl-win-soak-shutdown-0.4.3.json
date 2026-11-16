@@ -1,0 +1,7 @@
+{
+  "test_process_exit_code": 0,
+  "cleanup_marker_observed": true,
+  "worker_threads_joined": true,
+  "benchmark_uses_production_inference_thread": true,
+  "production_code_changed": false
+}

@@ -1,0 +1,10 @@
+{
+  "cross_process_native_verified": true,
+  "real_uia_unicode_readback_verified": true,
+  "uia_verified_unicode_characters": 380,
+  "uia_verified_unicode_ms": 5713.184799998999,
+  "uia_programmatic_edit_rejected": true,
+  "hung_native_target_timeout_ms": 155.67709994502366,
+  "hung_uia_target_timeout_ms": 157.08679996896535,
+  "scope": "Disposable Win32 editor and its UIA provider; browser/Word/VS Code not certified"
+}

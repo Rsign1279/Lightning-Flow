@@ -1,0 +1,10 @@
+{
+  "desktop-dist\\LightningFlow\\LightningFlow.exe": "0e7d7eb8d825ee3cc2de2da0926e6bf90756f5c153c1d4e6d107fd2d5b2a3bfa",
+  "installers\\LightningFlow-Setup.exe": "91723f95ebff7bc26136f269e05179a853cb4391e08a4b69751b02d3a28acdef",
+  "dist\\lightningflow-0.3.1-py3-none-any.whl": "d26e0c14a7176952f797593b5be987652c167ef76540108cac4eae78e93a3dc0",
+  "results\\animation-0.3.1.json": "b8d004209e95a0680f3dc72652029b3576c524f1bb72da9cebdda0db503cb381",
+  "results\\desktop-integration-0.3.1.json": "388f77a6be64fcef250bd4d5012903958fbe7e0cb6eee5b52c25cbfa03fd238a",
+  "results\\desktop-package-0.3.1.json": "f2bd5aec54ea5c0fc96b6588c4a1fb2613e0305697f14a4a061b7ffa68b7f772",
+  "results\\gpu-path-integrity-0.3.1.json": "bef8b2fa208b819e4fbe75f85edc6d5e5fa4b7794a66b09fdc0ee36308f01994",
+  "results\\hold-integration-0.3.1.json": "7b87a25734f7b0e1b9cc47626b7da3554503966f72e72de0b1f8e7b7ff7767d3"
+}

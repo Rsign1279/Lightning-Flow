@@ -1,0 +1,18 @@
+{
+  "version": "0.4.4",
+  "single_frontend": true,
+  "gui_pid": 82792,
+  "worker_pids": [
+    73236,
+    78456
+  ],
+  "worker_has_CUDA_context": true,
+  "all_saved_preferences_preserved": true,
+  "model": "base.en",
+  "compute": "float16",
+  "recording_shortcut": "ctrl_win",
+  "activation": "smart",
+  "vocabulary_terms": 188,
+  "personalization_enabled": true,
+  "scope": "Read-only process/config/CUDA-context verification following the approved idle restart."
+}

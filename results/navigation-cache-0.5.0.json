@@ -1,0 +1,10 @@
+{
+  "switches": 200,
+  "median_ms": 7.505199988372624,
+  "p95_ms": 13.527399860322475,
+  "max_ms": 49.246600130572915,
+  "widgets_reused": true,
+  "cached_pages": 2,
+  "callback_errors": [],
+  "scope": "Hidden Home/Log navigation and idle layout, not visible compositor FPS or all settings screens."
+}

@@ -1,0 +1,53 @@
+name: Windows release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-lock.txt
+      - name: Prepare development environment
+        shell: pwsh
+        run: |
+          python -m venv .venv
+          .venv/Scripts/python.exe -m pip install -r requirements-lock.txt
+      - name: Test and build wheel
+        shell: pwsh
+        run: |
+          .venv/Scripts/python.exe -m pytest -q
+          if ($LASTEXITCODE) { throw 'Regression tests failed' }
+          .venv/Scripts/python.exe -m pip wheel . --no-deps --wheel-dir dist
+          if ($LASTEXITCODE) { throw 'Wheel build failed' }
+      - name: Build desktop and installer
+        shell: pwsh
+        run: |
+          ./Build-Desktop.ps1
+          ./Build-Installer.ps1
+      - name: Package portable app and checksums
+        shell: pwsh
+        run: |
+          $releaseRoot = (Resolve-Path 'desktop-dist/LightningFlow').Path
+          Remove-Item -LiteralPath (Join-Path $releaseRoot 'runtime.json')
+          $zipName = "LightningFlow-Windows-$env:GITHUB_REF_NAME.zip"
+          Compress-Archive -LiteralPath $releaseRoot -DestinationPath $zipName -CompressionLevel Optimal
+          $assets = @('installers/LightningFlow-Setup.exe', $zipName) + @(Get-ChildItem dist/*.whl | ForEach-Object FullName)
+          $lines = foreach ($asset in $assets) { $hash = Get-FileHash -LiteralPath $asset -Algorithm SHA256; $hash.Hash.ToLower() + '  ' + (Split-Path $asset -Leaf) }
+          [System.IO.File]::WriteAllLines((Join-Path (Get-Location) 'SHA256SUMS.txt'), $lines)
+      - name: Publish release assets
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$env:GITHUB_REF_NAME" installers/LightningFlow-Setup.exe "LightningFlow-Windows-$env:GITHUB_REF_NAME.zip" dist/*.whl SHA256SUMS.txt --verify-tag --title "LightningFlow $env:GITHUB_REF_NAME" --notes-file CHANGELOG.md
+          if ($LASTEXITCODE) { throw 'GitHub release publication failed' }

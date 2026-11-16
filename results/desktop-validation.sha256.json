@@ -1,0 +1,13 @@
+{
+  "desktop-dist\\LightningFlow\\LightningFlow.exe": "68641577d1cb6d73cdecc4c6d4800e747c8bd038e108564d8cf90d99cd09601e",
+  "installers\\LightningFlow-Setup.exe": "411ccc2a8163f77abf75e399fa0a234bdb11ffa879cc22d00ec371b8809d003a",
+  "dist\\lightningflow-0.2.0-py3-none-any.whl": "00f417f56de43b8c13619f0afcca8490caf5660b17596bf7338e67ed3c102d1e",
+  "DESKTOP.md": "cd19cd125126a422e79b0420b78383b29cbcfaf73a36468e56281de97eb4347c",
+  "DESKTOP_VALIDATION.md": "327688fab8eec3619388ea3984ba4056bb77190ec1ad46fdcc7839fe4ec3ddcf",
+  "results\\desktop-external-0.2.0.json": "2d49bb1fe7581181749e4e9604f1576a9df9c770eea56c5c2288de9d036f8b65",
+  "results\\desktop-integration-0.2.0.json": "022773a33f143d58c1651ed923bb835b3b1ba674d3440c74c2492345eff3bd31",
+  "results\\desktop-package-0.2.0.json": "7fa1f4eb948801564e16b702a6e5a8e7e9efca32a243cd137be1752cf982c613",
+  "results\\gpu-path-integrity-0.2.0.json": "e4ad0600a6d84c9a39c5c64411bc099ebbdf8a2bff4f3a08732c1c9ff78faf84",
+  "results\\installed-runtime-0.2.0.json": "80d8672cde3cbc080ae4e7ebe7ce13242aecb22dda04df1d6ddcd60dadb9d838",
+  "results\\model-task-0.2.0.json": "ae2ed612c32188baecacc2389122db93bd3b852a5321901e5f007cd70bcb2d27"
+}
