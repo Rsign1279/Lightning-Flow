@@ -69,6 +69,13 @@ def run():
                     'gui_heartbeat_max_gap_ms':max((b-a)*1000 for a,b in zip(ticks,ticks[1:])) if len(ticks)>1 else None,
                     'overlay_style_noactivate':overlay_checked})
                 assert overlay_checked
+                app.partial='An interrupted preview'
+                app.events.put({'event':'process_exit','pid':app.engine.process.pid,'code':1})
+                app.poll_events(reschedule=False)
+                assert app.engine_state=='error' and app.last_result['text']=='An interrupted preview'
+                assert not app.last_result['delivered'] and 'not a final transcript' in app.last_result['cleanup']
+                assert not app.retained_audio_ids
+                outcome['native_exit_preview_retained_for_review']=True
                 app.quit_app(); return
             app.after(25,drive)
         except Exception as exc:

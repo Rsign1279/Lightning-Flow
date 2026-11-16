@@ -1,3 +1,7 @@
+# Current release evidence
+
+See [0.6.0 validation](FIXES_0.6.0.md) and its dated JSON reports for current results. The original vertical-slice measurements below are historical and do not describe the current feature set.
+
 # 0.5.0 performance update
 
 Current scoped results are in [FIXES_0.5.0.md](FIXES_0.5.0.md). Earlier reports below describe older releases and are not current universal guarantees.

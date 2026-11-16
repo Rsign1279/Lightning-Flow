@@ -22,7 +22,7 @@ foreach ($desktopFile in @('runtime-requirements.txt','Setup-Runtime.ps1','Insta
 }
 $desktopEvidence = Join-Path $desktopRelease 'results'
 New-Item -ItemType Directory -Path $desktopEvidence -Force | Out-Null
-foreach ($desktopPattern in @('soak-100-*.json','log-paging-*.json','soak-proof-*.json','ctrl-win-*.json','personalization-*.json','personalized-pipeline-*.json','rtx-*.json','decoder-*.json','control-path-*.json','app-insertion-*.json','preview-latency-*.json','navigation-cache-*.json','accessibility-long-*.json','animation-0.5.0.json','desktop-integration-0.5.0.json','release-0.5.0.json','animation-0.6.0.json','desktop-integration-0.6.0.json','long-recordings-0.6.0.json','queue-recovery-0.6.0.json','frozen-self-check-0.6.0.json')) {
+foreach ($desktopPattern in @('soak-100-*.json','log-paging-*.json','soak-proof-*.json','ctrl-win-*.json','personalization-*.json','personalized-pipeline-*.json','rtx-*.json','decoder-*.json','control-path-*.json','app-insertion-*.json','preview-latency-*.json','navigation-cache-*.json','accessibility-long-*.json','animation-0.5.0.json','desktop-integration-0.5.0.json','release-0.5.0.json','animation-0.6.0.json','desktop-integration-0.6.0.json','long-recordings-*.json','long-recording-*.json','core-configuration-*.json','queue-recovery-0.6.0.json','frozen-self-check-0.6.0.json')) {
     Get-ChildItem -Path (Join-Path $PSScriptRoot ('results\' + $desktopPattern)) -File -ErrorAction SilentlyContinue | ForEach-Object {
         Copy-Item -LiteralPath $_.FullName -Destination $desktopEvidence -Force
     }

@@ -10,7 +10,7 @@ LightningFlow is an independent project. It does not use Wispr Flow code, brandi
 
 - Native desktop window, tray integration, light/dark themes and a nonactivating audio-responsive recording capsule. Normal use needs no terminal.
 - Persistent faster-whisper/CTranslate2 CUDA inference. The app refuses silent CPU fallback.
-- Hold-to-talk, double-tap hands-free, release-to-stop, cancellation and explicit retry. Choose Ctrl+Win in Settings Ã¢â€ â€™ Shortcuts; fresh profiles default to Ctrl+Alt+F8 until changed.
+- Hold-to-talk, double-tap hands-free, release-to-stop, cancellation and explicit retry. Choose Ctrl+Win in Settings / Shortcuts; fresh profiles default to Ctrl+Alt+F8 until changed.
 - Start a new recording while earlier transcription finishes; a bounded queue preserves delivery order and verifies the target again.
 - Provisional live previews; final recognition retains the larger audio windows and only verified final text is inserted.
 - Personal vocabulary, explicit corrections, Clean/Verbatim modes and conservative spoken date/time/number corrections. Code, quotes and ambiguous corrections are preserved.
@@ -47,6 +47,6 @@ See [0.6.0 fixes and evidence](FIXES_0.6.0.md), [0.5.0 fixes](FIXES_0.5.0.md), [
 
 ## Known boundaries
 
-Cross-application editing is not atomic. Moving the caret, changing focus or editing the document may deliberately block insertion; recover the text from the app. Password/read-only/inaccessible/elevated fields can refuse delivery. Physical Ctrl+Win, broad editor coverage, real human accuracy and 30-minute wall-clock recording still need manual validation. Parakeet and whisper.cpp are not implemented. There is no meeting notetaker, cloud sync or team account service. General-purpose prose rewriting is intentionally constrained to preserve content. A trusted code-signing certificate and an independent security review are not included.
+Cross-application editing is not atomic. Moving the caret, changing focus or editing the document may deliberately block insertion; recover the text from the app. Password/read-only/inaccessible/elevated fields can refuse delivery. Physical Ctrl+Win, broad editor coverage, real human accuracy and 30-minute wall-clock recording still need manual validation. One accelerated long run encountered an NVIDIA TDR/native engine interruption; its cause is unresolved. Parakeet and whisper.cpp are not implemented. There is no meeting notetaker, cloud sync or team account service. General-purpose prose rewriting is intentionally constrained to preserve content. A trusted code-signing certificate and an independent security review are not included.
 
 Original source: [MIT](LICENSE). NVIDIA CUDA libraries and Windows are external proprietary platform dependencies; this does not make the entire GPU/OS stack open source.

@@ -40,9 +40,7 @@ class RecoveryStore:
             shutil.rmtree(folder)
 
     def clear(self):
-        if self.root.exists():
-            for folder in self.root.iterdir():
-                if ID.fullmatch(folder.name):self.remove(folder.name)
+        storage.clear_recovery(self.root)
 
     def metadata(self,ident):
         path=self.folder(ident)/'manifest.json'

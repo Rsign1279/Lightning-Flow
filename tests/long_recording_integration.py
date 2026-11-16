@@ -23,6 +23,8 @@ def run(seconds=1800,speed=.08,model='small.en',compute='int8_float16'):
     from lightningflow.benchmark import error_rate
     root=Path(__file__).resolve().parents[1]
     folder=root/'.work/long-recording';folder.mkdir(parents=True,exist_ok=True)
+    checkpoint=folder/'checkpoint.json'
+    checkpoint.write_text(json.dumps({'version':__version__,'complete':False,'completed_cases':[]}),encoding='utf-8')
     settings=Settings(model=model,compute=compute,models_dir=str(root/'models'),recording_shortcut='ctrl_win',activation='smart',
         max_seconds=3600,personalization_enabled=True,voice_profile=json.loads((root/'examples/vocabulary.json').read_text()))
     Preferences(folder/'settings.json').save(settings)
@@ -123,6 +125,8 @@ def run(seconds=1800,speed=.08,model='small.en',compute='int8_float16'):
                 'stop_to_result_ms':(completed-stop)*1000,'synthetic_WER':wer,'final_marker_present':True,
                 'transcript_characters':len(current.text),'transcript_sha256':hashlib.sha256(current.text.encode()).hexdigest(),
                 'single_result':True,'audio_released':True,'post_stop_audio_appends':0})
+            checkpoint.write_text(json.dumps({'version':__version__,'complete':False,'completed_cases':report,
+                'scope':'Completed cases only; the overall long run has not finished.'},indent=2),encoding='utf-8')
         return {'version':__version__,'model':model,'compute':compute,'provider':models[0],'model_initializations':len(models),
             'requested_audio_seconds_per_mode':seconds,'replay_wall_scale':speed,'cases':report,
             'stream_opens':Replay.opens,'stream_closes':Replay.closes,'peak_sampled_process_RSS_MiB':max(rss),

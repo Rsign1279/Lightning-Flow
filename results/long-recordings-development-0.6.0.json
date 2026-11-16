@@ -1,0 +1,41 @@
+{
+  "version": "0.5.0",
+  "model": "small.en",
+  "compute": "int8_float16",
+  "provider": "CUDA / CTranslate2",
+  "model_initializations": 1,
+  "requested_audio_seconds_per_mode": 1800,
+  "replay_wall_scale": 0.08,
+  "cases": [
+    {
+      "mode": "hold",
+      "captured_audio_seconds": 1800.02,
+      "wall_seconds": 196.6641958002001,
+      "synthetic_WER": 0.041572803604341596,
+      "final_marker_present": true,
+      "transcript_characters": 27014,
+      "transcript_sha256": "803502de560645902284f2bdb4b2f9e101d9f00ac6c2c5418e982226b2548cb6",
+      "single_result": true,
+      "audio_released": true,
+      "stop_through_reference_scoring_ms": 3055.017000064254
+    },
+    {
+      "mode": "locked",
+      "captured_audio_seconds": 1800.0,
+      "wall_seconds": 196.53050919994712,
+      "synthetic_WER": 0.041572803604341596,
+      "final_marker_present": true,
+      "transcript_characters": 27014,
+      "transcript_sha256": "803502de560645902284f2bdb4b2f9e101d9f00ac6c2c5418e982226b2548cb6",
+      "single_result": true,
+      "audio_released": true,
+      "stop_through_reference_scoring_ms": 3304.5554000418633
+    }
+  ],
+  "stream_opens": 3,
+  "stream_closes": 3,
+  "peak_sampled_process_RSS_MiB": 876.12890625,
+  "elapsed_seconds": 394.1846236998681,
+  "scope": "Synthetic PCM of the reported duration, accelerated when scale <1, actual CUDA and production modifier callbacks. Isolated scratchpad; not a live microphone, physical Windows-key interception or external editor certification. Timing in this development harness included reference scoring and is labeled accordingly; no tracked post-stop append assertion was present in this first run.",
+  "validation_stage": "Development run before the 0.6.0 version bump, encrypted recovery and final UI event changes; not final packaged-build certification."
+}

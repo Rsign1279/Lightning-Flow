@@ -212,7 +212,9 @@ class DesktopApp(ctk.CTk):
             self._invalidate_pages=True
             if history_changed: self.history.configure(candidate.history_enabled)
             if restart: self.start_engine(confirmed=True)
-            else: self.send('configure')
+            else:
+                connected=self.send('configure')
+                if not connected and changes.get('retain_failed_audio') is False:self.clear_offline_recovery()
             self.refresh_status()
             self.toast('Changes saved on this PC.')
             return True
@@ -385,6 +387,8 @@ class DesktopApp(ctk.CTk):
                 if self.engine and event['pid']==self.engine.process.pid and not self.restart_wait and not self.repairing:
                     if event.get('code'):
                         from .state import interrupted_preview
+                        self.retained_audio_ids.clear()
+                        for saved in self.history.rows:saved['audio_available']=False
                         row=interrupted_preview(self.partial,event['code'])
                         if row:
                             self.history.add(row);self.last_result=row;self.partial=''
@@ -924,10 +928,18 @@ class DesktopApp(ctk.CTk):
     def clear_history(self):
         if messagebox.askyesno('Clear local history','Delete all transcript history and forget retained recovery audio? Export anything you want to keep first.',parent=self):
             try:
-                self.history.clear(); self.last_result=None; self.send('forget')
+                self.history.clear(); self.last_result=None
+                if not self.send('forget'):self.clear_offline_recovery()
                 self.retained_audio_ids.clear()
                 self.toast('Transcript history cleared on this PC.')
             except Exception as exc: self.toast('History could not be cleared: '+str(exc))
+
+    def clear_offline_recovery(self):
+        def clear():
+            from .storage import clear_recovery
+            try:clear_recovery(paths.data_dir()/'recovery-audio')
+            except Exception as exc:self.events.put({'event':'notice','message':'Recovery files could not be deleted: '+str(exc)})
+        threading.Thread(target=clear,daemon=True).start()
 
     def performance_tick(self):
         if self.closing: return
@@ -948,7 +960,7 @@ class DesktopApp(ctk.CTk):
         if self.engine_state in BUSY and not messagebox.askyesno('Quit while recording?',
             'The current recording will be cancelled. Quit LightningFlow?',parent=self): return
         if self.retained_audio_ids and not messagebox.askyesno('Quit with retained audio?',
-            'Recovery audio will be forgotten. Export it from History first if you want to keep it. Quit?',parent=self): return
+            'Audio held only in memory will be forgotten. Completed encrypted recovery saves survive when enabled. Export first to ensure you keep it. Quit?',parent=self): return
         self.closing=True
         self.overlay.hide()
         if self.engine: self.engine.stop()

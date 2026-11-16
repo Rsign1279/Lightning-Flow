@@ -7,6 +7,7 @@
 - Finalize already captured speech after microphone read, resume or close failures; retain incomplete dictation for review rather than pasting a cutoff sentence.
 - Add opt-in Windows-user-encrypted recovery for completed failed recordings, exact float32 audio, bounded background storage, clear-during-save cancellation and explicit GPU retranscription into the log.
 - Correct privacy/restart messaging and report recovery eviction. Preserve the existing GPU decoder, precision, model residency, authoritative segmentation and modifier-chord dispatcher.
+- Retain explicitly incomplete previews after native engine exits; allow recovery-file deletion even with the engine offline. Report the unresolved driver-reset event encountered during long testing.
 - Add reproducible long-audio, queued-session and device-fault integration tools. See FIXES_0.6.0.md for measured results and validation limits.
 
 ## 0.5.0

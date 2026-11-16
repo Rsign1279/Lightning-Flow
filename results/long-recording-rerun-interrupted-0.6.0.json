@@ -1,0 +1,11 @@
+{
+  "version": "0.6.0",
+  "passed": false,
+  "attempt": "Final long replay at 0.12 wall scale",
+  "completed_final_report": false,
+  "last_reported_mode": "locked",
+  "last_reported_audio_seconds_in_current_mode": 695.3,
+  "last_reported_pending_real_jobs": 0,
+  "hold_mode_assertions_completed_before_locked_progress": true,
+  "scope": "The process/session disappeared before completion; no new matching Windows application crash or NVIDIA TDR event was found. Cause is unverified. No completed final long-run pass is claimed."
+}

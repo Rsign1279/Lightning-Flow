@@ -55,3 +55,17 @@ def loads(text):
 def protected(text):
     try:return json.loads(text).get('format')==FORMAT
     except (ValueError,AttributeError):return False
+
+
+def clear_recovery(root):
+    """Delete only owned recording directories, including with the engine down."""
+    from pathlib import Path
+    import re
+    import shutil
+    root=Path(root)
+    if not root.exists():return
+    resolved=root.resolve()
+    for folder in root.iterdir():
+        if not re.fullmatch('[0-9a-f]{32}',folder.name):continue
+        if folder.resolve().parent!=resolved or folder.is_symlink():raise ValueError('Recovery path leaves its storage directory')
+        shutil.rmtree(folder)

@@ -1,0 +1,19 @@
+{
+  "unchanged_AST_from_v0_5_0": {
+    "lightningflow/asr.py": true,
+    "lightningflow/audio.py": true,
+    "lightningflow/desktop/chords.py": true,
+    "lightningflow/desktop/gestures.py": true,
+    "lightningflow/desktop/personalization.py": true
+  },
+  "gpu": [
+    {
+      "name": "NVIDIA GeForce RTX 5070",
+      "driver": "610.88",
+      "total_mib": "12227",
+      "used_mib": "3243",
+      "util_percent": "20"
+    }
+  ],
+  "scope": "Configuration/source comparison and current GPU inventory, not an accuracy guarantee or exclusive VRAM reservation."
+}
