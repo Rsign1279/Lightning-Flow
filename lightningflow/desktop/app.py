@@ -224,7 +224,7 @@ class DesktopApp(ctk.CTk):
 
     def confirm_restart(self):
         return not self.retained_audio_ids or messagebox.askyesno('Restart the local engine?',
-            'Retained recovery audio will be forgotten. Transcripts stay in history. Export audio first if you want to keep it.',parent=self)
+            'Audio held only in memory will be forgotten. Completed encrypted recovery saves survive a restart when enabled. Export audio first to ensure you keep it.',parent=self)
 
     def start_engine(self,confirmed=False):
         if self.closing: return
@@ -312,8 +312,19 @@ class DesktopApp(ctk.CTk):
                     self.history.add(row)
                     if self.last_result and self.last_result['id']==row['id']:self.last_result=row
                     self.toast('A local AI suggestion is available in the dictation log. Inserted text is unchanged.')
+            elif kind=='recovered':
+                for row in event['rows']:
+                    existing=next((item for item in self.history.rows if item['id']==row['id']),None)
+                    self.history.add(dict(existing or row,audio_available=True))
+                    self.retained_audio_ids.add(row['id'])
+                if self.page=='history' and 'log_refresh' in self.refs:self.refs['log_refresh']()
+            elif kind=='recovery_removed':
+                for row in self.history.rows:
+                    if row['id'] in event['ids']:row['audio_available']=False
+                self.retained_audio_ids.difference_update(event['ids'])
             elif kind=='result':
-                self.last_result=event; self.partial=''
+                self.last_result=event
+                if not event.get('recording_in_progress'):self.partial=''
                 count=len(event.get('text','').split())
                 self.session_words+=count-self.session_word_counts.get(event['id'],0)
                 self.session_word_counts[event['id']]=count
@@ -322,7 +333,7 @@ class DesktopApp(ctk.CTk):
                 if event.get('audio_available'): self.retained_audio_ids.add(event['id'])
                 else: self.retained_audio_ids.discard(event['id'])
                 if self.history.error: self.toast(self.history.error)
-                if self.page=='dictation': self.update_dashboard()
+                if self.page=='dictation' and not event.get('recording_in_progress'): self.update_dashboard()
                 elif self.page=='history' and 'log_refresh' in self.refs:self.refs['log_refresh']()
                 elif self.page=='performance' and self.state()!='withdrawn':self.navigate(self.page)
                 if event.get('error'): self.toast('Transcript kept: '+event['error'])
@@ -372,6 +383,16 @@ class DesktopApp(ctk.CTk):
             elif kind=='process_exit':
                 self.tasks=[task for task in self.tasks if task.process.pid!=event['pid']]
                 if self.engine and event['pid']==self.engine.process.pid and not self.restart_wait and not self.repairing:
+                    if event.get('code'):
+                        from .state import interrupted_preview
+                        row=interrupted_preview(self.partial,event['code'])
+                        if row:
+                            self.history.add(row);self.last_result=row;self.partial=''
+                        self.engine_state='error'
+                        self.status_message=f"Local engine exited unexpectedly (code {event['code']}). Check Performance diagnostics; restart the engine when ready."
+                        self.toast('Engine stopped. Any available preview was retained in the log; it may be incomplete.')
+                        if self.page=='dictation':self.update_dashboard()
+                        elif self.page=='history' and 'log_refresh' in self.refs:self.refs['log_refresh']()
                     if self.engine_state!='error':
                         self.engine_state='offline'; self.status_message='The local engine is stopped.'
                     self.refresh_status()
@@ -446,6 +467,7 @@ class DesktopApp(ctk.CTk):
 
     def open_transcript(self,row):
         dialog=ctk.CTkToplevel(self); dialog.title('Transcript · LightningFlow'); dialog.geometry('720x590'); dialog.minsize(600,450)
+        if row.get('audio_available'):dialog.geometry('720x700')
         dialog.configure(fg_color=BG)
         dialog.transient(self)
         label(dialog,'Your transcript',25,True).pack(anchor='w',padx=26,pady=(24,7))
@@ -461,7 +483,11 @@ class DesktopApp(ctk.CTk):
         if row.get('cleanup_suggestion'):
             button(actions,'Copy AI suggestion',lambda:self.copy(row['cleanup_suggestion']),width=160).pack(side='left',padx=8)
             self.set_text(original,'AI SUGGESTION · not inserted\n'+row['cleanup_suggestion']+'\n\nRAW TRANSCRIPT\n'+row.get('raw',row.get('text','')))
-        if row.get('audio_available'): button(actions,'Save retained audio',lambda:self.send('export_audio',id=row['id']),width=165).pack(side='right')
+        if row.get('audio_available'):
+            recovery=ctk.CTkFrame(dialog,fg_color='transparent');recovery.pack(fill='x',padx=26,pady=(0,15))
+            button(recovery,'Save retained audio',lambda:self.send('export_audio',id=row['id']),width=165).pack(side='left')
+            button(recovery,'Retranscribe on GPU',lambda:self.send('retranscribe',id=row['id']),width=175).pack(side='left',padx=8)
+            label(dialog,'Retranscription updates the log for review; it does not type into another app.',12,muted=True).pack(anchor='w',padx=26,pady=(0,12))
         dialog.after(50,lambda:dark_titlebar(dialog,ctk.get_appearance_mode()=='Dark'))
 
     def page_models(self):
@@ -804,7 +830,8 @@ class DesktopApp(ctk.CTk):
             button(links,title,lambda p=page:self.navigate(p),image=icon(page),compound='left',height=44,
                    anchor='w').grid(row=index//2,column=index%2,sticky='ew',padx=(0 if index%2==0 else 8,0),pady=(0,8))
         privacy=self.section('Your data','Core dictation works offline after installation. No telemetry, account, or automatic cloud processing.')
-        for title,hint,name in [('Save transcript history on this PC','Off stops saving new transcripts. Existing saved history stays until Clear. On stores plaintext in your user profile.','history_enabled'),
+        for title,hint,name in [('Save transcript history on this PC','Off stops saving new transcripts. Existing history stays until Clear. Saved text is encrypted for your Windows account.','history_enabled'),
+                                ('Recover failed recordings after restart','Opt in to encrypted audio for completed, undelivered recordings. Up to five recordings / 1 GiB. Turning off deletes these files. Live recordings are not journaled.','retain_failed_audio'),
                                 ('Show the recording indicator','A compact, non-activating status capsule above the taskbar.','overlay'),
                                 ('Close to the system tray','Keep the model ready when the main window closes. Use Quit to exit.','close_to_tray')]:
             row=ctk.CTkFrame(privacy,fg_color='transparent'); row.pack(fill='x',pady=12)
@@ -824,7 +851,7 @@ class DesktopApp(ctk.CTk):
             try: self.save_settings(restart=True,max_seconds=int(limit.get()))
             except ValueError: self.toast('Enter a whole number between 1 and 3600.')
         button(appearance,'Apply recording limit',apply_limit,width=200).pack(anchor='w')
-        storage=self.section('Local storage','Saved settings and history are stored under your Windows user account. Raw audio is never retained automatically on disk.')
+        storage=self.section('Local storage','Settings, saved history and opt-in recovery audio are encrypted for your Windows account. Explicit audio/text exports are plaintext.')
         label(storage,str(paths.data_dir()),12,muted=True,wraplength=700).pack(anchor='w',pady=(0,14))
         row=ctk.CTkFrame(storage,fg_color='transparent'); row.pack(fill='x')
         button(row,'Open data folder',self.open_data_folder,width=180).pack(side='left')

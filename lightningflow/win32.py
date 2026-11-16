@@ -86,6 +86,7 @@ class Target:
 class Delivery:
     confirmed: bool
     method: str
+    after_state: object = None
 
 def message(hwnd, code, wp=0, lp=0, timeout=150):
     result = PTR()
@@ -304,7 +305,9 @@ class InputGuard:
             actual = read_edit(target.focus)
             if actual.text != expected:
                 raise RuntimeError('Target rejected, truncated or changed the insertion; check the field before retrying')
-            return Delivery(True, 'native edit message + readback')
+            if actual.start!=actual.end or actual.start!=target.state.start+len(text.encode('utf-16-le'))//2:
+                raise RuntimeError('Caret changed during native insertion; inspect the field before retrying')
+            return Delivery(True, 'native edit message + readback',actual)
         if len(text.encode('utf-16-le')) > MAX_TEXT*2:
             raise RuntimeError('Transcript exceeds the safe Unicode insertion limit; retained for export')
         if self.prefer_clipboard:
@@ -323,12 +326,12 @@ class InputGuard:
                     if any(u.GetAsyncKeyState(v)&0x8000 for v in (0x10,0x11,0x12,0x5B,0x5C)):
                         raise RuntimeError('Modifier pressed before paste; transcript retained')
                     send_virtual_keys([0x11,0x56])
-                    self.verify_accessible(target,text)
+                    actual=self.verify_accessible(target,text)
                 finally:
                     transaction.__exit__(None,None,None)
                 method='Clipboard paste + accessibility readback'
                 if transaction.restore_note: method+='; '+transaction.restore_note
-                return Delivery(True,method)
+                return Delivery(True,method,actual)
         working = target
         for offset in range(0, len(text), 128):
             # Split on Python characters, never between a UTF-16 surrogate pair.
@@ -365,7 +368,7 @@ class InputGuard:
                 time.sleep(.01)
             else:
                 raise RuntimeError('Text delivery could not be verified; inspect the target before retrying')
-        return Delivery(True, 'Unicode input + accessibility readback')
+        return Delivery(True, 'Unicode input + accessibility readback',working.state)
 
     def verify_accessible(self,target,text):
         expected=expected_text(target.state,text)
@@ -382,7 +385,7 @@ class InputGuard:
             if actual.text==expected:
                 if actual.start!=actual.end or actual.start!=target.state.start+len(text):
                     raise RuntimeError('Caret changed during paste; inspect the target before retrying')
-                return
+                return actual
             time.sleep(.008)
         raise RuntimeError('Paste could not be verified. Transcript retained; inspect the field before retrying')
 

@@ -91,6 +91,9 @@ def build_backend(settings_path,models):
             super().__init__(args)
             self.external=queue.Queue(maxsize=64)
             self.failed={}
+            from .recovery import RecoveryWorker
+            self.recovery=RecoveryWorker(Path(settings_path).parent/'recovery-audio')
+            self.recovery_requests={}
             self.cleanup_result=queue.Queue(maxsize=1)
             self.cleanup_pending=None
             self.cleanup_busy=threading.Event()
@@ -120,19 +123,19 @@ def build_backend(settings_path,models):
 
         def emit(self,event,value=None):
             super().emit(event,value)
+            if event=='ready' and self.settings.retain_failed_audio:self.recovery.submit('inventory')
             if event=='ready': send('status',state='ready',message='Ready to record',
                                     detail=value,model=self.args.model,provider='CUDA / CTranslate2')
             elif event=='fatal': send('status',state='error',message=str(value))
-            elif event=='listening':
+            elif event=='listening' and value is self.active:
                 state=self.gesture.state
                 if state=='finishing': return
                 send('status',state='paused' if state=='waiting' else 'recording',
                      message='Tap again to keep recording' if state=='waiting' else 'Listening',gesture=state)
-            elif event=='partial': send('partial',text=self.active.text if self.active is not None else str(value))
+            elif event=='partial' and value is self.active: send('partial',text=value.text)
             elif event=='preview' and value is self.active and not value.capture_until:
                 send('partial',text=value.provisional,provisional=True)
             elif event=='notice':
-                if value and 'Recording limit reached' in str(value): self.gesture.state='finishing'
                 send('notice',message=str(value))
 
         def handle_hotkey(self,ident):
@@ -160,13 +163,15 @@ def build_backend(settings_path,models):
         def key_down(self,vk,chord):
             if self.args.recording_chord: return
             if self.settings.activation in ('smart','hold') and vk==self.args.toggle_vk and chord:
-                if self.gesture.state=='idle' and (not self.ready or self.active is not None or self.mic_testing):
+                if self.gesture.state=='idle' and (not self.can_start_recording() or self.mic_testing):
                     return
                 self.gesture_actions(self.gesture.press(time.perf_counter()))
 
         def recording_edge(self,edge):
             if edge=='press':
-                if self.gesture.state=='idle' and (not self.ready or self.active is not None or self.mic_testing): return
+                if self.gesture.state=='idle' and (not self.can_start_recording() or self.mic_testing):
+                    send('notice',message='The dictation queue is busy. Wait for a result before starting another recording.')
+                    return
                 if self.settings.activation=='toggle':
                     before=self.recording
                     super().handle_hotkey(1)
@@ -182,7 +187,7 @@ def build_backend(settings_path,models):
         def gesture_actions(self,actions):
             for action in actions:
                 if action=='start':
-                    if not self.ready or self.active is not None:
+                    if not self.can_start_recording():
                         self.gesture.reset()
                         return
                     requested=time.perf_counter()
@@ -196,11 +201,13 @@ def build_backend(settings_path,models):
                     session=self.new_session(None)
                     session.hotkey_at=requested
                     self.active=session
+                    self.register_session(session)
                     self.recording=True
                     self.commands.put_nowait(('start',session))
                     # Capture starts independently of a potentially slow
                     # accessibility provider. No UIA call runs inside a hook.
-                    self.target_pending=(session,identity)
+                    if self.target_pending is None:self.target_pending=[]
+                    self.target_pending.append((session,identity))
                 elif action in ('pause','resume') and self.active is not None:
                     self.active.capture_paused_at=time.perf_counter() if action=='pause' else 0.
                     self.commands.put_nowait((action,None))
@@ -214,6 +221,7 @@ def build_backend(settings_path,models):
                     self.active.capture_until=self.active.requested_stop
                     self.commands.put_nowait(('stop',None))
                     self.recording=False
+                    self.gesture.reset()
                     send('status',state='processing',message='Transcribing…')
 
         def key_up(self,vk):
@@ -243,8 +251,8 @@ def build_backend(settings_path,models):
                         else:
                             session.cleanup_background=True
                             session.cleanup_note='Delivered immediately; local AI suggestion follows in the log'
-                        self.recording=False
-                        if settings.wait_for_cleanup:
+                        if self.active is session:self.recording=False
+                        if settings.wait_for_cleanup and not self.recording:
                             send('status',state='enhancing',message='Cleaning up locally. Raw text is ready.')
                             send('partial',text=session.text)
                         snapshot=Settings(**asdict(settings))
@@ -259,9 +267,9 @@ def build_backend(settings_path,models):
             super().schedule_delivery(session)
 
         def _deliver(self,session,source):
-            self.gesture.reset()
+            if self.active is session and not self.recording:self.gesture.reset()
             seconds=len(source.raw)*BLOCK/RATE
-            if getattr(session,'destination','external')=='scratchpad' and not session.cancelled and not session.error:
+            if getattr(session,'destination','external')=='scratchpad' and not session.cancelled and not session.error and not session.capture_warning:
                 session.delivered=source.delivered=True
                 session.metrics={'provider':'CUDA / CTranslate2','decode_ms':session.decode_ms,
                     'audio_seconds':seconds,'stop_to_input_ms':(time.perf_counter()-session.stopped)*1000,
@@ -274,23 +282,37 @@ def build_backend(settings_path,models):
             if 'Clipboard restoration was blocked' in session.metrics.get('delivery_method',''):
                 send('notice',message='Text delivered. Clipboard restoration was blocked; the clipboard may contain this transcript.')
             if session.cancelled:
-                send('cancelled')
-                send('status',state='ready' if self.ready else 'error',message='Recording cancelled.')
+                if not self.recording:
+                    send('cancelled')
+                    send('status',state='ready' if self.ready else 'error',message='Recording cancelled.')
                 return
             ident=getattr(source,'ident',uuid.uuid4().hex)
             error=session.error or session.delivery_error
             if not session.delivered and source.raw:
                 self.failed[ident]=source
-                while len(self.failed)>5: self.failed.pop(next(iter(self.failed)))
+                while len(self.failed)>5:
+                    expired=next(iter(self.failed));self.failed.pop(expired)
+                    if not self.settings.retain_failed_audio:
+                        send('recovery_removed',ids=[expired])
+                        send('notice',message='The oldest failed audio left the five-recording memory buffer. Its transcript remains in the log.')
             elif session.delivered:
                 self.failed.pop(ident,None)
-            send('result',id=ident,text=session.text,raw=getattr(session,'raw_text',session.text),
+                if self.settings.retain_failed_audio:self.recovery.submit('remove',ident)
+            row=dict(id=ident,text=session.text,raw=getattr(session,'raw_text',session.text),
                  delivered=session.delivered,destination=getattr(session,'destination','external'),
                  error=error,metrics=session.metrics,seconds=seconds,cleanup=getattr(session,'cleanup_note','Raw mode'),
-                 audio_available=ident in self.failed)
+                 audio_available=ident in self.failed,recording_in_progress=self.recording)
+            send('result',**row)
+            if not session.delivered and source.raw and self.settings.retain_failed_audio:
+                if not self.recovery.submit('save',ident,list(source.raw),row):
+                    send('notice',message='Recovery storage is busy. Audio remains in memory; export it before quitting.')
             session.result_emitted=True
-            send('status',state='ready' if self.ready else 'error',message='Ready to record' if session.delivered else
-                 'No speech detected. Check your microphone or try again.' if not session.text else 'Transcript retained. Check the target before retrying.')
+            if self.recording:
+                send('status',state='recording' if self.active.first_audio else 'starting',message='Recording the next dictation',gesture=self.gesture.state)
+            elif len(self.sessions)>1:send('status',state='processing',message='Finishing queued dictations')
+            else:
+                send('status',state='ready' if self.ready else 'error',message='Ready to record' if session.delivered else
+                     'No speech detected. Check your microphone or try again.' if not session.text else 'Transcript retained. Check the target before retrying.')
 
         def microphone_test(self):
             import sounddevice as sd
@@ -319,14 +341,38 @@ def build_backend(settings_path,models):
                 send('mic_level',level=0)
 
         def on_tick(self):
+            for _ in range(8):
+                try:generation,kind,value=self.recovery.results.get_nowait()
+                except queue.Empty:break
+                if generation!=self.recovery.generation:continue
+                if kind=='error':
+                    self.recovery_requests.clear()
+                    send('notice',message='Recovery audio could not be processed: '+value+'. Existing files were kept where possible.')
+                elif kind=='inventory':
+                    rows,errors=value
+                    send('recovered',rows=[dict(item['row'],audio_available=True) for item in rows])
+                    if errors:send('notice',message=f'{len(errors)} retained recordings could not be read. Their files were kept.')
+                elif kind=='saved' and value['evicted']:
+                    send('recovery_removed',ids=value['evicted'])
+                    send('notice',message='Old recovery audio was removed to enforce the five-recording / 1 GiB limit.')
+                elif kind=='loaded':
+                    ident,frames,row=value;action=self.recovery_requests.pop(ident,None)
+                    if action:
+                        source=self.new_session(None);source.ident=ident;source.raw=frames;source.text=row.get('text','')
+                        self.failed[ident]=source
+                        self.use_retained_audio(action,source)
+            if self.active is not None and self.active.stopped and self.recording:
+                self.recording=False;self.gesture.reset()
+                send('status',state='processing',message='Recovering captured speech after microphone interruption' if self.active.capture_warning else 'Transcribing captured speech')
             if self.gesture_mode!=self.settings.activation and self.active is None:
                 self.gesture_mode=self.settings.activation
                 self.gesture=HoldToTalkGesture() if self.gesture_mode=='hold' else RecordingGesture()
             self.gesture_actions(self.gesture.tick(time.perf_counter()))
             if self.target_pending:
-                session,identity=self.target_pending
+                pending=self.target_pending
                 self.target_pending=None
-                if identity is not None and self.active is session and not session.cancelled:
+                for session,identity in pending:
+                    if identity is None or not any(item is session for item in self.sessions) or session.cancelled:continue
                     try:
                         target=self.guard.snapshot(track=False)
                         if (target.foreground,target.focus,target.process,target.epoch)==(
@@ -363,13 +409,18 @@ def build_backend(settings_path,models):
                     self.mic_cancel.set()
                     u.PostThreadMessageW(self.thread_id,0x312,4,0)
                 elif action=='configure':
+                    retained_before=self.settings.retain_failed_audio
                     self.settings=self.preferences.load()
+                    if retained_before and not self.settings.retain_failed_audio:
+                        self.recovery.clear()
+                        send('notice',message='Encrypted recovery files are being deleted. Failed audio in memory remains available until exit.')
                     self.asr_hint=hint_text(self.settings.voice_profile,self.settings.dictionary) if self.settings.personalization_enabled else ''
                 elif action=='sandbox':
                     if self.ready and self.active is None and not self.mic_testing:
                         session=self.new_session(None)
                         session.destination='scratchpad'
                         self.active=session
+                        self.register_session(session)
                         self.commands.put_nowait(('start',session))
                         self.recording=True
                         send('partial',text='')
@@ -389,19 +440,58 @@ def build_backend(settings_path,models):
                 elif action=='forget':
                     self.failed.clear()
                     self.last=None
-                elif action=='export_audio':
+                    self.recovery_requests.clear();self.recovery.clear()
+                elif action in ('export_audio','retranscribe'):
                     session=self.failed.get(command.get('id'))
-                    if session:
-                        previous=self.last
-                        self.last=session
-                        self.save()
-                        self.last=previous
-                        send('notice',message=f'Audio and transcript exported to {self.args.recovery}')
-                    else: send('notice',message='Audio is no longer held. Export the transcript from history.')
+                    if session:self.use_retained_audio(action,session)
+                    elif self.settings.retain_failed_audio:
+                        ident=command.get('id')
+                        if self.recovery.submit('load',ident):self.recovery_requests[ident]=action
+                        else:send('notice',message='Recovery is busy. Try again shortly.')
+                    else:send('notice',message='Audio is no longer held. Export the transcript from history.')
                 elif action=='devices': threading.Thread(target=devices,daemon=True).start()
                 elif action=='hardware': threading.Thread(target=hardware,daemon=True).start()
                 elif action=='mic_test' and self.active is None and not self.mic_testing:
                     threading.Thread(target=self.microphone_test,daemon=True).start()
+
+        def use_retained_audio(self,action,source):
+            if action=='export_audio':
+                # Explicit export is plaintext; run its disk work off the hook.
+                frames=list(source.raw);text=source.text
+                def export():
+                    import wave
+                    try:
+                        folder=Path(self.args.recovery)/source.ident;folder.mkdir(parents=True,exist_ok=True)
+                        (folder/'transcript.txt').write_text(text,encoding='utf-8')
+                        with wave.open(str(folder/'recording.wav'),'wb') as wav:
+                            wav.setparams((1,2,RATE,0,'NONE','not compressed'))
+                            for frame in frames:wav.writeframesraw((np.clip(frame,-1,1)*32767).astype('<i2').tobytes())
+                        send('notice',message=f'Audio and transcript exported to {folder}')
+                    except Exception as exc:send('notice',message='Audio export failed: '+str(exc))
+                threading.Thread(target=export,daemon=True).start()
+                return
+            if not self.can_start_recording() or self.sessions or self.mic_testing:
+                send('notice',message='Finish current dictations before retranscribing retained audio.');return
+            session=self.new_session(None);session.ident=source.ident;session.destination='scratchpad';session.raw=list(source.raw)
+            session.stopped=time.perf_counter();self.active=session;self.register_session(session)
+            send('status',state='processing',message='Retranscribing retained audio on the resident GPU')
+            def replay():
+                from ..audio import Segmenter
+                segmenter=Segmenter()
+                try:
+                    def put(kind,chunk=None):
+                        while not self.quit.is_set():
+                            try:self.jobs.put((kind,session,chunk),timeout=.1);return
+                            except queue.Full:pass
+                    for frame in session.raw:
+                        if self.quit.is_set() or session.cancelled:break
+                        chunk=segmenter.feed(frame)
+                        if chunk is not None:put('chunk',chunk)
+                    chunk=segmenter.flush()
+                    if chunk is not None:put('chunk',chunk)
+                except Exception as exc:session.error='Retained audio could not be prepared: '+str(exc)
+                finally:put('finish')
+            threading.Thread(target=replay,daemon=True).start()
 
     return DesktopBackend()
 

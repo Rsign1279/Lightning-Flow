@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.0
+
+- Accept the next recording while prior transcription finishes, with a three-session ordered queue. Confirmed insertion can advance only identical captured targets; changed fields still refuse delivery.
+- Stop release-to-record gestures immediately while keeping earlier results from resetting a newer recording indicator.
+- Finalize already captured speech after microphone read, resume or close failures; retain incomplete dictation for review rather than pasting a cutoff sentence.
+- Add opt-in Windows-user-encrypted recovery for completed failed recordings, exact float32 audio, bounded background storage, clear-during-save cancellation and explicit GPU retranscription into the log.
+- Correct privacy/restart messaging and report recovery eviction. Preserve the existing GPU decoder, precision, model residency, authoritative segmentation and modifier-chord dispatcher.
+- Add reproducible long-audio, queued-session and device-fault integration tools. See FIXES_0.6.0.md for measured results and validation limits.
+
 ## 0.5.0
 
 - Reject meaning-changing deletion of negation, qualifiers, content words or operators; retain ordered semantic evidence.

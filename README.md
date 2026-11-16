@@ -10,12 +10,14 @@ LightningFlow is an independent project. It does not use Wispr Flow code, brandi
 
 - Native desktop window, tray integration, light/dark themes and a nonactivating audio-responsive recording capsule. Normal use needs no terminal.
 - Persistent faster-whisper/CTranslate2 CUDA inference. The app refuses silent CPU fallback.
-- Hold-to-talk, double-tap hands-free, release-to-stop, cancellation and explicit retry. Choose Ctrl+Win in Settings → Shortcuts; fresh profiles default to Ctrl+Alt+F8 until changed.
+- Hold-to-talk, double-tap hands-free, release-to-stop, cancellation and explicit retry. Choose Ctrl+Win in Settings Ã¢â€ â€™ Shortcuts; fresh profiles default to Ctrl+Alt+F8 until changed.
+- Start a new recording while earlier transcription finishes; a bounded queue preserves delivery order and verifies the target again.
 - Provisional live previews; final recognition retains the larger audio windows and only verified final text is inserted.
 - Personal vocabulary, explicit corrections, Clean/Verbatim modes and conservative spoken date/time/number corrections. Code, quotes and ambiguous corrections are preserved.
 - Guarded native/clipboard/Unicode insertion, prose-boundary spacing, clipboard preservation and recoverable failures. No blind automatic retries or focus restoration to an old application.
 - Optional loopback Ollama or llama.cpp formatting. Default delivery does not wait: later edits are copyable suggestions in the log. Waiting within a configured budget is an explicit option.
 - Windows-user DPAPI-protected settings and optional transcript history. No telemetry or automatic audio uploads. Release checks are opt-in; installers never execute automatically.
+- Opt-in encrypted recovery for completed failed recordings, with explicit retranscription on the resident GPU into the log. Live microphone capture is not crash-journaled.
 - English and multilingual Whisper model choices. Multilingual recognition requires a multilingual model; English-specific cleanup is disabled for other languages. Non-English quality has not been benchmarked here.
 
 ## Install
@@ -39,9 +41,9 @@ Open `LightningFlow.vbs` or `desktop-dist\LightningFlow\LightningFlow.exe`. Buil
 
 ## Validation
 
-257 automated tests pass on the development Windows machine. A final CUDA replay run passed 100 hold and 100 locked sessions with one model initialization and no audio appends after stop. These were production gesture callbacks, not physical Windows-key injection. Real-time synthetic replay produced first partials at 923 ms with previews versus 4,445 ms without; final transcripts were identical in the two sessions. This is a limited measurement, not a universal latency or accuracy score.
+282 automated tests pass on the development Windows machine. The 0.6.0 CUDA replay run passed 100 hold and 100 locked sessions with one model initialization and no audio appends after stop. Queued dictations and encrypted audio recovery after a simulated microphone disconnect also passed with the same resident CUDA model. These were synthetic PCM and production gesture callbacks, not physical Windows-key injection or human-speech accuracy tests. See the release evidence for timing scope and long-recording results.
 
-See [0.5.0 fixes and evidence](FIXES_0.5.0.md), [architecture](ARCHITECTURE.md), [installation](INSTALLATION.md), [privacy](PRIVACY.md), [security](SECURITY.md), [contributing](CONTRIBUTING.md), and [license notices](LICENSE_NOTICES.md).
+See [0.6.0 fixes and evidence](FIXES_0.6.0.md), [0.5.0 fixes](FIXES_0.5.0.md), [architecture](ARCHITECTURE.md), [installation](INSTALLATION.md), [privacy](PRIVACY.md), [security](SECURITY.md), [contributing](CONTRIBUTING.md), and [license notices](LICENSE_NOTICES.md).
 
 ## Known boundaries
 

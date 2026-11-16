@@ -17,12 +17,12 @@ Get-ChildItem -LiteralPath $desktopSourceRoot -Recurse -File | Where-Object { $_
     Copy-Item -LiteralPath $_.FullName -Destination $desktopDestination -Force
 }
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'assets') -Destination $desktopRelease -Recurse -Force
-foreach ($desktopFile in @('runtime-requirements.txt','Setup-Runtime.ps1','Install-LightningFlow.ps1','Uninstall-LightningFlow.ps1','Uninstall-LightningFlow.vbs','LICENSE','LICENSE_NOTICES.md','README.md','DESKTOP.md','DESKTOP_VALIDATION.md','ARCHITECTURE.md','INSTALLATION.md','TROUBLESHOOTING.md','MODEL_COMPARISON.md','PERFORMANCE.md','DESIGN_SYSTEM.md','UI_UPDATE.md','TEST_100.md','SHORTCUT_UPDATE.md','PERSONALIZATION.md','DECODER_FIX.md','APP_INSERTION_TEST.md','FIXES_0.5.0.md','PRIVACY.md','SECURITY.md','CONTRIBUTING.md','CHANGELOG.md','ROADMAP.md')) {
+foreach ($desktopFile in @('runtime-requirements.txt','Setup-Runtime.ps1','Install-LightningFlow.ps1','Uninstall-LightningFlow.ps1','Uninstall-LightningFlow.vbs','LICENSE','LICENSE_NOTICES.md','README.md','DESKTOP.md','DESKTOP_VALIDATION.md','ARCHITECTURE.md','INSTALLATION.md','TROUBLESHOOTING.md','MODEL_COMPARISON.md','PERFORMANCE.md','DESIGN_SYSTEM.md','UI_UPDATE.md','TEST_100.md','SHORTCUT_UPDATE.md','PERSONALIZATION.md','DECODER_FIX.md','APP_INSERTION_TEST.md','FIXES_0.5.0.md','FIXES_0.6.0.md','PRIVACY.md','SECURITY.md','CONTRIBUTING.md','CHANGELOG.md','ROADMAP.md')) {
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $desktopFile) -Destination $desktopRelease -Force
 }
 $desktopEvidence = Join-Path $desktopRelease 'results'
 New-Item -ItemType Directory -Path $desktopEvidence -Force | Out-Null
-foreach ($desktopPattern in @('soak-100-*.json','log-paging-*.json','soak-proof-*.json','ctrl-win-*.json','personalization-*.json','personalized-pipeline-*.json','rtx-*.json','decoder-*.json','control-path-*.json','app-insertion-*.json','preview-latency-*.json','navigation-cache-*.json','accessibility-long-*.json','animation-0.5.0.json','desktop-integration-0.5.0.json','release-0.5.0.json')) {
+foreach ($desktopPattern in @('soak-100-*.json','log-paging-*.json','soak-proof-*.json','ctrl-win-*.json','personalization-*.json','personalized-pipeline-*.json','rtx-*.json','decoder-*.json','control-path-*.json','app-insertion-*.json','preview-latency-*.json','navigation-cache-*.json','accessibility-long-*.json','animation-0.5.0.json','desktop-integration-0.5.0.json','release-0.5.0.json','animation-0.6.0.json','desktop-integration-0.6.0.json','long-recordings-0.6.0.json','queue-recovery-0.6.0.json','frozen-self-check-0.6.0.json')) {
     Get-ChildItem -Path (Join-Path $PSScriptRoot ('results\' + $desktopPattern)) -File -ErrorAction SilentlyContinue | ForEach-Object {
         Copy-Item -LiteralPath $_.FullName -Destination $desktopEvidence -Force
     }

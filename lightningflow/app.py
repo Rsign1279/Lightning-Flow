@@ -1,6 +1,6 @@
 import ctypes as C
 from ctypes import wintypes as W
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 import json
 import queue
@@ -34,11 +34,15 @@ class Session:
     metrics: dict = field(default_factory=dict)
     preview_epoch: int = 0
     provisional: str = ''
+    capture_warning: str = ''
+    ready_for_delivery: bool = False
 
 class Dictation:
     def __init__(self, args):
         self.args = args
-        self.commands = queue.Queue(maxsize=8)
+        # Three queued smart gestures can each issue start/pause/resume/stop
+        # before the capture thread next runs. Keep that burst bounded and safe.
+        self.commands = queue.Queue(maxsize=32)
         self.jobs = queue.Queue(maxsize=32)
         self.events = queue.Queue()
         self.previews = queue.Queue(maxsize=1)
@@ -51,6 +55,26 @@ class Dictation:
         self.recording = False
         self.ready = False
         self.pending = None
+        self.sessions = []
+
+    def register_session(self,session):
+        if not any(item is session for item in self.sessions):self.sessions.append(session)
+
+    def can_start_recording(self):
+        return (self.ready and not self.recording and len(self.sessions)<3
+                and not any(item.retry_of for item in self.sessions)
+                and (self.active is None or any(item is self.active for item in self.sessions)))
+
+    def rebase_queued_targets(self,session,receipt):
+        """Advance only an identical captured caret after our confirmed insert."""
+        old=session.target;after=getattr(receipt,'after_state',None)
+        if old is None or after is None:return
+        for item in self.sessions:
+            target=item.target
+            if item is session or target is None:continue
+            if ((target.foreground,target.focus,target.process,target.epoch,target.native)==
+                    (old.foreground,old.focus,old.process,old.epoch,old.native) and target.state==old.state):
+                item.target=replace(target,state=after)
 
     def emit(self, event, value=None):
         self.events.put((event, value))
@@ -100,7 +124,7 @@ class Dictation:
                     session.text = merge(session.text, result, chunk.overlapped)
                     if result:
                         session.first_partial = session.first_partial or time.perf_counter()
-                        self.emit("partial", result)
+                        self.emit("partial", session)
                 except Exception as exc:
                     session.error = f"GPU transcription failed: {exc}"
 
@@ -124,7 +148,9 @@ class Dictation:
         def finish():
             nonlocal stream, session
             if stream is not None:
-                stream.close()
+                try:stream.close()
+                except Exception:
+                    if session is not None:session.capture_warning='Microphone could not close cleanly. Captured speech was retained.'
                 stream = None
             if session is not None:
                 session.preview_epoch+=1
@@ -150,22 +176,30 @@ class Dictation:
                                                 channels=1, dtype="float32", blocksize=BLOCK,
                                                 latency="low")
                         stream.start()
-                        self.emit("listening", None)
+                        self.emit("listening", session)
                     except Exception as exc:
                         session.error = f"Microphone could not open: {exc}. Check Windows microphone permissions/device."
                         finish()
                 elif action == "pause" and stream is not None:
-                    stream.close()
-                    stream = None
+                    try:
+                        stream.close()
+                        stream = None
+                    except Exception:
+                        session.capture_warning='Microphone failed while pausing. Captured speech was retained.'
+                        self.emit('capture_stopped',session)
+                        finish()
                 elif action == "resume" and session is not None and stream is None:
                     try:
                         stream = sd.InputStream(**input_options(self.args.device), samplerate=RATE,
                                                 channels=1, dtype="float32", blocksize=BLOCK,
                                                 latency="low")
                         stream.start()
-                        self.emit("listening", None)
+                        self.emit("listening", session)
                     except Exception as exc:
-                        session.error = f"Microphone could not resume: {exc}"
+                        if session.raw:
+                            session.capture_warning='Microphone could not resume. Captured speech was retained.'
+                            self.emit('capture_stopped',session)
+                        else:session.error='Microphone could not resume. Check the selected device.'
                         finish()
                 elif action in ("stop", "cancel") and session is not None:
                     if action == "cancel":
@@ -205,7 +239,8 @@ class Dictation:
                             finish()
                     except Exception as exc:
                         if session is not None:
-                            session.error = f"Microphone capture interrupted: {exc}"
+                            session.capture_warning = 'Microphone capture interrupted. Captured speech is available for recovery; reconnect the selected device before recording again.'
+                            self.emit('capture_stopped',session)
                         finish()
         finally:
             if session is not None:
@@ -237,8 +272,9 @@ class Dictation:
             if not session.cancelled:
                 self.last = source
             if self.active is session:
-                self.active = None
-                self.recording = False
+                self.active = next((item for item in reversed(self.sessions) if item is not session),None)
+                if self.active is None:self.recording=False
+            self.sessions=[item for item in self.sessions if item is not session]
 
     def _deliver(self, session, source):
         if session.cancelled:
@@ -249,6 +285,10 @@ class Dictation:
             return
         if session.error:
             print(f"ERROR: {session.error}\nAudio/text retained until next recording or exit. Ctrl+Alt+S exports locally.", flush=True)
+            return
+        if session.capture_warning and session.retry_of is None:
+            session.delivery_error=session.capture_warning
+            print('Captured speech retained after microphone interruption; inspect before inserting.',flush=True)
             return
         if not session.text:
             print("No speech detected. No text inserted.", flush=True)
@@ -268,6 +308,7 @@ class Dictation:
                        "provider": "CUDA / CTranslate2", "delivery_method": receipt.method}
             session.delivered = source.delivered = True
             session.metrics = metrics
+            self.rebase_queued_targets(session,receipt)
             print("INSERTED (verified): " + session.text, flush=True)
             print(json.dumps(metrics), flush=True)
             # Successful recordings keep text only for explicit retry/export.
@@ -277,17 +318,20 @@ class Dictation:
             print(f"DELIVERY NOT CONFIRMED: {exc}\nRecovered text: {session.text}\nCheck the field before retrying; the export shortcut saves a local copy.", flush=True)
 
     def schedule_delivery(self, session):
-        if self.pending is not None:
-            raise RuntimeError('A delivery is already pending')
-        self.active = session
-        self.recording = False
-        self.pending = (session, time.perf_counter() + 1.5)
+        self.register_session(session)
+        session.ready_for_delivery=True
+        if self.active is None:self.active=session
+        if self.active is session:self.recording=False
+        if self.pending is None and self.sessions[0] is session:
+            self.pending=(session,time.perf_counter()+1.5)
 
     def tick_delivery(self):
         if self.pending is None:
-            return
+            if not self.sessions or not self.sessions[0].ready_for_delivery:return
+            self.pending=(self.sessions[0],time.perf_counter()+1.5)
         session, deadline = self.pending
         held = any(u.GetAsyncKeyState(v) & 0x8000 for v in (0x10, 0x11, 0x12, 0x5B, 0x5C))
+        if held and self.recording and self.active is not session:return
         if session.cancelled or not held or time.perf_counter() >= deadline:
             self.pending = None
             if held and not session.cancelled:
@@ -298,7 +342,7 @@ class Dictation:
         if ident == 4:
             return False
         if ident == 1 and self.ready:
-            if self.active is None and self.pending is None:
+            if self.can_start_recording():
                 try:
                     try:
                         target = self.guard.snapshot()
@@ -307,6 +351,7 @@ class Dictation:
                         print(f'Automatic insertion unavailable: {exc}. Dictation will still be transcribed and retained.', flush=True)
                     session = self.new_session(target)
                     self.active = session
+                    self.register_session(session)
                     self.commands.put_nowait(('start', session))
                     self.recording = True
                     print('Opening microphone…', flush=True)
@@ -376,7 +421,9 @@ class Dictation:
                     elif event == "done":
                         self.schedule_delivery(value)
                     elif event == "partial":
-                        print("PARTIAL: " + value, flush=True)
+                        print("PARTIAL: " + value.text, flush=True)
+                    elif event == 'capture_stopped':
+                        if value is self.active:self.recording=False
                     elif event == 'preview':
                         if value is self.active and not value.capture_until:
                             print('PROVISIONAL: '+value.provisional,flush=True)
@@ -394,6 +441,7 @@ class Dictation:
             self.quit.set()
             if self.active:
                 self.active.cancelled = True
+            for session in self.sessions:session.cancelled=True
             for ident in registered:
                 u.UnregisterHotKey(None, ident)
             self.guard.close()

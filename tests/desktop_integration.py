@@ -1,3 +1,4 @@
+from lightningflow import __version__
 """Actual GUI -> JSON IPC -> resident CUDA -> GUI/history, without live mic speech."""
 import ctypes as C
 import json
@@ -82,5 +83,5 @@ def run():
 
 if __name__=='__main__':
     result=run()
-    (root/'results/desktop-integration-0.5.0.json').write_text(json.dumps(result,indent=2))
+    (root/f'results/desktop-integration-{__version__}.json').write_text(json.dumps(result,indent=2))
     print(json.dumps(result,indent=2))

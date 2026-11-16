@@ -1,0 +1,13 @@
+{
+  "version": "0.6.0",
+  "attempt": "long synthetic replay at 0.08 wall scale",
+  "passed": false,
+  "last_reported_audio_seconds": 1674.2,
+  "last_reported_pending_real_jobs": 24,
+  "observed_windows_events": {
+    "gpu_driver": "nvlddmkm: Reset TDR occurred / Restarting TDR occurred",
+    "application_module": "ucrtbase.dll",
+    "exception_code": "0xc0000409"
+  },
+  "scope": "A failed integration attempt, not a completed duration test. Events coincided; the underlying driver timeout cause is unresolved. No driver settings or CPU fallback were applied. A separate run uses a lower accelerated replay rate."
+}

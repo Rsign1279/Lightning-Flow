@@ -1,3 +1,4 @@
+from lightningflow import __version__
 """Hidden real-widget navigation test. No microphone, hooks or external app input."""
 import json
 import os
@@ -38,5 +39,5 @@ def run():
 if __name__=='__main__':
     result=run();root=Path(__file__).resolve().parents[1]
     (root/'results').mkdir(exist_ok=True)
-    (root/'results/navigation-cache-0.5.0.json').write_text(json.dumps(result,indent=2))
+    (root/f'results/navigation-cache-{__version__}.json').write_text(json.dumps(result,indent=2))
     print(json.dumps(result,indent=2))

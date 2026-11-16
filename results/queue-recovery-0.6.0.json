@@ -1,0 +1,15 @@
+{
+  "version": "0.6.0",
+  "provider": "CUDA / CTranslate2",
+  "model": "small.en",
+  "compute": "int8_float16",
+  "model_initializations": 1,
+  "queued_order_preserved": true,
+  "queued_transcripts_identical": true,
+  "microphone_fault_preserved_audio_and_text": true,
+  "encrypted_disk_reload_retranscribed": true,
+  "retranscribed_text_identical": true,
+  "failed_audio_seconds": 8.84,
+  "external_insertions": 0,
+  "scope": "Synthetic replay and an injected device error through production capture, queue, DPAPI persistence and resident CUDA. No microphone, physical keyboard or external editor."
+}

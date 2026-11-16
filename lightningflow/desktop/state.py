@@ -14,6 +14,15 @@ MODELS = {'tiny.en':('Fast · English',75), 'base.en':('Balanced · English',145
 MODES = ('Raw', 'Smart cleanup', 'Professional', 'Casual', 'Technical', 'Custom')
 DEFAULT_KEYS = {'toggle':0x77,'cancel':0x1B,'retry':0x78,'quit':ord('Q'),'save':ord('S')}
 
+
+def interrupted_preview(text,code):
+    """Recover reviewable text after a native engine exit; never label it final."""
+    if not text.strip():return None
+    return {'id':uuid.uuid4().hex,'text':text,'raw':text,'delivered':False,'audio_available':False,
+            'destination':'scratchpad','cleanup':'Interrupted preview · not a final transcript',
+            'error':f'The local engine exited unexpectedly (code {code}). This preview may be incomplete or provisional. No recovery paste was attempted.',
+            'metrics':{}}
+
 @dataclass
 class Settings:
     theme: str = 'Light'
@@ -23,6 +32,7 @@ class Settings:
     device: int | None = None
     models_dir: str = ''
     history_enabled: bool = False
+    retain_failed_audio: bool = False
     overlay: bool = True
     close_to_tray: bool = True
     onboarding_done: bool = False
@@ -74,7 +84,7 @@ class Settings:
         for entry in self.dictionary:
             if set(entry)!={'spoken','written'} or not all(isinstance(v,str) and 0<len(v.strip())<=120 for v in entry.values()):
                 raise ValueError('Each dictionary entry needs a spoken and written phrase (1–120 characters).')
-        for name in ('history_enabled','overlay','close_to_tray','onboarding_done','startup','personalization_enabled','wait_for_cleanup','live_preview','check_updates'):
+        for name in ('history_enabled','retain_failed_audio','overlay','close_to_tray','onboarding_done','startup','personalization_enabled','wait_for_cleanup','live_preview','check_updates'):
             if not isinstance(getattr(self,name),bool): raise ValueError(f'{name} must be a boolean.')
         return self
 

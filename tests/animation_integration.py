@@ -1,3 +1,4 @@
+from lightningflow import __version__
 """Real Tk frame pacing and no-activation check; no microphone is opened."""
 import ctypes as C
 import json
@@ -66,5 +67,5 @@ def run():
 
 if __name__=='__main__':
     result=run()
-    (root/'results/animation-0.5.0.json').write_text(json.dumps(result,indent=2))
+    (root/f'results/animation-{__version__}.json').write_text(json.dumps(result,indent=2))
     print(json.dumps(result,indent=2))
