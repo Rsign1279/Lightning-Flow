@@ -1,0 +1,53 @@
+{
+  "version": "0.6.1",
+  "provider": "CUDA / CTranslate2",
+  "model": "small.en",
+  "compute": "int8_float16",
+  "parity": [
+    {
+      "personalization_hint": false,
+      "paired_decodes": 8,
+      "identical_transcripts": true,
+      "synthetic_WER": 0.041666666666666664,
+      "direct_median_ms": 273.3727500308305,
+      "isolated_median_ms": 320.9820000920445
+    },
+    {
+      "personalization_hint": true,
+      "paired_decodes": 8,
+      "identical_transcripts": true,
+      "synthetic_WER": 0.041666666666666664,
+      "direct_median_ms": 232.3793499963358,
+      "isolated_median_ms": 205.04354988224804
+    }
+  ],
+  "fault_cases": [
+    {
+      "mode": "hold",
+      "parent_capture_and_inference_threads_survived": true,
+      "microphone_closed": true,
+      "audio_frames_retained": 277,
+      "partial_text_retained": true,
+      "automatic_insertions": 0,
+      "failed_runtime_reused": false,
+      "fault_to_retained_result_ms": 63.221200136467814
+    },
+    {
+      "mode": "locked",
+      "parent_capture_and_inference_threads_survived": true,
+      "microphone_closed": true,
+      "audio_frames_retained": 301,
+      "partial_text_retained": true,
+      "automatic_insertions": 0,
+      "failed_runtime_reused": false,
+      "fault_to_retained_result_ms": 78.80509993992746
+    }
+  ],
+  "timeout_case": {
+    "suspended_owned_child": true,
+    "timeout_including_pipe_write_ms": 395.3249999321997,
+    "child_terminated": true,
+    "parent_survived": true
+  },
+  "scope": "Actual CUDA, synthetic speech, production modifier callbacks and failure injection limited to owned test children. No forced driver reset, physical key injection or human accuracy certification."
+}

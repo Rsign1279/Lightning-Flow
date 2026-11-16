@@ -1,0 +1,59 @@
+{
+  "application_version": "0.6.1",
+  "audit_date": "2026-11-16",
+  "production_runtime_unchanged_from": "cec8588bc356ce14b53dbe22720d5cedb5b34d98",
+  "original_incident": {
+    "kernel_copy_verified": true,
+    "kernel_dump_bytes": 3649031,
+    "raw_dump_published": false,
+    "live_dump_code": "0x117",
+    "driver": "nvlddmkm.sys",
+    "driver_version": "32.0.16.1088",
+    "driver_signature_status": "Valid",
+    "wer_bucket": "LKD_0x117_Tdr:A_IMAGE_nvlddmkm.sys_Blackwell_UserOC",
+    "local_analysis": "ANALYSIS_INCONCLUSIVE",
+    "initial_timeout_trigger_confirmed": false,
+    "driver_fix_claimed": false
+  },
+  "current_clock_snapshot": {
+    "successful_queries": 32,
+    "nonzero_reported_offsets": 0,
+    "scope": "Read-only graphics/memory queries across pstate identifiers 0-15 after the incident. Not evidence of historical clock state."
+  },
+  "private_readonly_sampling": {
+    "start_utc": "2026-11-16T06:18:05.020751+00:00",
+    "end_utc": "2026-11-16T06:29:52.248988+00:00",
+    "samples": 354,
+    "nonzero_reported_offset_samples": 0,
+    "maximum_sampled_temperature_C": 49,
+    "maximum_sampled_power_W": 71.012,
+    "maximum_sampled_vram_bytes": 4726456320,
+    "scope": "Two-second sampling began during the later part of the cycle test; it is not an incident-time snapshot or proof of historical hardware stability."
+  },
+  "event_window": {
+    "start_utc": "2026-11-16T06:15:31.863453+00:00",
+    "end_utc": "2026-11-16T06:30:46.746458+00:00",
+    "nvidia_TDR_events": 0,
+    "original_incident_positive_control_detected": true
+  },
+  "automated_tests": {
+    "passed": 295,
+    "command": ".venv/Scripts/python.exe -m pytest -q"
+  },
+  "wheel_build": {
+    "passed": true,
+    "command": "uv build --wheel --out-dir .work/kernel-audit-wheel"
+  },
+  "recording_cycles": {
+    "hold": 100,
+    "hands_free": 100,
+    "public_example_vocabulary_terms_checked": 5
+  },
+  "long_replay": {
+    "audio_seconds_per_mode": 1800,
+    "both_modes_passed": true,
+    "transcript_hashes_match_previous_release_run": true,
+    "synthetic_WER_unchanged": true
+  },
+  "validation_scope": "Actual RTX 5070 CUDA with synthetic PCM and production modifier callbacks. No physical key injection, live human microphone test, external-editor certification, forced display-driver reset or general accuracy guarantee."
+}

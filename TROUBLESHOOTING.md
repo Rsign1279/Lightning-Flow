@@ -12,3 +12,5 @@
 - **Locked recording:** press the shortcut again, or cancel with Ctrl+Alt+Esc. With Ctrl+Win selected, releasing either modifier ends a hold. The alternate Ctrl+Alt+key binding also ends on release. The overlay distinguishes locked, paused and processing states.
 
 No application can guarantee failure-free insertion across every Windows app. Known limits and actual validation are in DESKTOP_VALIDATION.md.
+
+For the protected original NVIDIA live report, use the narrow private exporter and see [KERNEL_DIAGNOSTICS.md](KERNEL_DIAGNOSTICS.md). Local analysis confirms an NVIDIA 0x117 timeout, but its underlying trigger remains unresolved. Current zero clock offsets do not disprove a past tuning state, and the WER `UserOC` label alone does not establish causation. Never upload a raw kernel memory report as a public GitHub issue.

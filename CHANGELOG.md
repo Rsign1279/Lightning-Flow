@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — private GPU diagnostics
+
+- Add a one-file, data-only, hash-verified WATCHDOG export helper with a hidden UAC launcher and isolated fixture tests.
+- Exclude memory dumps and raw Windows trace/event reports from Git.
+- Publish the redacted kernel investigation: the original NVIDIA timeout is confirmed; its underlying trigger remains unresolved. CUDA decoding and Ctrl+Win behavior are unchanged.
+
 ## 0.6.1
 
 - Isolate resident CUDA inference in a hidden owned interpreter so native failures cannot terminate microphone capture and shortcut handling.

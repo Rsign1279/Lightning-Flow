@@ -30,3 +30,7 @@ results/comparison-audit-*.json
 *.pfx
 *.pem
 *.key
+*.dmp
+*.etl
+*.evtx
+*.wer
