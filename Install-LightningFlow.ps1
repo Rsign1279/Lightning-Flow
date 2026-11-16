@@ -33,7 +33,7 @@ if (-not $NoRegister) {
     $uninstallKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\LightningFlowDesktop'
     New-Item -Path $uninstallKey -Force | Out-Null
     New-ItemProperty -Path $uninstallKey -Name DisplayName -Value 'LightningFlow' -PropertyType String -Force | Out-Null
-    New-ItemProperty -Path $uninstallKey -Name DisplayVersion -Value '0.6.0' -PropertyType String -Force | Out-Null
+    New-ItemProperty -Path $uninstallKey -Name DisplayVersion -Value '0.6.1' -PropertyType String -Force | Out-Null
     New-ItemProperty -Path $uninstallKey -Name InstallLocation -Value $installTarget -PropertyType String -Force | Out-Null
     New-ItemProperty -Path $uninstallKey -Name DisplayIcon -Value (Join-Path $installTarget 'LightningFlow.exe') -PropertyType String -Force | Out-Null
     $uninstallCommand = 'wscript.exe "' + (Join-Path $installTarget 'Uninstall-LightningFlow.vbs') + '"'

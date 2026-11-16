@@ -1,0 +1,44 @@
+{
+  "version": "0.6.1",
+  "model": "small.en",
+  "compute": "int8_float16",
+  "provider": "CUDA / CTranslate2",
+  "model_initializations": 1,
+  "requested_audio_seconds_per_mode": 1800,
+  "replay_wall_scale": 0.08,
+  "cases": [
+    {
+      "mode": "hold",
+      "captured_audio_seconds": 1800.02,
+      "wall_seconds": 370.4855177998543,
+      "stop_to_result_ms": 57.75529984384775,
+      "synthetic_WER": 0.041572803604341596,
+      "final_marker_present": true,
+      "transcript_characters": 27014,
+      "transcript_sha256": "803502de560645902284f2bdb4b2f9e101d9f00ac6c2c5418e982226b2548cb6",
+      "single_result": true,
+      "audio_released": true,
+      "post_stop_audio_appends": 0
+    },
+    {
+      "mode": "locked",
+      "captured_audio_seconds": 1800.0,
+      "wall_seconds": 265.17936350009404,
+      "stop_to_result_ms": 20.36050008609891,
+      "synthetic_WER": 0.041572803604341596,
+      "final_marker_present": true,
+      "transcript_characters": 27014,
+      "transcript_sha256": "803502de560645902284f2bdb4b2f9e101d9f00ac6c2c5418e982226b2548cb6",
+      "single_result": true,
+      "audio_released": true,
+      "post_stop_audio_appends": 0
+    }
+  ],
+  "stream_opens": 3,
+  "stream_closes": 3,
+  "peak_sampled_process_RSS_MiB": 185.578125,
+  "peak_sampled_process_tree_RSS_sum_MiB": 940.21484375,
+  "nvidia_TDR_events_during_run": 0,
+  "elapsed_seconds": 651.1727201999165,
+  "scope": "Synthetic PCM of the reported duration, accelerated when scale <1, actual CUDA and production modifier callbacks. Isolated scratchpad; not a live microphone, physical Windows-key interception or external editor certification."
+}

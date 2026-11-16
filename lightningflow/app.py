@@ -11,7 +11,7 @@ import wave
 import numpy as np
 import sounddevice as sd
 from .audio import RATE, BLOCK, Segmenter, PreviewBuffer, merge, input_options
-from .asr import CudaASR
+from .asr_process import CudaASRProcess as CudaASR, GPUWorkerError
 from .win32 import InputGuard, u
 from . import __version__
 
@@ -56,12 +56,13 @@ class Dictation:
         self.ready = False
         self.pending = None
         self.sessions = []
+        self.gpu_error = ''
 
     def register_session(self,session):
         if not any(item is session for item in self.sessions):self.sessions.append(session)
 
     def can_start_recording(self):
-        return (self.ready and not self.recording and len(self.sessions)<3
+        return (self.ready and not self.gpu_error and not self.recording and len(self.sessions)<3
                 and not any(item.retry_of for item in self.sessions)
                 and (self.active is None or any(item is self.active for item in self.sessions)))
 
@@ -83,8 +84,19 @@ class Dictation:
         return Session(target)
 
     def on_tick(self):
-        """Extension point for a desktop command bridge; console is unchanged."""
-        pass
+        if self.gpu_error:
+            self.ready=False
+            if self.recording and self.active is not None:
+                self.active.capture_until=time.perf_counter()
+                self.commands.put_nowait(('stop',None))
+                self.recording=False
+
+    def latch_gpu_fault(self,session,reason):
+        if not self.gpu_error:
+            self.gpu_error=f'GPU transcription stopped: {reason}. Captured audio retained; export or save recovery audio before restarting the engine.'
+            self.ready=False
+            self.emit('gpu_fault',self.gpu_error)
+        if session is not None:session.error=self.gpu_error
 
     def infer(self):
         try:
@@ -94,14 +106,22 @@ class Dictation:
         except Exception as exc:
             self.emit("fatal", f"GPU startup failed: {exc}. No CPU fallback attempted.")
             return
+        try:self._infer_loop(engine)
+        finally:
+            close=getattr(engine,'close',None)
+            if close:close()
+
+    def _infer_loop(self,engine):
         while not self.quit.is_set():
+            if getattr(engine,'failed',False) and not self.gpu_error:
+                self.latch_gpu_fault(self.active,'The isolated CUDA process exited unexpectedly')
             try:
                 kind, session, chunk = self.jobs.get(timeout=.02)
             except queue.Empty:
                 try:session,epoch,samples=self.previews.get_nowait()
                 except queue.Empty:continue
                 # A real decode/finalization always takes priority over previews.
-                if not self.jobs.empty() or session.cancelled or session.error or session.stopped or session.capture_until or epoch!=session.preview_epoch:continue
+                if self.gpu_error or not self.jobs.empty() or session.cancelled or session.error or session.stopped or session.capture_until or epoch!=session.preview_epoch:continue
                 try:
                     prompt=getattr(session,'asr_prompt','')
                     result=engine.transcribe(samples,initial_prompt=prompt) if prompt else engine.transcribe(samples)
@@ -109,10 +129,13 @@ class Dictation:
                         session.first_partial=session.first_partial or time.perf_counter()
                         session.provisional=merge(session.text,result,True)
                         self.emit('preview',session)
+                except GPUWorkerError as exc:
+                    self.latch_gpu_fault(session,str(exc))
                 except Exception:
                     # Preview failure must not poison the authoritative transcript.
                     pass
                 continue
+            if self.gpu_error and not session.cancelled:session.error=self.gpu_error
             if kind == "finish":
                 self.emit("done", session)
             elif not session.cancelled and not session.error:
@@ -126,7 +149,7 @@ class Dictation:
                         session.first_partial = session.first_partial or time.perf_counter()
                         self.emit("partial", session)
                 except Exception as exc:
-                    session.error = f"GPU transcription failed: {exc}"
+                    self.latch_gpu_fault(session,str(exc))
 
     def enqueue(self, kind, session, chunk=None):
         try:
@@ -413,11 +436,12 @@ class Dictation:
                 while not self.events.empty():
                     event, value = self.events.get_nowait()
                     if event == "ready":
-                        self.ready = True
+                        self.ready = not self.gpu_error
                         print("READY: " + value, flush=True)
                     elif event == "fatal":
                         print(value, flush=True)
                         return 1
+                    elif event == 'gpu_fault':print(value,flush=True)
                     elif event == "done":
                         self.schedule_delivery(value)
                     elif event == "partial":

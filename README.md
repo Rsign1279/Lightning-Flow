@@ -9,7 +9,7 @@ LightningFlow is an independent project. It does not use Wispr Flow code, brandi
 ## What works
 
 - Native desktop window, tray integration, light/dark themes and a nonactivating audio-responsive recording capsule. Normal use needs no terminal.
-- Persistent faster-whisper/CTranslate2 CUDA inference. The app refuses silent CPU fallback.
+- Persistent faster-whisper/CTranslate2 CUDA inference in an owned isolated child. The app refuses silent CPU fallback.
 - Hold-to-talk, double-tap hands-free, release-to-stop, cancellation and explicit retry. Choose Ctrl+Win in Settings / Shortcuts; fresh profiles default to Ctrl+Alt+F8 until changed.
 - Start a new recording while earlier transcription finishes; a bounded queue preserves delivery order and verifies the target again.
 - Provisional live previews; final recognition retains the larger audio windows and only verified final text is inserted.
@@ -41,12 +41,12 @@ Open `LightningFlow.vbs` or `desktop-dist\LightningFlow\LightningFlow.exe`. Buil
 
 ## Validation
 
-282 automated tests pass on the development Windows machine. The 0.6.0 CUDA replay run passed 100 hold and 100 locked sessions with one model initialization and no audio appends after stop. Queued dictations and encrypted audio recovery after a simulated microphone disconnect also passed with the same resident CUDA model. These were synthetic PCM and production gesture callbacks, not physical Windows-key injection or human-speech accuracy tests. See the release evidence for timing scope and long-recording results.
+293 automated tests pass locally. The 0.6.1 CUDA replay run passed 100 hold and 100 hands-free sessions with one model initialization and zero audio appends after stop. A final long run processed 30 minutes of synthetic audio in each mode with matching transcripts and zero observed NVIDIA TDR events. Native GPU-child exits in both modes retained captured audio/text, and direct/isolated decoder comparisons produced identical test output. These were synthetic PCM and production gesture callbacks, not physical Windows-key injection or human-speech accuracy certification. See the release evidence for timing scope, concurrent-load results and the remaining driver-reset uncertainty.
 
-See [0.6.0 fixes and evidence](FIXES_0.6.0.md), [0.5.0 fixes](FIXES_0.5.0.md), [architecture](ARCHITECTURE.md), [installation](INSTALLATION.md), [privacy](PRIVACY.md), [security](SECURITY.md), [contributing](CONTRIBUTING.md), and [license notices](LICENSE_NOTICES.md).
+See [0.6.1 GPU crash handling and evidence](FIXES_0.6.1.md), [0.6.0 fixes](FIXES_0.6.0.md), [0.5.0 fixes](FIXES_0.5.0.md), [architecture](ARCHITECTURE.md), [installation](INSTALLATION.md), [privacy](PRIVACY.md), [security](SECURITY.md), [contributing](CONTRIBUTING.md), and [license notices](LICENSE_NOTICES.md).
 
 ## Known boundaries
 
-Cross-application editing is not atomic. Moving the caret, changing focus or editing the document may deliberately block insertion; recover the text from the app. Password/read-only/inaccessible/elevated fields can refuse delivery. Physical Ctrl+Win, broad editor coverage, real human accuracy and 30-minute wall-clock recording still need manual validation. One accelerated long run encountered an NVIDIA TDR/native engine interruption; its cause is unresolved. Parakeet and whisper.cpp are not implemented. There is no meeting notetaker, cloud sync or team account service. General-purpose prose rewriting is intentionally constrained to preserve content. A trusted code-signing certificate and an independent security review are not included.
+Cross-application editing is not atomic. Moving the caret, changing focus or editing the document may deliberately block insertion; recover the text from the app. Password/read-only/inaccessible/elevated fields can refuse delivery. Physical Ctrl+Win, broad editor coverage, real human accuracy and 30-minute wall-clock recording still need manual validation. The original NVIDIA reset triggered a native allocator-cleanup abort. Version 0.6.1 isolates native GPU failure and retains capture/text; the underlying driver-reset trigger remains unproven. Parakeet and whisper.cpp are not implemented. There is no meeting notetaker, cloud sync or team account service. General-purpose prose rewriting is intentionally constrained to preserve content. A trusted code-signing certificate and an independent security review are not included.
 
 Original source: [MIT](LICENSE). NVIDIA CUDA libraries and Windows are external proprietary platform dependencies; this does not make the entire GPU/OS stack open source.

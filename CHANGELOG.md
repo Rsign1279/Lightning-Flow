@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.6.1
+
+- Isolate resident CUDA inference in a hidden owned interpreter so native failures cannot terminate microphone capture and shortcut handling.
+- Own the actual interpreter before GPU initialization, including Windows Store Python launcher cases.
+- Preserve exact float32 transport, recognition model, precision, VAD, vocabulary and decoding settings.
+- Bound complete inference requests, including pipe writes; latch failed runtimes, stop capture, retain audio/text and prevent incomplete insertion or CPU fallback.
+- Add native-child-exit tests for both Ctrl+Win modes, blocked-pipe timeout tests, direct/isolated decoding comparisons and long-run NVIDIA event monitoring.
+- Preserve the original crash evidence and distinguish the identified application abort from the unproven driver-reset trigger.
+
 ## 0.6.0
 
 - Accept the next recording while prior transcription finishes, with a three-session ordered queue. Confirmed insertion can advance only identical captured targets; changed fields still refuse delivery.

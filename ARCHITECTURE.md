@@ -1,6 +1,10 @@
-# Architecture — 0.5.0
+# Architecture — 0.6.1
 
-The CustomTkinter Windows GUI owns settings, local history and status. A separate background process owns Windows hooks, microphone capture, ASR and guarded insertion. A Windows Job Object ties the worker tree to the GUI. Inference never runs on Tk's event thread.
+The CustomTkinter Windows GUI owns settings, local history and status. A background control process owns Windows hooks, microphone capture, transcript assembly and guarded insertion. Resident CUDA inference runs in a further isolated child, reached by bounded local pipes. Inference never runs on Tk's event thread or inside the microphone/control process.
+
+The CUDA child reports its actual interpreter PID before loading a model. The control worker verifies ownership and assigns that interpreter to a kill-on-close Windows Job Object before acknowledging initialization; this handles Windows Store Python launchers that can escape a launcher's job. Native stdout is redirected to diagnostic stderr so it cannot corrupt the framed protocol. Exact float32 samples, vocabulary hints, language and existing decoding options pass through the pipe without quantization. A bounded writer and reader enforce the full request deadline, including blocked pipe writes. The model stays loaded across dictations.
+
+A GPU child exit, protocol failure or deadline latches the runtime as failed. Capture stops, already recorded audio/text is retained and queued sessions finalize as recoverable errors. The failed runtime is never reused, no CPU fallback occurs, and incomplete text is not pasted. Export retained audio before restarting the engine; encrypted recovery survives only if it was already enabled and its save completed. This contains the observed native abort; it does not prove that an underlying NVIDIA driver/hardware reset cannot recur.
 
 ```mermaid
 flowchart LR

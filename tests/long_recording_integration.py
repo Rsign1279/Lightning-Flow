@@ -21,6 +21,8 @@ def run(seconds=1800,speed=.08,model='small.en',compute='int8_float16'):
     from lightningflow.desktop.state import Preferences,Settings
     from lightningflow._vendor.faster_whisper.audio import decode_audio
     from lightningflow.benchmark import error_rate
+    from tests.gpu_events import utc_now,tdr_count
+    event_start=utc_now()
     root=Path(__file__).resolve().parents[1]
     folder=root/'.work/long-recording';folder.mkdir(parents=True,exist_ok=True)
     checkpoint=folder/'checkpoint.json'
@@ -70,7 +72,7 @@ def run(seconds=1800,speed=.08,model='small.en',compute='int8_float16'):
         item.raw=Tracked();return item
     engine.new_session=session
     threads=[threading.Thread(target=f) for f in (engine.infer,engine.capture)]
-    process=psutil.Process();rss=[];report=[];started=time.perf_counter();last_sample=0;last_progress=0
+    process=psutil.Process();rss=[];tree_rss=[];report=[];started=time.perf_counter();last_sample=0;last_progress=0
     def tick():
         nonlocal last_sample,last_progress
         engine.on_tick()
@@ -82,7 +84,12 @@ def run(seconds=1800,speed=.08,model='small.en',compute='int8_float16'):
             elif kind=='done':engine.schedule_delivery(value)
         engine.tick_delivery()
         now=time.perf_counter()
-        if now-last_sample>.5:rss.append(process.memory_info().rss/1024**2);last_sample=now
+        if now-last_sample>.5:
+            memory=process.memory_info().rss;rss.append(memory/1024**2)
+            for child in process.children(recursive=True):
+                try:memory+=child.memory_info().rss
+                except psutil.NoSuchProcess:pass
+            tree_rss.append(memory/1024**2);last_sample=now
         if now-last_progress>20:
             print(json.dumps({'captured_audio_seconds':round(Replay.offset/16000,1),'model_loads':len(models),'pending_real_jobs':engine.jobs.qsize()}),flush=True)
             last_progress=now
@@ -127,9 +134,12 @@ def run(seconds=1800,speed=.08,model='small.en',compute='int8_float16'):
                 'single_result':True,'audio_released':True,'post_stop_audio_appends':0})
             checkpoint.write_text(json.dumps({'version':__version__,'complete':False,'completed_cases':report,
                 'scope':'Completed cases only; the overall long run has not finished.'},indent=2),encoding='utf-8')
+        resets=tdr_count(event_start)
+        assert resets==0,('NVIDIA TDR events occurred during the run',resets)
         return {'version':__version__,'model':model,'compute':compute,'provider':models[0],'model_initializations':len(models),
             'requested_audio_seconds_per_mode':seconds,'replay_wall_scale':speed,'cases':report,
             'stream_opens':Replay.opens,'stream_closes':Replay.closes,'peak_sampled_process_RSS_MiB':max(rss),
+            'peak_sampled_process_tree_RSS_sum_MiB':max(tree_rss),'nvidia_TDR_events_during_run':resets,
             'elapsed_seconds':time.perf_counter()-started,
             'scope':'Synthetic PCM of the reported duration, accelerated when scale <1, actual CUDA and production modifier callbacks. Isolated scratchpad; not a live microphone, physical Windows-key interception or external editor certification.'}
     finally:

@@ -32,6 +32,11 @@ def hardware():
     import psutil
     from ..asr import gpu_snapshot
     process=psutil.Process()
+    controller_rss=process.memory_info().rss
+    engine_rss=controller_rss
+    for child in process.children(recursive=True):
+        try:engine_rss+=child.memory_info().rss
+        except (psutil.NoSuchProcess,psutil.AccessDenied):pass
     cpu=platform.processor()
     try:
         import winreg
@@ -39,7 +44,7 @@ def hardware():
             cpu=winreg.QueryValueEx(key,'ProcessorNameString')[0].strip()
     except OSError: pass
     send('hardware',gpu=gpu_snapshot(),cpu=cpu,ram_gib=round(psutil.virtual_memory().total/1024**3,1),
-         engine_ram_mib=round(process.memory_info().rss/1024**2,1),engine_pid=process.pid)
+         engine_ram_mib=round(engine_rss/1024**2,1),controller_ram_mib=round(controller_rss/1024**2,1),engine_pid=process.pid)
 
 def devices():
     import sounddevice as sd
@@ -127,7 +132,8 @@ def build_backend(settings_path,models):
             if event=='ready': send('status',state='ready',message='Ready to record',
                                     detail=value,model=self.args.model,provider='CUDA / CTranslate2')
             elif event=='fatal': send('status',state='error',message=str(value))
-            elif event=='listening' and value is self.active:
+            elif event=='gpu_fault':send('status',state='error',message=str(value))
+            elif event=='listening' and value is self.active and not self.gpu_error:
                 state=self.gesture.state
                 if state=='finishing': return
                 send('status',state='paused' if state=='waiting' else 'recording',
@@ -311,8 +317,9 @@ def build_backend(settings_path,models):
                 send('status',state='recording' if self.active.first_audio else 'starting',message='Recording the next dictation',gesture=self.gesture.state)
             elif len(self.sessions)>1:send('status',state='processing',message='Finishing queued dictations')
             else:
-                send('status',state='ready' if self.ready else 'error',message='Ready to record' if session.delivered else
+                send('status',state='ready' if self.ready else 'error',message=self.gpu_error or ('Ready to record' if session.delivered else
                      'No speech detected. Check your microphone or try again.' if not session.text else 'Transcript retained. Check the target before retrying.')
+                     )
 
         def microphone_test(self):
             import sounddevice as sd
@@ -341,6 +348,9 @@ def build_backend(settings_path,models):
                 send('mic_level',level=0)
 
         def on_tick(self):
+            was_recording=self.recording
+            super().on_tick()
+            if self.gpu_error and was_recording:self.gesture.reset()
             for _ in range(8):
                 try:generation,kind,value=self.recovery.results.get_nowait()
                 except queue.Empty:break

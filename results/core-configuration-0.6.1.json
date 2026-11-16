@@ -1,0 +1,21 @@
+{
+  "unchanged_AST_from_v0_6_0": {
+    "lightningflow/asr.py": true,
+    "lightningflow/audio.py": true,
+    "lightningflow/desktop/chords.py": true,
+    "lightningflow/desktop/gestures.py": true,
+    "lightningflow/desktop/personalization.py": true,
+    "lightningflow/desktop/cleanup.py": true,
+    "lightningflow/win32.py": true
+  },
+  "gpu": [
+    {
+      "name": "NVIDIA GeForce RTX 5070",
+      "driver": "610.88",
+      "total_mib": "12227",
+      "used_mib": "2926",
+      "util_percent": "26"
+    }
+  ],
+  "scope": "Decoder, segmentation, chord, vocabulary, cleanup and insertion source unchanged. GPU execution moved into an owned process. This is source/configuration evidence, not a universal accuracy guarantee."
+}

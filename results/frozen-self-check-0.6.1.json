@@ -1,0 +1,29 @@
+{
+  "version": "0.6.1",
+  "passed": true,
+  "scope": "Packaged GUI, isolated settings, real CUDA startup/warm-up, no microphone or text insertion.",
+  "pages": [
+    "Dark/dictation",
+    "Dark/history",
+    "Dark/writing",
+    "Dark/dictionary",
+    "Dark/models",
+    "Dark/microphone",
+    "Dark/shortcuts",
+    "Dark/performance",
+    "Dark/settings",
+    "Light/dictation",
+    "Light/history",
+    "Light/writing",
+    "Light/dictionary",
+    "Light/models",
+    "Light/microphone",
+    "Light/shortcuts",
+    "Light/performance",
+    "Light/settings"
+  ],
+  "callback_errors": [],
+  "provider": "CUDA / CTranslate2",
+  "model": "tiny.en",
+  "elapsed_seconds": 8.011744800023735
+}
